@@ -1,6 +1,5 @@
 import React from 'react'
 import { MapContainer, ScaleControl, TileLayer, Marker } from 'react-leaflet'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import styled from '@emotion/styled'
 import { window, exists } from 'browser-monads'
 
@@ -22,7 +21,7 @@ const Row = styled.div`
     }
   }
   ul {
-    padding-left: 0;
+    padding-left: 20px;
   }
 `
 const Col = styled.div`
@@ -178,8 +177,4 @@ const KontaktPage = () => {
   )
 }
 
-KontaktPage.displayName = 'KontaktPage'
-
 export default KontaktPage
-
-export { Head } from '../components/Head'
