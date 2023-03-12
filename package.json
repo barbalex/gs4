@@ -32,7 +32,6 @@
     "react-scrollspy": "3.4.3",
     "react-typography": "0.16.23",
     "reactstrap": "9.1.6",
-    "typography": "0.16.21",
     "vercel": "28.16.15"
   },
   "devDependencies": {
