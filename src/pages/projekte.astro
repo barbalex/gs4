@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
 import Projekte from '../components/Projekte'
 ---
 
 <Layout>
-  <Projekte client:load />
+  <Navbar>
+  <Projekte client:load /></Navbar>
 </Layout>

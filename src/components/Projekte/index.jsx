@@ -4,7 +4,6 @@ import Scrollspy from 'react-scrollspy'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import styled from '@emotion/styled'
 
-import Layout from '../Layout'
 import apfImg from '/apflora.png'
 import aeImg from '/ae.png'
 import bbImg from '/bb.png'
@@ -124,328 +123,324 @@ const Img = styled.img`
 `
 
 const ProjektPage = () => (
-  <Layout>
-    <Page>
-      <Column>
-        <StyledScrollspy
-          items={[
-            'apflora',
-            'arteigenschaften',
-            'vermehrung',
-            'kapla',
-            'awel-personal',
-            'awel-indikatoren',
-            'mediterranean-migration',
-          ]}
-          currentClassName="active"
-          offset={-50}
-        >
-          <Li>
-            <A href="#apflora">apflora.ch</A>
-          </Li>
-          <Li>
-            <A href="#arteigenschaften">arteigenschaften.ch</A>
-          </Li>
-          <Li>
-            <A href="#vermehrung">vermehrung.ch</A>
-          </Li>
-          <Li>
-            <A href="#kapla">Kapla</A>
-          </Li>
-          <Li>
-            <A href="#awel-personal">AWEL-Personal</A>
-          </Li>
-          <Li>
-            <A href="#awel-indikatoren">AWEL-Indikatoren</A>
-          </Li>
-          <Li>
-            <A href="#mediterranean-migration">
-              mediterranean-
-              <br />
-              migration.com
-            </A>
-          </Li>
-        </StyledScrollspy>
-      </Column>
-      <MainColumn>
-        <Lead className="lead">Eine Auswahl von aktuellen Projekten:</Lead>
-        <Section id="apflora">
-          <Img src={apfImg} alt="apflora" height={51} />
-          <H2>apflora.ch</H2>
-          <H3>
-            Aktionsplan Flora der Fachstelle Naturschutz des Kantons Zürich
-          </H3>
-          <div>
-            Grösste Stärken:
-            <Ul>
-              <Li>komplexe Projektstruktur im Strukturbaum darstellen</Li>
-              <Li>aufwändige Jahresberichte auf Knopfdruck produzieren</Li>
-              <Li>
-                Erfolgskontrollen werden in einem leistungsfähigen Formular
-                Excel-ähnlich geplant
-              </Li>
-              <Li>differenzierte Benutzerrechte</Li>
-              <Li>
-                Profis und Freiwillige erfassen ihre Daten selber, mit Hilfe von
-                massgeschneiderten Zugängen
-              </Li>
-            </Ul>
-          </div>
-          <UncontrolledCarousel
-            items={apfloraCarouselItems}
-            autoPlay={false}
-            interval={false}
-          />
-          <P>Im produktiven Einsatz seit 2013.</P>
-          <P>
-            Mehr Informationen&nbsp;
-            <a
-              href="https://apflora.ch"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              auf der Startseite
-            </a>
-            &nbsp;und&nbsp;
-            <a
-              href="https://apflora.ch/Dokumentation/Benutzer/Was-kann-man-mit-apflora-machen"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              in der Dokumentation
-            </a>
-            .
-          </P>
-        </Section>
-        <Section id="arteigenschaften">
-          <Img src={aeImg} alt="arteigenschaften.ch" height={51} />
-          <H2>arteigenschaften.ch</H2>
-          <H3>
-            Naturschutzrelevante Informationen über Arten aus den Gruppen Fauna,
-            Flora, Moose, Pilze und von Lebensräumen:
-          </H3>
+  <Page>
+    <Column>
+      <StyledScrollspy
+        items={[
+          'apflora',
+          'arteigenschaften',
+          'vermehrung',
+          'kapla',
+          'awel-personal',
+          'awel-indikatoren',
+          'mediterranean-migration',
+        ]}
+        currentClassName="active"
+        offset={-50}
+      >
+        <Li>
+          <A href="#apflora">apflora.ch</A>
+        </Li>
+        <Li>
+          <A href="#arteigenschaften">arteigenschaften.ch</A>
+        </Li>
+        <Li>
+          <A href="#vermehrung">vermehrung.ch</A>
+        </Li>
+        <Li>
+          <A href="#kapla">Kapla</A>
+        </Li>
+        <Li>
+          <A href="#awel-personal">AWEL-Personal</A>
+        </Li>
+        <Li>
+          <A href="#awel-indikatoren">AWEL-Indikatoren</A>
+        </Li>
+        <Li>
+          <A href="#mediterranean-migration">
+            mediterranean-
+            <br />
+            migration.com
+          </A>
+        </Li>
+      </StyledScrollspy>
+    </Column>
+    <MainColumn>
+      <Lead className="lead">Eine Auswahl von aktuellen Projekten:</Lead>
+      <Section id="apflora">
+        <Img src={apfImg} alt="apflora" height={51} />
+        <H2>apflora.ch</H2>
+        <H3>Aktionsplan Flora der Fachstelle Naturschutz des Kantons Zürich</H3>
+        <div>
+          Grösste Stärken:
           <Ul>
-            <Li>anzeigen</Li>
-            <Li>importieren</Li>
-            <Li>kombinieren</Li>
-            <Li>Informationen von Synonymen verbinden</Li>
-            <Li>exportieren</Li>
-            <Li>über Artengruppen hinweg zusammenfassen</Li>
-            <Li>in eigener Anwendung einbinden</Li>
-          </Ul>
-          <P>
-            Grösste Stärke ist der einfache Import und Export von Daten. Die
-            Absicht dahinter: Alle benötigten Daten können, sofern nicht schon
-            enthalten, rasch ergänzt und für Auswertungen kombiniert werden.
-          </P>
-          <UncontrolledCarousel
-            items={aeCarouselItems}
-            autoPlay={false}
-            interval={false}
-          />
-          <P>Im produktiven Einsatz seit 2013.</P>
-          <P>
-            Mehr Informationen&nbsp;
-            <a
-              href="https://artdaten.ch/Dokumentation/Projektbeschreibung"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              in der Dokumentation
-            </a>
-            .
-          </P>
-        </Section>
-        <Section id="vermehrung">
-          <Img src={vmImg} alt="vermehrung.ch" height={51} />
-          <H2>vermehrung.ch</H2>
-          <H3>Bedrohte Pflanzen vermehren</H3>
-          <Ul>
-            <Li>mobile first</Li>
-            <Li>offline first</Li>
-            <Li>live aktualisierte Daten</Li>
+            <Li>komplexe Projektstruktur im Strukturbaum darstellen</Li>
+            <Li>aufwändige Jahresberichte auf Knopfdruck produzieren</Li>
+            <Li>
+              Erfolgskontrollen werden in einem leistungsfähigen Formular
+              Excel-ähnlich geplant
+            </Li>
             <Li>differenzierte Benutzerrechte</Li>
+            <Li>
+              Profis und Freiwillige erfassen ihre Daten selber, mit Hilfe von
+              massgeschneiderten Zugängen
+            </Li>
           </Ul>
-          <P>
-            Grösste Stärke ist die Fähigkeit, ohne Internet-Anschluss und mit
-            jedem beliebigen Gerät arbeiten zu können.
-          </P>
-          <UncontrolledCarousel
-            items={vmCarouselItems}
-            autoPlay={false}
-            interval={false}
-          />
-          <P>Im produktiven Einsatz seit 2020.</P>
-          <P>
-            Mehr Informationen&nbsp;
-            <a
-              href="https://vermehrung.ch"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              auf der Startseite
-            </a>
-            {' und '}
-            <a
-              href="https://vermehrung.ch/Dokumentation/Ziele"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              in der Dokumentation
-            </a>
-            .
-          </P>
-        </Section>
-        <Section id="kapla">
-          <Img src={kaplaImg} alt="Kapla" height={51} />
-          <H2>Kapla</H2>
-          <P>
-            Mit Kapla verwaltet die Abteilung Recht des AWEL (Amt für Abfall,
-            Wasser, Energie und Luft) des Kantons Zürich ihre Geschäfte.
-          </P>
-          <br />
-          <div>
-            Grösste Stärken:
-            <Ul>
-              <Li>massgeschneidert für die Aufgabe</Li>
-              <Li>benutzerfreundlich</Li>
-              <Li>beinahe null Unterhalt</Li>
-            </Ul>
-          </div>
-          <UncontrolledCarousel
-            items={kaplaCarouselItems}
-            autoPlay={false}
-            interval={false}
-          />
-          <P>Im produktiven Einsatz seit 2016.</P>
-          <P>
-            Mehr Informationen&nbsp;
-            <a
-              href="https://github.com/barbalex/kapla3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              auf GitHub
-            </a>
-            .
-          </P>
-        </Section>
-        <Section id="awel-personal">
-          <Img src={apImg} alt="AWEL-Personal" height={51} />
-          <H2>AWEL-Personal</H2>
-          <P>
-            Damit verwaltet das AWEL (Amt für Abfall, Wasser, Energie und Luft)
-            des Kantons Zürich Personal-Daten.
-          </P>
-          <br />
-          <div>
-            Grösste Stärken:
-            <Ul>
-              <Li>massgeschneidert für die Aufgabe</Li>
-              <Li>benutzerfreundlich</Li>
-              <Li>beinahe null Unterhalt</Li>
-            </Ul>
-          </div>
-          <P>Sorry, keine Bilder: Personaldaten sind sensibel...</P>
-          <br />
-          <P>Im produktiven Einsatz seit 2019.</P>
-          <P>
-            Mehr Informationen&nbsp;
-            <a
-              href="https://github.com/barbalex/awel-personal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              auf GitHub
-            </a>
-            .
-          </P>
-        </Section>
-        <Section id="awel-indikatoren">
-          <Img src={zhLoeweImg} alt="AWEL-Indikatoren" height={51} />
-          <H2>AWEL-Indikatoren</H2>
-          <P>
-            Das AWEL (Amt für Abfall, Wasser, Energie und Luft) des Kantons
-            Zürich verwaltet mit dieser Access-Anwendung Indikatoren.
-          </P>
-          <div>
-            Grösste Stärken:
-            <Ul>
-              <Li>massgeschneidert für die Aufgabe</Li>
-              <Li>bisher null Unterhaltsbedarf</Li>
-            </Ul>
-          </div>
-          <UncontrolledCarousel
-            items={aiCarouselItems}
-            autoPlay={false}
-            interval={false}
-          />
-          <P>Im produktiven Einsatz seit 2014.</P>
-        </Section>
-        <Section id="mediterranean-migration">
-          <Img src={bbImg} alt="mediterranean-migration" height={51} />
-          <H2>mediterranean-migration.com</H2>
-          <P>
-            Übersicht über die Migration durch das zentrale und östliche
-            Mittelmeer.
-          </P>
-          <div>
-            Grösste Stärken:
-            <Ul>
-              <Li>
-                rasche Übersicht über Migrationsströme und dazugehörige
-                politische Ereignisse
-              </Li>
-              <Li>
-                der Autor kann Ereignisse und Artikel direkt bearbeiten - wie
-                bei einem{' '}
-                <a
-                  href="https://de.wikipedia.org/wiki/Content-Management-System"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CMS
-                </a>
-              </Li>
-            </Ul>
-          </div>
-          <UncontrolledCarousel
-            items={bbCarouselItems}
-            autoPlay={false}
-            interval={false}
-          />
-          <P>Im produktiven Einsatz seit 2015.</P>
-          <P>
-            Schauen Sie selber:&nbsp;
-            <a
-              href="https://mediterranean-migration.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              mediterranean-migration.com
-            </a>
-            .
-          </P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-          <P>&nbsp;</P>
-        </Section>
-      </MainColumn>
-    </Page>
-  </Layout>
+        </div>
+        <UncontrolledCarousel
+          items={apfloraCarouselItems}
+          autoPlay={false}
+          interval={false}
+        />
+        <P>Im produktiven Einsatz seit 2013.</P>
+        <P>
+          Mehr Informationen&nbsp;
+          <a
+            href="https://apflora.ch"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            auf der Startseite
+          </a>
+          &nbsp;und&nbsp;
+          <a
+            href="https://apflora.ch/Dokumentation/Benutzer/Was-kann-man-mit-apflora-machen"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            in der Dokumentation
+          </a>
+          .
+        </P>
+      </Section>
+      <Section id="arteigenschaften">
+        <Img src={aeImg} alt="arteigenschaften.ch" height={51} />
+        <H2>arteigenschaften.ch</H2>
+        <H3>
+          Naturschutzrelevante Informationen über Arten aus den Gruppen Fauna,
+          Flora, Moose, Pilze und von Lebensräumen:
+        </H3>
+        <Ul>
+          <Li>anzeigen</Li>
+          <Li>importieren</Li>
+          <Li>kombinieren</Li>
+          <Li>Informationen von Synonymen verbinden</Li>
+          <Li>exportieren</Li>
+          <Li>über Artengruppen hinweg zusammenfassen</Li>
+          <Li>in eigener Anwendung einbinden</Li>
+        </Ul>
+        <P>
+          Grösste Stärke ist der einfache Import und Export von Daten. Die
+          Absicht dahinter: Alle benötigten Daten können, sofern nicht schon
+          enthalten, rasch ergänzt und für Auswertungen kombiniert werden.
+        </P>
+        <UncontrolledCarousel
+          items={aeCarouselItems}
+          autoPlay={false}
+          interval={false}
+        />
+        <P>Im produktiven Einsatz seit 2013.</P>
+        <P>
+          Mehr Informationen&nbsp;
+          <a
+            href="https://artdaten.ch/Dokumentation/Projektbeschreibung"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            in der Dokumentation
+          </a>
+          .
+        </P>
+      </Section>
+      <Section id="vermehrung">
+        <Img src={vmImg} alt="vermehrung.ch" height={51} />
+        <H2>vermehrung.ch</H2>
+        <H3>Bedrohte Pflanzen vermehren</H3>
+        <Ul>
+          <Li>mobile first</Li>
+          <Li>offline first</Li>
+          <Li>live aktualisierte Daten</Li>
+          <Li>differenzierte Benutzerrechte</Li>
+        </Ul>
+        <P>
+          Grösste Stärke ist die Fähigkeit, ohne Internet-Anschluss und mit
+          jedem beliebigen Gerät arbeiten zu können.
+        </P>
+        <UncontrolledCarousel
+          items={vmCarouselItems}
+          autoPlay={false}
+          interval={false}
+        />
+        <P>Im produktiven Einsatz seit 2020.</P>
+        <P>
+          Mehr Informationen&nbsp;
+          <a
+            href="https://vermehrung.ch"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            auf der Startseite
+          </a>
+          {' und '}
+          <a
+            href="https://vermehrung.ch/Dokumentation/Ziele"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            in der Dokumentation
+          </a>
+          .
+        </P>
+      </Section>
+      <Section id="kapla">
+        <Img src={kaplaImg} alt="Kapla" height={51} />
+        <H2>Kapla</H2>
+        <P>
+          Mit Kapla verwaltet die Abteilung Recht des AWEL (Amt für Abfall,
+          Wasser, Energie und Luft) des Kantons Zürich ihre Geschäfte.
+        </P>
+        <br />
+        <div>
+          Grösste Stärken:
+          <Ul>
+            <Li>massgeschneidert für die Aufgabe</Li>
+            <Li>benutzerfreundlich</Li>
+            <Li>beinahe null Unterhalt</Li>
+          </Ul>
+        </div>
+        <UncontrolledCarousel
+          items={kaplaCarouselItems}
+          autoPlay={false}
+          interval={false}
+        />
+        <P>Im produktiven Einsatz seit 2016.</P>
+        <P>
+          Mehr Informationen&nbsp;
+          <a
+            href="https://github.com/barbalex/kapla3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            auf GitHub
+          </a>
+          .
+        </P>
+      </Section>
+      <Section id="awel-personal">
+        <Img src={apImg} alt="AWEL-Personal" height={51} />
+        <H2>AWEL-Personal</H2>
+        <P>
+          Damit verwaltet das AWEL (Amt für Abfall, Wasser, Energie und Luft)
+          des Kantons Zürich Personal-Daten.
+        </P>
+        <br />
+        <div>
+          Grösste Stärken:
+          <Ul>
+            <Li>massgeschneidert für die Aufgabe</Li>
+            <Li>benutzerfreundlich</Li>
+            <Li>beinahe null Unterhalt</Li>
+          </Ul>
+        </div>
+        <P>Sorry, keine Bilder: Personaldaten sind sensibel...</P>
+        <br />
+        <P>Im produktiven Einsatz seit 2019.</P>
+        <P>
+          Mehr Informationen&nbsp;
+          <a
+            href="https://github.com/barbalex/awel-personal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            auf GitHub
+          </a>
+          .
+        </P>
+      </Section>
+      <Section id="awel-indikatoren">
+        <Img src={zhLoeweImg} alt="AWEL-Indikatoren" height={51} />
+        <H2>AWEL-Indikatoren</H2>
+        <P>
+          Das AWEL (Amt für Abfall, Wasser, Energie und Luft) des Kantons Zürich
+          verwaltet mit dieser Access-Anwendung Indikatoren.
+        </P>
+        <div>
+          Grösste Stärken:
+          <Ul>
+            <Li>massgeschneidert für die Aufgabe</Li>
+            <Li>bisher null Unterhaltsbedarf</Li>
+          </Ul>
+        </div>
+        <UncontrolledCarousel
+          items={aiCarouselItems}
+          autoPlay={false}
+          interval={false}
+        />
+        <P>Im produktiven Einsatz seit 2014.</P>
+      </Section>
+      <Section id="mediterranean-migration">
+        <Img src={bbImg} alt="mediterranean-migration" height={51} />
+        <H2>mediterranean-migration.com</H2>
+        <P>
+          Übersicht über die Migration durch das zentrale und östliche
+          Mittelmeer.
+        </P>
+        <div>
+          Grösste Stärken:
+          <Ul>
+            <Li>
+              rasche Übersicht über Migrationsströme und dazugehörige politische
+              Ereignisse
+            </Li>
+            <Li>
+              der Autor kann Ereignisse und Artikel direkt bearbeiten - wie bei
+              einem{' '}
+              <a
+                href="https://de.wikipedia.org/wiki/Content-Management-System"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CMS
+              </a>
+            </Li>
+          </Ul>
+        </div>
+        <UncontrolledCarousel
+          items={bbCarouselItems}
+          autoPlay={false}
+          interval={false}
+        />
+        <P>Im produktiven Einsatz seit 2015.</P>
+        <P>
+          Schauen Sie selber:&nbsp;
+          <a
+            href="https://mediterranean-migration.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            mediterranean-migration.com
+          </a>
+          .
+        </P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+        <P>&nbsp;</P>
+      </Section>
+    </MainColumn>
+  </Page>
 )
 
 export default ProjektPage

@@ -1,11 +1,11 @@
 ---
 import { Icon } from 'astro-icon'
 import CoreLayout from '../layouts/Layout.astro'
-import Layout from '../components/Layout.astro'
+import Navbar from '../components/Navbar.astro'
 ---
 
 <CoreLayout>
-  <Layout>
+  <Navbar>
     <div class="my-page page leitbild">
       <p class="lead my-lead">Ich richte mich nach diesen Leitlinien:</p>
       <div class="my-row row marketing">
@@ -133,7 +133,7 @@ import Layout from '../components/Layout.astro'
         </div>
       </div>
     </div>
-  </Layout>
+  </Navbar>
 </CoreLayout>
 
 <style>
@@ -167,6 +167,7 @@ import Layout from '../components/Layout.astro'
   }
   .my-lead {
     margin-bottom: 16px;
+    margin-left: 12px;
   }
   a {
     color: #145f00;

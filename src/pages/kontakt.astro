@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
 import Kontakt from '../components/Kontakt'
 // TODO: move map out of Kontakt, to avoid client:only
 ---
 
 <Layout>
-  <Kontakt client:only />
+  <Navbar>
+    <Kontakt client:only />
+  </Navbar>
 </Layout>

@@ -1,12 +1,12 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Navbar from '../components/Navbar.astro'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const NotFoundPage = () => (
-  <Layout>
+  <Navbar>
     <h1>NICHT GEFUNDEN</h1>
     <p>Sorry, diese URL existiert nicht :-(</p>
-  </Layout>
+  </Navbar>
 )
 
 export default NotFoundPage
