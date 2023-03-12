@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Collapse,
   Navbar,
@@ -28,11 +28,19 @@ const StyledNavLink = styled(NavLink)`
     props.active ? 'white' : 'rgba(255, 255, 255, 0.7)'} !important;
 `
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [open, setOpen] = useState(false)
+
+  const [pathname, setPathname] = useState('')
+  const [share, setShare] = useState()
+  useEffect(() => {
+    setPathname(window.location.pathname)
+    setShare(window?.navigator?.share)
+  }, [])
+
   return (
     <StyledNavbar color="dark" dark expand="md" sticky="top" role="navigation">
-      <StyledNavbarBrand href="/">{siteTitle}</StyledNavbarBrand>
+      <StyledNavbarBrand href="/">Gabriel Software</StyledNavbarBrand>
       <NavbarToggler
         aria-label="toggle Navbar"
         onClick={() => setOpen(!open)}
@@ -40,43 +48,34 @@ const Header = ({ siteTitle }) => {
       <Collapse isOpen={open} navbar style={{ justifyContent: 'flex-end' }}>
         <Nav className="ml-auto" navbar>
           <StyledNavItem>
-            <StyledNavLink
-              href="/Leitbild/"
-              active={window.location.pathname === '/Leitbild/'}
-            >
+            <StyledNavLink href="/Leitbild/" active={pathname === '/Leitbild/'}>
               Leitbild
             </StyledNavLink>
           </StyledNavItem>
           <StyledNavItem>
-            <StyledNavLink
-              href="/Projekte/"
-              active={window.location.pathname === '/Projekte/'}
-            >
+            <StyledNavLink href="/Projekte/" active={pathname === '/Projekte/'}>
               Projekte
             </StyledNavLink>
           </StyledNavItem>
           <StyledNavItem>
             <StyledNavLink
               href="/Technologien/"
-              active={window.location.pathname === '/Technologien/'}
+              active={pathname === '/Technologien/'}
             >
               Technologien
             </StyledNavLink>
           </StyledNavItem>
           <StyledNavItem>
-            <StyledNavLink
-              href="/Kontakt/"
-              active={window.location.pathname === '/Kontakt/'}
-            >
+            <StyledNavLink href="/Kontakt/" active={pathname === '/Kontakt/'}>
               Kontakt
             </StyledNavLink>
           </StyledNavItem>
-          {window.navigator && window.navigator.share && (
+          {share && (
             <StyledNavItem>
               <StyledNavLink
                 href="#"
                 onClick={() => {
-                  window.navigator.share({
+                  share({
                     title: 'Gabriel Software',
                     url: 'https://gabriel-software.ch',
                   })
