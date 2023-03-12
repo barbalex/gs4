@@ -1,140 +1,134 @@
 ---
 import { Icon } from 'astro-icon'
-import CoreLayout from '../layouts/Layout.astro'
-import Navbar from '../components/Navbar.astro'
+import Layout from '../components/Layout/index.astro'
 ---
 
-<CoreLayout>
-  <Navbar>
-    <div class="my-page page leitbild">
-      <p class="lead my-lead">Ich richte mich nach diesen Leitlinien:</p>
-      <div class="my-row row marketing">
-        <div class="col-lg-4">
-          <Icon pack="fa-regular" name="question-circle" class="icon" />
-          <h1>Verstehen, wie Sie arbeiten</h1>
-          <p>
-            Je mehr ich Ihre Arbeit verstehe,
-            <br />
-            je genauer die App Ihre Arbeit abbildet,
-            <br />
-            {'desto besser "passt" sie.'}
-          </p>
-          <p>Und umso kleiner ist das Risiko bei der Einführung.</p>
-          <p>
-            Wenn Menschen vom selben sprechen, verstehen nicht immer alle
-            dasselbe. Klappt etwas nicht? Oft liegt der Hund hier begraben.
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <Icon pack="ic" name="baseline-gps-fixed" class="icon" />
-          <h1>Sinn suchen</h1>
-          <p>
-            Menschen gewöhnen sich erstaunlich gut an Inkonsistenzen. Oft leidet
-            darunter die Produktivität.
-          </p>
-          <p>Software versteht nur Logik.</p>
-        </div>
-        <div class="col-lg-4">
-          <Icon pack="fa-regular" name="check-circle" class="icon" />
-          <h1>
-            So einfach wie möglich,
-            <br />
-            so vollständig wie nötig
-          </h1>
-          <p>
-            Ist die Anwendung klar und übersichtlich, arbeiten Sie effizient.
-          </p>
-          <p>Beansprucht sie zu viel Aufmerksamkeit, passieren Fehler.</p>
-          <p>
-            Eine elegante Architektur beschleunigt die Entwicklung und reduziert
-            den Unterhalt.
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <Icon pack="fa" name="wrench" class="icon" />
-          <h1>Geeignete Technologie wählen</h1>
-          <p>
-            Wer einen Hammer hat, ist verleitet, in allem einen Nagel zu
-            erkennen.
-          </p>
-          <p>Sie kommen mit einer Schraube zu mir?</p>
-          <p>Ich leite Sie zur Kollegin mit dem Schraubenzieher weiter.</p>
-          <p>
-            Oder lerne zu schrauben. Und freue mich über die angewandte
-            Weiterbildung. Natürlich auf meine Kosten.
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <Icon pack="fa-solid" name="crown" class="icon" />
-          <h1>Der Kunde ist König</h1>
-          <p>
-            Damit Sie zufrieden sind, braucht es mehr als eine gute Anwendung.
-            Ich bin bestrebt:
-          </p>
-          <ul>
-            <li>offen zu kommunizieren</li>
-            <li>rechtzeitig zu agieren</li>
-            <li>oder besser: einen Schritt voraus</li>
-            <li>den Aufwand zu minimieren</li>
-            <li>Vertrauen aufzubauen</li>
-          </ul>
-        </div>
-        <div class="col-lg-4">
-          <Icon pack="fa-solid" name="retweet" class="icon" />
-          <h1>Ich bin austauschbar</h1>
-          <p>
-            {`Ich arbeite 100% `}
-            <a
-              href="https://opensource.com/resources/what-open-source"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              open source
-            </a>
-            {` unter der `}
-            <a
-              href="https://choosealicense.com/licenses/isc/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              freizügigsten Lizenz
-            </a>
-            .
-          </p>
-          <p>
-            {
-              `Code und Konzepte werden in der App selbst dokumentiert und sind auf `
-            }
-            <a
-              href="https://github.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-            {` frei verfügbar.`}
-          </p>
-          <p>
-            Ich verwende modernste Methoden. Aber nichts Exotisches: jede
-            kompetente Entwicklerin kann das Projekt nach kurzer Einarbeit
-            übernehmen.
-          </p>
-          <p>
-            Technologien und Methoden werden laufend aktuell gehalten. Es gibt
-            keinen{' '}
-            <a
-              href="https://martinfowler.com/bliki/TechnicalDebt.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              technical debt.
-            </a>
-          </p>
-        </div>
+<Layout>
+  <div class="my-page page leitbild">
+    <p class="lead my-lead">Ich richte mich nach diesen Leitlinien:</p>
+    <div class="my-row row marketing">
+      <div class="col-lg-4">
+        <Icon pack="fa-regular" name="question-circle" class="icon" />
+        <h1>Verstehen, wie Sie arbeiten</h1>
+        <p>
+          Je mehr ich Ihre Arbeit verstehe,
+          <br />
+          je genauer die App Ihre Arbeit abbildet,
+          <br />
+          {'desto besser "passt" sie.'}
+        </p>
+        <p>Und umso kleiner ist das Risiko bei der Einführung.</p>
+        <p>
+          Wenn Menschen vom selben sprechen, verstehen nicht immer alle
+          dasselbe. Klappt etwas nicht? Oft liegt der Hund hier begraben.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <Icon pack="ic" name="baseline-gps-fixed" class="icon" />
+        <h1>Sinn suchen</h1>
+        <p>
+          Menschen gewöhnen sich erstaunlich gut an Inkonsistenzen. Oft leidet
+          darunter die Produktivität.
+        </p>
+        <p>Software versteht nur Logik.</p>
+      </div>
+      <div class="col-lg-4">
+        <Icon pack="fa-regular" name="check-circle" class="icon" />
+        <h1>
+          So einfach wie möglich,
+          <br />
+          so vollständig wie nötig
+        </h1>
+        <p>Ist die Anwendung klar und übersichtlich, arbeiten Sie effizient.</p>
+        <p>Beansprucht sie zu viel Aufmerksamkeit, passieren Fehler.</p>
+        <p>
+          Eine elegante Architektur beschleunigt die Entwicklung und reduziert
+          den Unterhalt.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <Icon pack="fa" name="wrench" class="icon" />
+        <h1>Geeignete Technologie wählen</h1>
+        <p>
+          Wer einen Hammer hat, ist verleitet, in allem einen Nagel zu erkennen.
+        </p>
+        <p>Sie kommen mit einer Schraube zu mir?</p>
+        <p>Ich leite Sie zur Kollegin mit dem Schraubenzieher weiter.</p>
+        <p>
+          Oder lerne zu schrauben. Und freue mich über die angewandte
+          Weiterbildung. Natürlich auf meine Kosten.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <Icon pack="fa-solid" name="crown" class="icon" />
+        <h1>Der Kunde ist König</h1>
+        <p>
+          Damit Sie zufrieden sind, braucht es mehr als eine gute Anwendung. Ich
+          bin bestrebt:
+        </p>
+        <ul>
+          <li>offen zu kommunizieren</li>
+          <li>rechtzeitig zu agieren</li>
+          <li>oder besser: einen Schritt voraus</li>
+          <li>den Aufwand zu minimieren</li>
+          <li>Vertrauen aufzubauen</li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <Icon pack="fa-solid" name="retweet" class="icon" />
+        <h1>Ich bin austauschbar</h1>
+        <p>
+          {`Ich arbeite 100% `}
+          <a
+            href="https://opensource.com/resources/what-open-source"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            open source
+          </a>
+          {` unter der `}
+          <a
+            href="https://choosealicense.com/licenses/isc/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            freizügigsten Lizenz
+          </a>
+          .
+        </p>
+        <p>
+          {
+            `Code und Konzepte werden in der App selbst dokumentiert und sind auf `
+          }
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          {` frei verfügbar.`}
+        </p>
+        <p>
+          Ich verwende modernste Methoden. Aber nichts Exotisches: jede
+          kompetente Entwicklerin kann das Projekt nach kurzer Einarbeit
+          übernehmen.
+        </p>
+        <p>
+          Technologien und Methoden werden laufend aktuell gehalten. Es gibt
+          keinen{' '}
+          <a
+            href="https://martinfowler.com/bliki/TechnicalDebt.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            technical debt.
+          </a>
+        </p>
       </div>
     </div>
-  </Navbar>
-</CoreLayout>
+  </div>
+</Layout>
 
 <style>
   .page {

@@ -1,5 +1,6 @@
 ---
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Navbar from './Navbar.astro'
 ---
 
 <!DOCTYPE html>
@@ -17,13 +18,20 @@ import 'bootstrap/dist/css/bootstrap.min.css'
     <title>Gabriel Software</title>
   </head>
   <body>
-    <slot />
+    <Navbar>
+      <slot />
+    </Navbar>
   </body>
 </html>
 
 <style is:global>
   .navbar-brand {
     font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .navbar-brand.active {
+    font-weight: 700;
+    color: white;
   }
   .navbar {
     background-color: #145f00 !important;
@@ -33,7 +41,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
     color: rgba(255, 255, 255, 0.7);
   }
   .nav-link.active {
-    font-weight: 800;
+    font-weight: 700;
     color: white;
   }
 </style>

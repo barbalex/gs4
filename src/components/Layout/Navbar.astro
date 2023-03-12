@@ -8,7 +8,9 @@ const pathname = Astro.url.pathname
     class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"
   >
     <div class="container-fluid">
-      <a href="/" class="navbar-brand">Gabriel Software</a>
+      <a href="/" class:list={['navbar-brand', { active: pathname === '/' }]}
+        >Gabriel Software</a
+      >
       <button aria-label="toggle Navbar" type="button" class="navbar-toggler"
         ><span class="navbar-toggler-icon"></span>
       </button>
