@@ -1,15 +1,45 @@
 {
   "name": "gs4",
+  "description": "Gabriel Software's website",
   "type": "module",
-  "version": "0.0.1",
+  "version": "2.0.0",
+  "author": "Alexander Gabriel",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "vercel build && vercel deploy --prebuilt",
+    "deploy_productive": "vercel build --prod && vercel deploy --prebuilt --prod"
   },
   "dependencies": {
-    "astro": "^2.0.18"
+    "@astrojs/react": "2.1.0",
+    "@astrojs/sitemap": "1.2.0",
+    "@emotion/react": "11.10.6",
+    "@emotion/styled": "11.10.6",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "astro": "2.0.18",
+    "bootstrap": "5.2.3",
+    "leaflet": "1.9.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "4.8.1-snapshot.1",
+    "react-leaflet": "4.2.1",
+    "react-scrollspy": "3.4.3",
+    "react-typography": "0.16.23",
+    "reactstrap": "9.1.6",
+    "typography": "0.16.21",
+    "vercel": "28.16.15"
+  },
+  "devDependencies": {
+    "copyfiles": "2.4.1",
+    "prettier": "2.8.4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barbalex/gs4"
   }
 }
