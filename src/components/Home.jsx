@@ -29,12 +29,12 @@ const Row = styled.div`
     padding-left: 20px;
   }
 `
-const H4 = styled.h2`
+const H2 = styled.h2`
   margin-bottom: 8px !important;
   font-weight: bold;
   font-size: 24px;
 `
-const H4Cloud = styled.h2`
+const H2Cloud = styled.h2`
   margin-bottom: 8px !important;
   font-weight: bold;
   font-size: 24px;
@@ -80,7 +80,7 @@ const IndexPage = () => (
               marginTop: 4,
             }}
           />
-          <H4Cloud>Web</H4Cloud>
+          <H2Cloud>Web</H2Cloud>
           <ul>
             <Li>{`Im Browser / als Progressive Web App`}</Li>
             <Li>Im Inter- oder Intranet</Li>
@@ -91,7 +91,7 @@ const IndexPage = () => (
           <AiOutlineDesktop
             style={{ fontSize: 78, minHeight: 78, maxHeight: 78, marginTop: 4 }}
           />
-          <H4>Desktop</H4>
+          <H2>Desktop</H2>
           <ul>
             <Li>Lokal installiert</Li>
             <Li>Windows, Mac, Linux</Li>
@@ -109,7 +109,7 @@ const IndexPage = () => (
               marginTop: 4,
             }}
           />
-          <H4>Mobile</H4>
+          <H2>Mobile</H2>
           <ul>
             <Li>Im App-Store</Li>
             <Li>Android und iOS</Li>
@@ -144,7 +144,7 @@ const IndexPage = () => (
               marginTop: 4,
             }}
           />
-          <H4>Alle Geräte-Klassen</H4>
+          <H2>Alle Geräte-Klassen</H2>
           <ul>
             <Li>Basierend auf einer einzigen Code-Basis</Li>
             <Li>Am PC vorbereiten, mobil erfassen</Li>
@@ -160,7 +160,7 @@ const IndexPage = () => (
               marginTop: 6,
             }}
           />
-          <H4>Hohe Ansprüche</H4>
+          <H2>Hohe Ansprüche</H2>
           <ul>
             <Li>Live synchronisiert</Li>
             <Li>Offline-first mit leistungsfähiger Konflikt-Lösung</Li>

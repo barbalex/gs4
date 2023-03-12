@@ -1,0 +1,17 @@
+---
+import Navbar from './Layout/Navbar'
+---
+
+<>
+  <Navbar client:visible />
+  <div class="container">
+    <slot />
+  </div>
+</>
+
+<style>
+  .container {
+    margin: 0 auto;
+    max-width: 1170px;
+  }
+</style>

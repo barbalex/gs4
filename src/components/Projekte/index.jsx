@@ -448,8 +448,4 @@ const ProjektPage = () => (
   </Layout>
 )
 
-ProjektPage.displayName = 'ProjektPage'
-
 export default ProjektPage
-
-export { Head } from '../Head'

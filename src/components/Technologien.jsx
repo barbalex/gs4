@@ -410,8 +410,4 @@ const TechnologienPage = () => (
   </Layout>
 )
 
-TechnologienPage.displayName = 'TechnologienPage'
-
 export default TechnologienPage
-
-export { Head } from '../components/Head'
