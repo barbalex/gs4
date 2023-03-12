@@ -84,13 +84,13 @@ const StyledScrollspy = styled(Scrollspy)`
     text-decoration: none !important;
   }
   .active {
-    background-color: #f5f5f5;
+    background-color: #155f0011;
   }
 `
 const A = styled.a`
   padding: 10px 15px !important;
   &:hover {
-    background-color: #145f00;
+    background-color: #155f0026;
   }
 `
 const Section = styled.section`
