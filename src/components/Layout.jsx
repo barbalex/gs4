@@ -4,7 +4,7 @@ import Header from './Header'
 
 const Layout = ({ children }) => (
   <>
-    <Header siteTitle="Gabriel Software" />
+    <Header />
     <div
       style={{
         margin: '0 auto',
