@@ -1,8 +1,8 @@
-import gsListeImg from '../images/gs_liste.png'
-import gsFilternImg from '../images/gs_filtern.png'
-import gsBearbImg from '../images/gs_bearb.png'
-import gsBerichteImg from '../images/gs_berichte.png'
-import gsExportImg from '../images/gs_export.png'
+import gsListeImg from '/gs_liste.png'
+import gsFilternImg from '/gs_filtern.png'
+import gsBearbImg from '/gs_bearb.png'
+import gsBerichteImg from '/gs_berichte.png'
+import gsExportImg from '/gs_export.png'
 
 export default [
   {

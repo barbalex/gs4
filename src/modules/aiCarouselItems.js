@@ -1,9 +1,9 @@
-import ai01 from '../images/ai_01_hauptmenu.png'
-import ai02 from '../images/ai_02_indikatoren.png'
-import ai03 from '../images/ai_03_aufgaben.png'
-import ai04 from '../images/ai_04_projekte.png'
-import ai05 from '../images/ai_05_drucken.png'
-import ai06 from '../images/ai_06_administration.png'
+import ai01 from '/ai_01_hauptmenu.png'
+import ai02 from '/ai_02_indikatoren.png'
+import ai03 from '/ai_03_aufgaben.png'
+import ai04 from '/ai_04_projekte.png'
+import ai05 from '/ai_05_drucken.png'
+import ai06 from '/ai_06_administration.png'
 
 export default [
   {

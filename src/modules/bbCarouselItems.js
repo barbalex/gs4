@@ -1,10 +1,10 @@
-import bb1Img from '../images/mm_01.jpg'
-import bb2Img from '../images/mm_02.jpg'
-import bb3Img from '../images/mm_03.jpg'
-import bb4Img from '../images/mm_04.jpg'
-import bb5Img from '../images/mm_05.jpg'
-import bb6Img from '../images/mm_06.jpg'
-import bb7Img from '../images/mm_07.jpg'
+import bb1Img from '/mm_01.jpg'
+import bb2Img from '/mm_02.jpg'
+import bb3Img from '/mm_03.jpg'
+import bb4Img from '/mm_04.jpg'
+import bb5Img from '/mm_05.jpg'
+import bb6Img from '/mm_06.jpg'
+import bb7Img from '/mm_07.jpg'
 
 export default [
   {

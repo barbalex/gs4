@@ -1,9 +1,9 @@
-import vm01 from '../images/vm_01.jpg'
-import vm02 from '../images/vm_02.png'
-import vm03 from '../images/vm_03.png'
-import vm04 from '../images/vm_04.png'
-import vm05 from '../images/vm_05.png'
-import vm06 from '../images/vm_06.png'
+import vm01 from '/vm_01.jpg'
+import vm02 from '/vm_02.png'
+import vm03 from '/vm_03.png'
+import vm04 from '/vm_04.png'
+import vm05 from '/vm_05.png'
+import vm06 from '/vm_06.png'
 
 export default [
   {
