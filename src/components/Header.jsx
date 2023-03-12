@@ -32,10 +32,8 @@ const Header = () => {
   const [open, setOpen] = useState(false)
 
   const [pathname, setPathname] = useState('')
-  const [share, setShare] = useState()
   useEffect(() => {
     setPathname(window.location.pathname)
-    setShare(window?.navigator?.share)
   }, [])
 
   return (
@@ -70,21 +68,6 @@ const Header = () => {
               Kontakt
             </StyledNavLink>
           </StyledNavItem>
-          {share && (
-            <StyledNavItem>
-              <StyledNavLink
-                href="#"
-                onClick={() => {
-                  share({
-                    title: 'Gabriel Software',
-                    url: 'https://gabriel-software.ch',
-                  })
-                }}
-              >
-                <FaShare /> Teilen
-              </StyledNavLink>
-            </StyledNavItem>
-          )}
         </Nav>
       </Collapse>
     </StyledNavbar>
