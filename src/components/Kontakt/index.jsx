@@ -4,8 +4,8 @@ import styled from '@emotion/styled'
 import { window, exists } from 'browser-monads'
 
 import alexImg from '/alex.jpg'
-import Layout from './Layout'
-import iconsvg from '../utils/icon.svg'
+import Layout from '../Layout'
+import iconsvg from './_icon.svg'
 
 const Page = styled.div`
   padding: 15px;

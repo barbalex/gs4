@@ -4,7 +4,7 @@ import Scrollspy from 'react-scrollspy'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import styled from '@emotion/styled'
 
-import Layout from './Layout'
+import Layout from '../Layout'
 import apfImg from '/apflora.png'
 import aeImg from '/ae.png'
 import bbImg from '/bb.png'
@@ -12,12 +12,12 @@ import vmImg from '/seedling.svg'
 import zhLoeweImg from '/zhLoewe.png'
 import kaplaImg from '/kapla.png'
 import apImg from '/ap.png'
-import apfloraCarouselItems from '../modules/apfloraCarouselItems'
-import aeCarouselItems from '../modules/aeCarouselItems'
-import vmCarouselItems from '../modules/vmCarouselItems'
-import bbCarouselItems from '../modules/bbCarouselItems'
-import kaplaCarouselItems from '../modules/kaplaCarouselItems'
-import aiCarouselItems from '../modules/aiCarouselItems'
+import apfloraCarouselItems from './_apfloraCarouselItems'
+import aeCarouselItems from './_aeCarouselItems'
+import vmCarouselItems from './_vmCarouselItems'
+import bbCarouselItems from './_bbCarouselItems'
+import kaplaCarouselItems from './_kaplaCarouselItems'
+import aiCarouselItems from './_aiCarouselItems'
 
 const Page = styled.div`
   padding: 15px;
@@ -452,4 +452,4 @@ ProjektPage.displayName = 'ProjektPage'
 
 export default ProjektPage
 
-export { Head } from '../components/Head'
+export { Head } from '../Head'
