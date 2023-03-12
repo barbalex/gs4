@@ -1,10 +1,177 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Home from '../components/Home.jsx'
+import CoreLayout from '../layouts/Layout.astro'
+import Layout from '../components/Layout.astro'
+import { Icon } from 'astro-icon'
 ---
 
-<Layout>
-  <Home client:load />
-</Layout>
+<CoreLayout>
+  <Layout>
+    <div class="page">
+      <div class="jumbotron">
+        <h1>Gabriel Software</h1>
+        <ul>
+          <li>einfach</li>
+          <li>individuell</li>
+          <li>zuverlässig</li>
+        </ul>
+        <p>...damit Sie sich auf Ihre Arbeit konzen­trieren können</p>
+      </div>
 
-<style></style>
+      <p class="apps-for">Apps für:</p>
+
+      <div class="my-row row marketing">
+        <div class="col-md">
+          <Icon pack="bi" name="cloud" class="cloud-icon" />
+          <h2>Web</h2>
+          <ul>
+            <li>{`Im Browser / als Progressive Web App`}</li>
+            <li>Im Inter- oder Intranet</li>
+            <li>Installieren und Aktualisieren sind simpel</li>
+          </ul>
+        </div>
+        <div class="col-md">
+          <Icon
+            pack="ant-design"
+            name="desktop-outlined"
+            class="desktop-icon"
+          />
+          <h2>Desktop</h2>
+          <ul>
+            <li>Lokal installiert</li>
+            <li>Windows, Mac, Linux</li>
+            <li>Lösungen mit beinahe null Unterhalt möglich</li>
+          </ul>
+        </div>
+        <div class="w-100 d-lg-none"></div>
+        <div class="col-md-2 col-lg-2">
+          <Icon pack="ant-design" name="mobile-outlined" class="mobile-icon" />
+          <h2>Mobile</h2>
+          <ul>
+            <li>Im App-Store</li>
+            <li>Android und iOS</li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-3">
+          <Icon pack="bi" name="cloud" class="all-cloud-icon" />
+          <Icon
+            pack="ant-design"
+            name="desktop-outlined"
+            class="all-desktop-icon"
+          />
+          <Icon
+            pack="ant-design"
+            name="mobile-outlined"
+            class="all-mobile-icon"
+          />
+          <h2>Alle Geräte-Klassen</h2>
+          <ul>
+            <li>Basierend auf einer einzigen Code-Basis</li>
+            <li>Am PC vorbereiten, mobil erfassen</li>
+          </ul>
+        </div>
+        <div class="col-md">
+          <Icon pack="ic" name="round-done" class="done-icon" />
+          <h2>Hohe Ansprüche</h2>
+          <ul>
+            <li>Live synchronisiert</li>
+            <li>Offline-first mit leistungsfähiger Konflikt-Lösung</li>
+            <li>Adaptives Benutzer-Erlebnis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Layout>
+</CoreLayout>
+
+<style>
+  .page {
+    padding: 15px;
+  }
+  .jumbotron {
+    margin-top: 15px;
+    margin-bottom: 32px;
+    padding: 60px;
+    border-radius: 5px;
+    background-color: #e0f6da;
+    font-size: 21px;
+    font-weight: 500;
+    ul {
+      padding-left: 25px;
+    }
+  }
+  .my-row {
+    /* side spacing for mobile first views */
+    padding-left: 15px;
+    padding-right: 15px;
+    ul {
+      padding-left: 20px;
+    }
+  }
+  h1 {
+    font-size: 63px;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    margin-bottom: 8px !important;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .apps-for {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 15px;
+    padding-bottom: 4px;
+  }
+  .section-title {
+    line-height: 1;
+  }
+  li {
+    margin-bottom: 0;
+  }
+  .cloud-icon {
+    font-size: 90px;
+    min-height: 83px;
+    max-height: 83px;
+    margin-bottom: -5px;
+    margin-left: -5px;
+  }
+  .desktop-icon {
+    min-height: 78px;
+    max-height: 78px;
+  }
+  .mobile-icon {
+    min-height: 78px;
+    max-height: 78px;
+    margin-left: -12px;
+    padding-top: 7px;
+    padding-bottom: 6px;
+  }
+  .all-cloud-icon {
+    padding-top: 5px;
+    min-height: 78px;
+    max-height: 78px;
+    margin-bottom: -5px;
+    margin-left: -8px;
+  }
+  .all-desktop-icon {
+    min-height: 78px;
+    max-height: 78px;
+    margin-left: -3px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+  }
+  .all-mobile-icon {
+    min-height: 78px;
+    max-height: 78px;
+    margin-bottom: 0;
+    margin-left: -12px;
+    padding-bottom: 7px;
+    padding-top: 10px;
+  }
+  .done-icon {
+    min-height: 85px;
+    max-height: 85px;
+    margin-left: -5px;
+    margin-bottom: -7px;
+  }
+</style>
