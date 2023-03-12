@@ -23,6 +23,7 @@
     "@types/react-dom": "18.0.11",
     "astro": "2.0.18",
     "bootstrap": "5.2.3",
+    "browser-monads": "^1.0.0",
     "leaflet": "1.9.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",

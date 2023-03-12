@@ -28,7 +28,7 @@ const StyledNavLink = styled(NavLink)`
     props.active ? 'white' : 'rgba(255, 255, 255, 0.7)'} !important;
 `
 
-const Header = () => {
+const NavbarComponent = () => {
   const [open, setOpen] = useState(false)
 
   const [pathname, setPathname] = useState('')
@@ -46,25 +46,25 @@ const Header = () => {
       <Collapse isOpen={open} navbar style={{ justifyContent: 'flex-end' }}>
         <Nav className="ml-auto" navbar>
           <StyledNavItem>
-            <StyledNavLink href="/Leitbild/" active={pathname === '/Leitbild/'}>
+            <StyledNavLink href="/leitbild/" active={pathname === '/leitbild/'}>
               Leitbild
             </StyledNavLink>
           </StyledNavItem>
           <StyledNavItem>
-            <StyledNavLink href="/Projekte/" active={pathname === '/Projekte/'}>
+            <StyledNavLink href="/projekte/" active={pathname === '/projekte/'}>
               Projekte
             </StyledNavLink>
           </StyledNavItem>
           <StyledNavItem>
             <StyledNavLink
-              href="/Technologien/"
-              active={pathname === '/Technologien/'}
+              href="/technologien/"
+              active={pathname === '/technologien/'}
             >
               Technologien
             </StyledNavLink>
           </StyledNavItem>
           <StyledNavItem>
-            <StyledNavLink href="/Kontakt/" active={pathname === '/Kontakt/'}>
+            <StyledNavLink href="/kontakt/" active={pathname === '/kontakt/'}>
               Kontakt
             </StyledNavLink>
           </StyledNavItem>
@@ -74,4 +74,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default NavbarComponent

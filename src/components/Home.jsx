@@ -2,7 +2,6 @@ import React from 'react'
 import { BsCloud } from 'react-icons/bs'
 import { AiOutlineMobile, AiOutlineDesktop } from 'react-icons/ai'
 import { MdDone } from 'react-icons/md'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import styled from '@emotion/styled'
 
 import Layout from './Layout'
@@ -10,7 +9,7 @@ import Layout from './Layout'
 const Page = styled.div`
   padding: 15px;
 `
-const StyledJumbotron = styled.div`
+const Jumbotron = styled.div`
   margin-top: 15px;
   margin-bottom: 32px;
   padding: 60px;
@@ -19,7 +18,7 @@ const StyledJumbotron = styled.div`
   font-size: 21px;
   font-weight: 500;
   ul {
-    padding-left: 05px;
+    padding-left: 25px;
   }
 `
 const Row = styled.div`
@@ -27,7 +26,7 @@ const Row = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   ul {
-    padding-left: 0;
+    padding-left: 20px;
   }
 `
 const H4 = styled.h2`
@@ -51,7 +50,7 @@ const Li = styled.li`
 const IndexPage = () => (
   <Layout>
     <Page>
-      <StyledJumbotron>
+      <Jumbotron>
         <H1>Gabriel Software</H1>
         <ul>
           <Li>einfach</Li>
@@ -59,7 +58,7 @@ const IndexPage = () => (
           <Li>zuverlässig</Li>
         </ul>
         <p>...damit Sie sich auf Ihre Arbeit konzen­trieren können</p>
-      </StyledJumbotron>
+      </Jumbotron>
 
       <p
         style={{
