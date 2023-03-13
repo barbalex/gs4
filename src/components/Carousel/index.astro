@@ -1,0 +1,27 @@
+---
+import './styles.css'
+---
+
+<section class="carousel" aria-label="Gallery">
+  <slot />
+</section>
+
+<script>
+  // prevent the carousel from jumping to the top on click
+  // https://markus.oberlehner.net/blog/super-simple-progressively-enhanced-carousel-with-css-scroll-snap/
+  const els = document.querySelectorAll('.move')
+  els.forEach((el) => {
+    el.addEventListener('click', (event) => {
+      const $slide = document.querySelector(event.target?.getAttribute('href'))
+      if (!$slide) return
+
+      if ($slide.scrollIntoViewIfNeeded) {
+        event.preventDefault()
+        $slide.scrollIntoViewIfNeeded()
+      } else if ($slide.scrollIntoView) {
+        event.preventDefault()
+        $slide.scrollIntoView()
+      }
+    })
+  })
+</script>
