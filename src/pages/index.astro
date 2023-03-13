@@ -17,8 +17,8 @@ import { Icon } from 'astro-icon'
 
     <p class="apps-for">Apps für:</p>
 
-    <div class="my-row row marketing">
-      <div class="col-md">
+    <div class="content">
+      <section class="section-web">
         <Icon pack="bi" name="cloud" class="cloud-icon" />
         <h2>Web</h2>
         <ul>
@@ -26,8 +26,8 @@ import { Icon } from 'astro-icon'
           <li>Im Inter- oder Intranet</li>
           <li>Installieren und Aktualisieren sind simpel</li>
         </ul>
-      </div>
-      <div class="col-md">
+      </section>
+      <section class="section-desktop">
         <Icon pack="ant-design" name="desktop-outlined" class="desktop-icon" />
         <h2>Desktop</h2>
         <ul>
@@ -35,17 +35,16 @@ import { Icon } from 'astro-icon'
           <li>Windows, Mac, Linux</li>
           <li>Lösungen mit beinahe null Unterhalt möglich</li>
         </ul>
-      </div>
-      <div class="w-100 d-lg-none"></div>
-      <div class="col-md-2 col-lg-2">
+      </section>
+      <section class="section-mobile">
         <Icon pack="ant-design" name="mobile-outlined" class="mobile-icon" />
         <h2>Mobile</h2>
         <ul>
           <li>Im App-Store</li>
           <li>Android und iOS</li>
         </ul>
-      </div>
-      <div class="col-sm-12 col-md-4 col-lg-3">
+      </section>
+      <section class="section-all">
         <Icon pack="bi" name="cloud" class="all-cloud-icon" />
         <Icon
           pack="ant-design"
@@ -62,8 +61,8 @@ import { Icon } from 'astro-icon'
           <li>Basierend auf einer einzigen Code-Basis</li>
           <li>Am PC vorbereiten, mobil erfassen</li>
         </ul>
-      </div>
-      <div class="col-md">
+      </section>
+      <section class="section-done">
         <Icon pack="ic" name="round-done" class="done-icon" />
         <h2>Hohe Ansprüche</h2>
         <ul>
@@ -71,7 +70,7 @@ import { Icon } from 'astro-icon'
           <li>Offline-first mit leistungsfähiger Konflikt-Lösung</li>
           <li>Adaptives Benutzer-Erlebnis</li>
         </ul>
-      </div>
+      </section>
     </div>
   </div>
 </Layout>
@@ -89,8 +88,23 @@ import { Icon } from 'astro-icon'
     font-size: 21px;
     font-weight: 500;
   }
-  .my-row ul {
-    padding-left: 20px;
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 0;
+  }
+  section {
+    flex-basis: 220px;
+    flex-grow: 1;
+  }
+  .section-mobile {
+    flex-basis: 189px;
+  }
+  .section-all {
+    flex-basis: 283px;
+  }
+  .jumbotron ul {
+    padding-left: 30px;
   }
   h1 {
     font-size: 63px;
@@ -108,6 +122,9 @@ import { Icon } from 'astro-icon'
   }
   .section-title {
     line-height: 1;
+  }
+  ul {
+    padding-left: 20px;
   }
   li {
     margin-bottom: 0;

@@ -32,27 +32,25 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
       >
     </div>
     <div>
-      <p class="my-lead">Eine Auswahl von aktuellen Projekten:</p>
+      <p class="lead">Eine Auswahl von aktuellen Projekten:</p>
       <section id="apflora">
         <img src="/apflora.png" alt="apflora" height="51" />
         <h2>apflora.ch</h2>
         <h3>Aktionsplan Flora der Fachstelle Naturschutz des Kantons Zürich</h3>
-        <div>
-          Grösste Stärken:
-          <ul>
-            <li>komplexe Projektstruktur im Strukturbaum darstellen</li>
-            <li>aufwändige Jahresberichte auf Knopfdruck produzieren</li>
-            <li>
-              Erfolgskontrollen werden in einem leistungsfähigen Formular
-              Excel-ähnlich geplant
-            </li>
-            <li>differenzierte Benutzerrechte</li>
-            <li>
-              Profis und Freiwillige erfassen ihre Daten selber, mit Hilfe von
-              massgeschneiderten Zugängen
-            </li>
-          </ul>
-        </div>
+        <p>Grösste Stärken:</p>
+        <ul>
+          <li>komplexe Projektstruktur im Strukturbaum darstellen</li>
+          <li>aufwändige Jahresberichte auf Knopfdruck produzieren</li>
+          <li>
+            Erfolgskontrollen werden in einem leistungsfähigen Formular
+            Excel-ähnlich geplant
+          </li>
+          <li>differenzierte Benutzerrechte</li>
+          <li>
+            Profis und Freiwillige erfassen ihre Daten selber, mit Hilfe von
+            massgeschneiderten Zugängen
+          </li>
+        </ul>
         <div class="carousel-container">
           <Carousel>
             <ApfloraCarousel />
@@ -1045,11 +1043,12 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
     border-bottom: 1px solid #145f00;
     text-decoration: none;
   }
-  .my-lead {
+  .lead {
     padding-bottom: 16px;
     font-weight: 300;
     color: #145f00;
     font-size: 20px;
+    font-style: italic;
   }
   img {
     margin-bottom: 0;
