@@ -1121,6 +1121,7 @@ import Layout from '../components/Layout/index.astro'
 </Layout>
 
 <script>
+  const options = { threshold: 0.5 }
   const toBeObserveds = [
     'apflora',
     'arteigenschaften',
@@ -1145,7 +1146,7 @@ import Layout from '../components/Layout/index.astro'
             ?.classList.remove('active')
         }
       })
-    })
+    }, options)
     sectionObserver.observe(section)
   }
 </script>
@@ -1190,6 +1191,10 @@ import Layout from '../components/Layout/index.astro'
 
   .scrollspy .active {
     background-color: #155f0011;
+    color: black;
+    border-color: unset;
+    border-width: 00.66666px;
+    border-color: rgba(0, 0, 0, 0.125);
   }
   .content {
   }
