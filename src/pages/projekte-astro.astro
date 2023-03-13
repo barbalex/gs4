@@ -1059,6 +1059,8 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
   }
   .carousel-container {
     max-width: 930px;
-    max-height: 562px;
+    --full-height: 562px;
+    --half-height: 281px;
+    max-height: var(--full-height);
   }
 </style>
