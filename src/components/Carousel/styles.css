@@ -100,15 +100,11 @@ li {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
-  background-color: #f99;
+  background-color: white;
   counter-increment: item;
   max-height: var(--full-height);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-}
-
-.slide:nth-child(even) {
-  background-color: #99f;
 }
 
 .slide:before {
