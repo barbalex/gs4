@@ -3,54 +3,38 @@ import Layout from '../components/Layout/index.astro'
 ---
 
 <Layout>
-  <div class="row my-page">
-    <div class="col-2">
-      <div id="list" class="list-group scrollspy">
-        <a
-          id="apflora-link"
-          class="list-group-item list-group-item-action"
-          href="#apflora">apflora.ch</a
-        >
-        <a
-          id="arteigenschaften-link"
-          class="list-group-item list-group-item-action"
-          href="#arteigenschaften">arteigenschaften.ch</a
-        >
-        <a
-          id="vermehrung-link"
-          class="list-group-item list-group-item-action"
-          href="#vermehrung">vermehrung.ch</a
-        >
-        <a
-          id="kapla-link"
-          class="list-group-item list-group-item-action"
-          href="#kapla">Kapla</a
-        >
-        <a
-          id="awel-personal-link"
-          class="list-group-item list-group-item-action"
-          href="#awel-personal">AWEL-Personal</a
-        >
-        <a
-          id="awel-indikatoren-link"
-          class="list-group-item list-group-item-action"
-          href="#awel-indikatoren">AWEL-Indikatoren</a
-        >
-        <a
-          id="mediterranean-migration-link"
-          class="list-group-item list-group-item-action"
-          href="#mediterranean-migration">mediterranean-<br />migration.com</a
-        >
-      </div>
+  <div class="my-page">
+    <div id="list" class="scrollspy">
+      <a id="apflora-link" class="scrollspy-item" href="#apflora">apflora.ch</a>
+      <a
+        id="arteigenschaften-link"
+        class="scrollspy-item"
+        href="#arteigenschaften">arteigenschaften.ch</a
+      >
+      <a id="vermehrung-link" class="scrollspy-item" href="#vermehrung"
+        >vermehrung.ch</a
+      >
+      <a id="kapla-link" class="scrollspy-item" href="#kapla">Kapla</a>
+      <a id="awel-personal-link" class="scrollspy-item" href="#awel-personal"
+        >AWEL-Personal</a
+      >
+      <a
+        id="awel-indikatoren-link"
+        class="scrollspy-item"
+        href="#awel-indikatoren">AWEL-Indikatoren</a
+      >
+      <a
+        id="mediterranean-migration-link"
+        class="scrollspy-item"
+        href="#mediterranean-migration">mediterranean-<br />migration.com</a
+      >
     </div>
-    <div class="col-10 content">
-      <p class="lead my-lead">Eine Auswahl von aktuellen Projekten:</p>
-      <section id="apflora" class="css-wkfll6">
+    <div>
+      <p class="my-lead">Eine Auswahl von aktuellen Projekten:</p>
+      <section id="apflora">
         <img src="/apflora.png" alt="apflora" height="51" />
-        <h2 class="css-v88e37">apflora.ch</h2>
-        <h3 class="css-17dvzuo">
-          Aktionsplan Flora der Fachstelle Naturschutz des Kantons Zürich
-        </h3>
+        <h2>apflora.ch</h2>
+        <h3>Aktionsplan Flora der Fachstelle Naturschutz des Kantons Zürich</h3>
         <div>
           Grösste Stärken:
           <ul>
@@ -277,10 +261,10 @@ import Layout from '../components/Layout/index.astro'
           >.
         </p>
       </section>
-      <section id="arteigenschaften" class="css-wkfll6">
+      <section id="arteigenschaften">
         <img src="/ae.png" alt="arteigenschaften.ch" height="51" />
-        <h2 class="css-v88e37">arteigenschaften.ch</h2>
-        <h3 class="css-17dvzuo">
+        <h2>arteigenschaften.ch</h2>
+        <h3>
           Naturschutzrelevante Informationen über Arten aus den Gruppen Fauna,
           Flora, Moose, Pilze und von Lebensräumen:
         </h3>
@@ -578,10 +562,10 @@ import Layout from '../components/Layout/index.astro'
           >.
         </p>
       </section>
-      <section id="vermehrung" class="css-wkfll6">
+      <section id="vermehrung">
         <img src="/seedling.svg" alt="vermehrung.ch" height="51" />
-        <h2 class="css-v88e37">vermehrung.ch</h2>
-        <h3 class="css-17dvzuo">Bedrohte Pflanzen vermehren</h3>
+        <h2>vermehrung.ch</h2>
+        <h3>Bedrohte Pflanzen vermehren</h3>
         <ul>
           <li>mobile first</li>
           <li>offline first</li>
@@ -699,9 +683,9 @@ import Layout from '../components/Layout/index.astro'
           >.
         </p>
       </section>
-      <section id="kapla" class="css-wkfll6">
+      <section id="kapla">
         <img src="/kapla.png" alt="Kapla" height="51" />
-        <h2 class="css-v88e37">Kapla</h2>
+        <h2>Kapla</h2>
         <p>
           Mit Kapla verwaltet die Abteilung Recht des AWEL (Amt für Abfall,
           Wasser, Energie und Luft) des Kantons Zürich ihre Geschäfte.
@@ -815,9 +799,9 @@ import Layout from '../components/Layout/index.astro'
           >.
         </p>
       </section>
-      <section id="awel-personal" class="css-wkfll6">
+      <section id="awel-personal">
         <img src="/ap.png" alt="AWEL-Personal" height="51" />
-        <h2 class="css-v88e37">AWEL-Personal</h2>
+        <h2>AWEL-Personal</h2>
         <p>
           Damit verwaltet das AWEL (Amt für Abfall, Wasser, Energie und Luft)
           des Kantons Zürich Personal-Daten.
@@ -841,9 +825,9 @@ import Layout from '../components/Layout/index.astro'
           >.
         </p>
       </section>
-      <section id="awel-indikatoren" class="css-wkfll6">
+      <section id="awel-indikatoren">
         <img src="/zhLoewe.png" alt="AWEL-Indikatoren" height="51" />
-        <h2 class="css-v88e37">AWEL-Indikatoren</h2>
+        <h2>AWEL-Indikatoren</h2>
         <p>
           Das AWEL (Amt für Abfall, Wasser, Energie und Luft) des Kantons Zürich
           verwaltet mit dieser Access-Anwendung Indikatoren.
@@ -961,9 +945,9 @@ import Layout from '../components/Layout/index.astro'
         </div>
         <p>Im produktiven Einsatz seit 2014.</p>
       </section>
-      <section id="mediterranean-migration" class="css-wkfll6">
+      <section id="mediterranean-migration">
         <img src="/bb.png" alt="mediterranean-migration" height="51" />
-        <h2 class="css-v88e37">mediterranean-migration.com</h2>
+        <h2>mediterranean-migration.com</h2>
         <p>
           Übersicht über die Migration durch das zentrale und östliche
           Mittelmeer.
@@ -1157,6 +1141,10 @@ import Layout from '../components/Layout/index.astro'
     display: flex;
     flex-direction: column;
   }
+  .scrollspy {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
   @media (min-width: 800px) {
     .my-page {
       display: grid;
@@ -1164,39 +1152,39 @@ import Layout from '../components/Layout/index.astro'
       grid-column-gap: 30px;
     }
     .scrollspy {
-      position: fixed;
+      position: sticky;
+      top: 15px;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
   .scrollspy {
     background-color: transparent;
     border: 1px solid #d8d8d8;
     margin-bottom: 15px !important;
-    margin-left: 0 !important;
     padding-left: 0;
+    padding-right: 0;
     border-radius: 5px;
     list-style: none;
+    height: fit-content;
   }
 
-  .scrollspy a {
+  .scrollspy-item {
     display: block;
     color: #716b7a;
     font-weight: bold;
     padding: 10px 15px;
+    text-decoration: none;
+    /* border: 0.3px solid rgba(0, 0, 0, 0.125); */
   }
 
-  .scrollspy a:hover {
-    text-decoration: none !important;
+  .scrollspy-item:hover {
     background-color: #155f0026;
   }
 
-  .scrollspy .active {
+  .scrollspy-item.active {
     background-color: #155f0011;
     color: black;
-    border-color: unset;
-    border-width: 00.66666px;
-    border-color: rgba(0, 0, 0, 0.125);
-  }
-  .content {
   }
 
   .carousel-caption {
@@ -1248,6 +1236,9 @@ import Layout from '../components/Layout/index.astro'
   }
   .my-lead {
     padding-bottom: 16px;
+    font-weight: 300;
+    color: rgb(33, 37, 41);
+    font-size: 20px;
   }
   img {
     margin-bottom: 0;

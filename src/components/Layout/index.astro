@@ -29,6 +29,22 @@ import Navbar from './Navbar.astro'
     overflow: hidden;
     height: 100vh;
   }
+  ::-webkit-scrollbar {
+    /* Foreground, Background */
+    scrollbar-color: #155f0057 #155f000f;
+  }
+  ::-webkit-scrollbar {
+    width: 10px; /* Mostly for vertical scrollbars */
+    height: 10px; /* Mostly for horizontal scrollbars */
+  }
+  ::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: #155f0057;
+  }
+  ::-webkit-scrollbar-track {
+    /* Background */
+    background: #155f000f;
+  }
   .navbar-brand {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.7);
