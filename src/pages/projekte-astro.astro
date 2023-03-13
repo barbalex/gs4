@@ -6,52 +6,40 @@ import Layout from '../components/Layout/index.astro'
   <div class="row my-page">
     <div class="col-2">
       <div id="list" class="list-group scrollspy">
-        <a
-          class="list-group-item list-group-item-action"
-          href="#apflora"
-          class="css-dc59ks">apflora.ch</a
+        <a class="list-group-item list-group-item-action" href="#apflora"
+          >apflora.ch</a
         >
         <a
           class="list-group-item list-group-item-action"
-          href="#arteigenschaften"
-          class="css-dc59ks">arteigenschaften.ch</a
+          href="#arteigenschaften">arteigenschaften.ch</a
+        >
+        <a class="list-group-item list-group-item-action" href="#vermehrung"
+          >vermehrung.ch</a
+        >
+        <a class="list-group-item list-group-item-action" href="#kapla">Kapla</a
+        >
+        <a class="list-group-item list-group-item-action" href="#awel-personal"
+          >AWEL-Personal</a
         >
         <a
           class="list-group-item list-group-item-action"
-          href="#vermehrung"
-          class="css-dc59ks">vermehrung.ch</a
+          href="#awel-indikatoren">AWEL-Indikatoren</a
         >
         <a
           class="list-group-item list-group-item-action"
-          href="#kapla"
-          class="css-dc59ks">Kapla</a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          href="#awel-personal"
-          class="css-dc59ks">AWEL-Personal</a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          href="#awel-indikatoren"
-          class="css-dc59ks">AWEL-Indikatoren</a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          href="#mediterranean-migration"
-          class="css-dc59ks">mediterranean-<br />migration.com</a
+          href="#mediterranean-migration">mediterranean-<br />migration.com</a
         >
       </div>
     </div>
     <div class="col-10">
+      <p class="lead my-lead">Eine Auswahl von aktuellen Projekten:</p>
       <div
         data-bs-spy="scroll"
         data-bs-target="#list"
         data-bs-smooth-scroll="true"
-        class="scrollspy-example"
         tabindex="0"
+        class="scrollspy-container"
       >
-        <p class="lead css-haw22i">Eine Auswahl von aktuellen Projekten:</p>
         <section id="apflora" class="css-wkfll6">
           <img
             src="/apflora.png"
@@ -1233,7 +1221,7 @@ import Layout from '../components/Layout/index.astro'
     scroll-padding: 56px;
   }
   ul {
-    padding-left: 0;
+    padding-left: 19px;
   }
   li {
     margin-bottom: 0;
@@ -1266,19 +1254,21 @@ import Layout from '../components/Layout/index.astro'
     }
   }
 
-  .scrollspy li a {
+  .scrollspy a {
     display: block;
     color: #716b7a;
     font-weight: bold;
     padding: 10px 15px;
   }
 
-  .scrollspy li a:hover {
+  .scrollspy a:hover {
     text-decoration: none !important;
   }
 
   .scrollspy .active {
     background-color: #155f0011;
+  }
+  .scrollspy-container {
   }
   section {
     margin-bottom: 60px;
@@ -1304,7 +1294,7 @@ import Layout from '../components/Layout/index.astro'
     text-decoration: none;
   }
   .my-lead {
-    margin-bottom: 16px;
+    padding-bottom: 16px;
   }
   img {
     margin-bottom: 0;

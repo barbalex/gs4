@@ -50,11 +50,17 @@ const pathname = Astro.url.pathname
       </div>
     </div>
   </nav>
-  <div class="container">
-    <slot />
+  <div class="scroll-container">
+    <div class="container">
+      <slot />
+    </div>
   </div>
 </>
 <style>
+  .scroll-container {
+    overflow: auto;
+    height: calc(100% - 56px);
+  }
   .container {
     margin: 0 auto;
     max-width: 1170px;
