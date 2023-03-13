@@ -3,59 +3,45 @@ const pathname = Astro.url.pathname
 ---
 
 <>
-  <nav
-    role="navigation"
-    class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"
-  >
-    <div class="container-fluid">
-      <a href="/" class:list={['navbar-brand', { active: pathname === '/' }]}
-        >Gabriel Software</a
-      >
-      <button aria-label="toggle Navbar" type="button" class="navbar-toggler"
-        ><span class="navbar-toggler-icon"></span>
-      </button>
-      <div style="justify-content:flex-end" class="collapse navbar-collapse">
-        <ul class="ml-auto navbar-nav">
-          <li class="nav-item">
-            <a
-              href="/leitbild/"
-              class:list={['nav-link', { active: pathname === '/leitbild/' }]}
-              >Leitbild</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="/projekte/"
-              class:list={['nav-link', { active: pathname === '/projekte/' }]}
-              >Projekte</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="/projekte-astro/"
-              class:list={[
-                'nav-link',
-                { active: pathname === '/projekte-astro/' },
-              ]}>Projekte astro</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="/technologien/"
-              class:list={[
-                'nav-link',
-                { active: pathname === '/technologien/' },
-              ]}>Technologien</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="/kontakt/"
-              class:list={['nav-link', { active: pathname === '/kontakt/' }]}
-              >Kontakt</a
-            >
-          </li>
-        </ul>
+  <nav role="navigation" class="navbar">
+    <a href="/" class:list={['navbar-brand', { active: pathname === '/' }]}
+      >Gabriel Software</a
+    >
+    <div class="nav-menus">
+      <div class="nav">
+        <a
+          href="/leitbild/"
+          class:list={['nav-link', { active: pathname === '/leitbild/' }]}
+          >Leitbild</a
+        >
+      </div>
+      <div class="nav">
+        <a
+          href="/projekte/"
+          class:list={['nav-link', { active: pathname === '/projekte/' }]}
+          >Projekte</a
+        >
+      </div>
+      <div class="nav">
+        <a
+          href="/projekte-astro/"
+          class:list={['nav-link', { active: pathname === '/projekte-astro/' }]}
+          >Projekte astro</a
+        >
+      </div>
+      <div class="nav">
+        <a
+          href="/technologien/"
+          class:list={['nav-link', { active: pathname === '/technologien/' }]}
+          >Technologien</a
+        >
+      </div>
+      <div class="nav">
+        <a
+          href="/kontakt/"
+          class:list={['nav-link', { active: pathname === '/kontakt/' }]}
+          >Kontakt</a
+        >
       </div>
     </div>
   </nav>
@@ -66,6 +52,47 @@ const pathname = Astro.url.pathname
   </div>
 </>
 <style>
+  .navbar {
+    min-height: 56px;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding: 0 6px 0 0;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 14px 0 0 12px;
+  }
+  .navbar-brand.active {
+    font-weight: 700;
+    color: white;
+  }
+  .navbar-brand:hover {
+    color: white;
+  }
+  .nav-menus {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .nav {
+    padding: 12px;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .nav-link.active {
+    font-weight: 700;
+    color: white;
+  }
+  .nav-link:hover {
+    color: white;
+  }
   .scroll-container {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -78,8 +105,5 @@ const pathname = Astro.url.pathname
   .container {
     margin: 0 auto;
     max-width: 1170px;
-  }
-  .my-nav-item {
-    margin-bottom: 0 !important;
   }
 </style>
