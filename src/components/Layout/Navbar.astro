@@ -32,6 +32,15 @@ const pathname = Astro.url.pathname
           </li>
           <li class="nav-item">
             <a
+              href="/projekte-astro/"
+              class:list={[
+                'nav-link',
+                { active: pathname === '/projekte-astro/' },
+              ]}>Projekte astro</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
               href="/technologien/"
               class:list={[
                 'nav-link',
@@ -58,7 +67,8 @@ const pathname = Astro.url.pathname
 </>
 <style>
   .scroll-container {
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: calc(100% - 56px);
   }
   .container {
