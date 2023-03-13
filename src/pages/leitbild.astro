@@ -4,10 +4,10 @@ import Layout from '../components/Layout/index.astro'
 ---
 
 <Layout>
-  <div class="my-page page leitbild">
-    <p class="lead my-lead">Ich richte mich nach diesen Leitlinien:</p>
-    <div class="row marketing">
-      <div class="col-lg-4">
+  <div class="page">
+    <p class="lead">Ich richte mich nach diesen Leitlinien:</p>
+    <div class="content">
+      <section>
         <Icon pack="fa-regular" name="question-circle" class="icon" />
         <h1>Verstehen, wie Sie arbeiten</h1>
         <p>
@@ -22,8 +22,8 @@ import Layout from '../components/Layout/index.astro'
           Wenn Menschen vom selben sprechen, verstehen nicht immer alle
           dasselbe. Klappt etwas nicht? Oft liegt der Hund hier begraben.
         </p>
-      </div>
-      <div class="col-lg-4">
+      </section>
+      <section>
         <Icon pack="ic" name="baseline-gps-fixed" class="icon" />
         <h1>Sinn suchen</h1>
         <p>
@@ -31,8 +31,8 @@ import Layout from '../components/Layout/index.astro'
           darunter die Produktivität.
         </p>
         <p>Software versteht nur Logik.</p>
-      </div>
-      <div class="col-lg-4">
+      </section>
+      <section>
         <Icon pack="fa-regular" name="check-circle" class="icon" />
         <h1>
           So einfach wie möglich,
@@ -45,8 +45,8 @@ import Layout from '../components/Layout/index.astro'
           Eine elegante Architektur beschleunigt die Entwicklung und reduziert
           den Unterhalt.
         </p>
-      </div>
-      <div class="col-lg-4">
+      </section>
+      <section>
         <Icon pack="fa" name="wrench" class="icon" />
         <h1>Geeignete Technologie wählen</h1>
         <p>
@@ -58,8 +58,8 @@ import Layout from '../components/Layout/index.astro'
           Oder lerne zu schrauben. Und freue mich über die angewandte
           Weiterbildung. Natürlich auf meine Kosten.
         </p>
-      </div>
-      <div class="col-lg-4">
+      </section>
+      <section>
         <Icon pack="fa-solid" name="crown" class="icon" />
         <h1>Der Kunde ist König</h1>
         <p>
@@ -73,8 +73,8 @@ import Layout from '../components/Layout/index.astro'
           <li>den Aufwand zu minimieren</li>
           <li>Vertrauen aufzubauen</li>
         </ul>
-      </div>
-      <div class="col-lg-4">
+      </section>
+      <section>
         <Icon pack="fa-solid" name="retweet" class="icon" />
         <h1>Ich bin austauschbar</h1>
         <p>
@@ -125,14 +125,30 @@ import Layout from '../components/Layout/index.astro'
             technical debt.
           </a>
         </p>
-      </div>
+      </section>
     </div>
   </div>
 </Layout>
 
 <style>
   .page {
-    padding: 15px;
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: 768px) {
+    .page {
+      padding: 5px 30px;
+    }
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+  }
+  section {
+    flex-basis: 345px;
+    flex-grow: 1;
   }
   ul {
     padding-left: 20px;
@@ -149,8 +165,11 @@ import Layout from '../components/Layout/index.astro'
   p {
     margin-bottom: 16px;
   }
-  .my-lead {
-    margin-bottom: 16px;
+  .lead {
+    padding-bottom: 16px;
+    font-weight: 300;
+    color: #145f00;
+    font-size: 20px;
   }
   a {
     color: #145f00;
