@@ -4,12 +4,12 @@ import Layout from '../components/Layout/index.astro'
 ---
 
 <Layout>
-  <div class="my-page page technologien">
-    <p class="lead my-lead">Mit diesen Technologien kenne ich mich aus:</p>
-    <div class="row marketing my-row">
-      <div class="col-lg-4">
+  <div class="page technologien">
+    <p class="lead">Mit diesen Technologien kenne ich mich aus:</p>
+    <div class="content">
+      <section>
         <Icon pack="ic" name="baseline-architecture" class="icon" />
-        <h2>App-Architekturen</h2>
+        <h1>App-Architekturen</h1>
         <ul>
           <li>
             <a
@@ -57,7 +57,7 @@ import Layout from '../components/Layout/index.astro'
           </li>
         </ul>
         <Icon pack="fa-solid" name="database" class="icon" />
-        <h2 style={{ marginTop: 5 }}>Datenbanken</h2>
+        <h1 style={{ marginTop: 5 }}>Datenbanken</h1>
         <ul>
           <li>
             <a
@@ -100,8 +100,8 @@ import Layout from '../components/Layout/index.astro'
             <p>Der Synchronisations-Meister</p>
           </li>
         </ul>
-      </div>
-      <div class="col-lg-4">
+      </section>
+      <section>
         <div
           style={{
             fontStyle: 'oblique',
@@ -113,7 +113,7 @@ import Layout from '../components/Layout/index.astro'
         >
           {'if ( ... ) then \u007B ... \u007D'}
         </div>
-        <h2 style={{ marginTop: 3 }}>Programmiersprachen</h2>
+        <h1 style={{ marginTop: 3 }}>Programmiersprachen</h1>
         <ul>
           <li>
             <a
@@ -195,12 +195,12 @@ import Layout from '../components/Layout/index.astro'
             <p>Die Sprache hinter Flutter</p>
           </li>
         </ul>
-      </div>
-      <div class="col-lg-4">
+      </section>
+      <section>
         <Icon pack="fa" name="wrench" class="icon" />
-        <h2 style={{ marginTop: 0 }}>
+        <h1 style={{ marginTop: 0 }}>
           Werkzeuge <small>(Auswahl)</small>
-        </h2>
+        </h1>
         <ul>
           <li>
             <a
@@ -311,7 +311,7 @@ import Layout from '../components/Layout/index.astro'
         <Icon pack="fa-brands" name="windows" class="icon" alt="Windows" />
         <Icon pack="fa-brands" name="linux" class="icon" alt="Linux" />
         <Icon pack="fa-brands" name="apple" class="icon" alt="MaxOs" />
-        <h2>Betriebssysteme</h2>
+        <h1>Betriebssysteme</h1>
         <ul>
           <li>
             <a
@@ -344,25 +344,51 @@ import Layout from '../components/Layout/index.astro'
             <p>Entwickler fliegen drauf</p>
           </li>
         </ul>
-      </div>
+      </section>
     </div>
   </div>
 </Layout>
 
 <style>
-  .my-page {
-    padding: 15px;
+  .page {
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
   }
-  ul {
-    padding-bottom: 15px;
-    padding-left: 20px;
+  @media (min-width: 768px) {
+    .page {
+      padding: 5px 30px;
+    }
   }
-  h2 {
+  .lead {
+    padding-bottom: 16px;
+    font-weight: 300;
+    color: #145f00;
+    font-size: 20px;
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+  }
+  section {
+    flex-basis: 345px;
+    flex-grow: 1;
+  }
+  h1 {
     margin-top: 5px !important;
     margin-bottom: 8px !important;
     font-weight: bold;
     font-size: 24px;
-    font-weight: 700;
+  }
+  ul {
+    margin-top: 0;
+    padding-bottom: 15px;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 5px;
+    line-height: 1.4em;
   }
   a {
     color: #145f00;
@@ -374,13 +400,8 @@ import Layout from '../components/Layout/index.astro'
     text-decoration: none;
   }
   p {
+    margin-top: 0;
     margin-bottom: -2px;
-  }
-  li {
-    margin-bottom: 0;
-  }
-  .my-lead {
-    margin-bottom: 16px;
   }
   .spacer {
     height: 10px;
