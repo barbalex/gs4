@@ -1,7 +1,8 @@
 ---
 import Layout from '../components/Layout/index.astro'
 import Carousel from '../components/Carousel/index.astro'
-import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
+import ApfloraCarousel from '../components/Carousel/Apflora.astro'
+import AeCarousel from '../components/Carousel/Ae.astro'
 ---
 
 <Layout>
@@ -90,281 +91,15 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
           Absicht dahinter: Alle benötigten Daten können, sofern nicht schon
           enthalten, rasch ergänzt und für Auswertungen kombiniert werden.
         </p>
-        <div class="carousel slide">
-          <div class="carousel-indicators">
-            <button
-              aria-label=""
-              data-bs-target="true"
-              type="button"
-              class="active"></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class="">
-            </button>
-          </div><div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                class="d-block w-100"
-                src="/01_strbaum.png"
-                alt="Strukturbaum erschliesst alle Datenstrukturen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Strukturbaum erschliesst alle Datenstrukturen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/02_strbaum_angemeldet.png"
-                alt="angemeldete Benutzer mit entsprechenden Rechten sehen mehr"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>
-                  angemeldete Benutzer mit entsprechenden Rechten sehen mehr
-                </h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/03_suchen.png"
-                alt="Art, Lebensraum oder Eigenschaften-Sammlung suchen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Art, Lebensraum oder Eigenschaften-Sammlung suchen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/04_strbaum.png"
-                alt="Der Strukturbaum baut die Taxonomien dynamisch aus den Daten auf"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>
-                  Der Strukturbaum baut die Taxonomien dynamisch aus den Daten
-                  auf
-                </h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/05_taxonomie.png"
-                alt="Taxonomie anzeigen..."
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Taxonomie anzeigen...</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/06_synonyme.png"
-                alt="...inklusive Synonymen und ihren Eigenschaften"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>...inklusive Synonymen und ihren Eigenschaften</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/07_tax_bearbeiten.png"
-                alt="Taxonomie bearbeiten"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Taxonomie bearbeiten</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/08_tax_links.png"
-                alt="Links zu externen Informationen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Links zu externen Informationen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/09_es_zeigen.png"
-                alt="Eigenschaften-Sammlung zeigen..."
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Eigenschaften-Sammlung zeigen...</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/10_es_zeigen.png"
-                alt="...inklusive ihren Eigenschaften"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>...inklusive ihren Eigenschaften</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/11_export.png"
-                alt="Export: Taxonomie(n) wählen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Export: Taxonomie(n) wählen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/12_export_filter.png"
-                alt="Export: Daten filtern"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Export: Daten filtern</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/13_export_felder.png"
-                alt="Export: Felder wählen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Export: Felder wählen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/14_export.png"
-                alt="Export: Datei speichern"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Export: Datei speichern</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/15_import.png"
-                alt="Eigenschaften importieren"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Eigenschaften importieren</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/16_organisationen.png"
-                alt="Organisationen geben Benutzern Rollen..."
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Organisationen geben Benutzern Rollen...</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/17_organisationen.png"
-                alt="...und sehen, für welche Taxonomien und Eigenschaften-Sammlungen sie zuständig sind"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>
-                  ...und sehen, für welche Taxonomien und
-                  Eigenschaften-Sammlungen sie zuständig sind
-                </h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/18_benutzer.png"
-                alt="Benutzer mit Konto sehen, welche Eigenschaften-Sammlungen und Taxonomien sie importiert haben"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>
-                  Benutzer mit Konto sehen, welche Eigenschaften-Sammlungen und
-                  Taxonomien sie importiert haben
-                </h3>
-                <p></p>
-              </div>
-            </div>
-          </div>
-          <a
-            class="carousel-control-prev"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
+        <div class="carousel-container">
+          <Carousel>
+            <AeCarousel />
+          </Carousel>
         </div>
         <p>Im produktiven Einsatz seit 2013.</p>
         <p>
           Mehr Informationen&nbsp;<a
-            href="https://artdaten.ch/Dokumentation/Projektbeschreibung"
+            href="https://arteigenschaften.ch/Dokumentation/Projektbeschreibung"
             target="_blank"
             rel="noopener noreferrer">in der Dokumentation</a
           >.
@@ -384,99 +119,11 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
           Grösste Stärke ist die Fähigkeit, ohne Internet-Anschluss und mit
           jedem beliebigen Gerät arbeiten zu können.
         </p>
-        <div class="carousel slide">
-          <div class="carousel-indicators">
-            <button
-              aria-label=""
-              data-bs-target="true"
-              type="button"
-              class="active"></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class="">
-            </button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="/vm_01.jpg" alt="Home" /><div
-                class="carousel-caption d-none d-md-block"
-              >
-                <h3>Home</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/vm_02.png"
-                alt="Alle Objekte - Desktop"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Alle Objekte - Desktop</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/vm_03.png"
-                alt="Alle Objekte - mobile"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Alle Objekte - mobile</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/vm_04.png" alt="Art - Desktop" />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Art - Desktop</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/vm_05.png" alt="Art - mobile" />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Art - mobile</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/vm_06.png"
-                alt="Garten - Felder wählen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Garten - Felder wählen</h3>
-                <p></p>
-              </div>
-            </div>
-          </div>
-          <a
-            class="carousel-control-prev"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
+
+        <div class="carousel-container">
+          <Carousel>
+            <ApfloraCarousel />
+          </Carousel>
         </div>
         <p>Im produktiven Einsatz seit 2020.</p>
         <p>
@@ -506,97 +153,10 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
             <li>beinahe null Unterhalt</li>
           </ul>
         </div>
-        <div class="carousel slide">
-          <div class="carousel-indicators">
-            <button
-              aria-label=""
-              data-bs-target="true"
-              type="button"
-              class="active"></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                class="d-block w-100"
-                src="/gs_liste.png"
-                alt="Geschäfte auflisten"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Geschäfte auflisten</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/gs_filtern.png"
-                alt="Geschäfte filtern und sortieren"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Geschäfte filtern und sortieren</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/gs_bearb.png"
-                alt="Geschäfte bearbeiten"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Geschäfte bearbeiten</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/gs_berichte.png"
-                alt="Geschäfte drucken"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Geschäfte drucken</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/gs_export.png"
-                alt="Geschäfte exportieren"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Geschäfte exportieren</h3>
-                <p></p>
-              </div>
-            </div>
-          </div>
-          <a
-            class="carousel-control-prev"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
+        <div class="carousel-container">
+          <Carousel>
+            <ApfloraCarousel />
+          </Carousel>
         </div>
         <p>Im produktiven Einsatz seit 2016.</p>
         <p>
@@ -646,110 +206,10 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
             <li>bisher null Unterhaltsbedarf</li>
           </ul>
         </div>
-        <div class="carousel slide">
-          <div class="carousel-indicators">
-            <button
-              aria-label=""
-              data-bs-target="true"
-              type="button"
-              class="active"></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                class="d-block w-100"
-                src="/ai_01_hauptmenu.png"
-                alt="Hauptmenü"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Hauptmenü</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/ai_02_indikatoren.png"
-                alt="Indikatoren erfassen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Indikatoren erfassen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/ai_03_aufgaben.png"
-                alt="Aufgaben erfassen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Aufgaben erfassen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/ai_04_projekte.png"
-                alt="Projekte erfassen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Projekte erfassen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/ai_05_drucken.png"
-                alt="Indikatoren nach Organisationseinheit auflisten"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Indikatoren nach Organisationseinheit auflisten</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/ai_06_administration.png"
-                alt="...und mehr"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>...und mehr</h3>
-                <p></p>
-              </div>
-            </div>
-          </div>
-          <a
-            class="carousel-control-prev"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
+        <div class="carousel-container">
+          <Carousel>
+            <ApfloraCarousel />
+          </Carousel>
         </div>
         <p>Im produktiven Einsatz seit 2014.</p>
       </section>
@@ -777,111 +237,10 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
             </li>
           </ul>
         </div>
-        <div class="carousel slide">
-          <div class="carousel-indicators">
-            <button
-              aria-label=""
-              data-bs-target="true"
-              type="button"
-              class="active"></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-            <button aria-label="" data-bs-target="true" type="button" class=""
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="/mm_01.jpg" alt="Home" />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Home</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/mm_02.jpg"
-                alt="Ereignisse und Statistiken"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Ereignisse und Statistiken</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/mm_03.jpg" alt="Kommentare" />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Kommentare</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/mm_04.jpg" alt="Kommentar" />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Kommentar</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/mm_05.jpg"
-                alt="Neues Ereignis erstellen"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Neues Ereignis erstellen</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/mm_06.jpg"
-                alt="Ereignis bearbeiten"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Ereignis bearbeiten</h3>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="/mm_07.jpg"
-                alt="Kommentar bearbeiten"
-              />
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Kommentar bearbeiten</h3>
-                <p></p>
-              </div>
-            </div>
-          </div>
-          <a
-            class="carousel-control-prev"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            style="cursor:pointer"
-            role="button"
-            tabindex="0"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
+        <div class="carousel-container">
+          <Carousel>
+            <ApfloraCarousel />
+          </Carousel>
         </div>
         <p>Im produktiven Einsatz seit 2015.</p>
         <p>
@@ -925,9 +284,11 @@ import ApfloraCarousel from '../components/Carousel/ApfloraCarousel.astro'
   ]
   for (const toBeObserved of toBeObserveds) {
     const section = document.querySelector(`#${toBeObserved}`)
+    console.log('section', section)
     if (!section) continue
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        console.log('entry', entry)
         if (entry.isIntersecting) {
           document
             .querySelector(`#${toBeObserved}-link`)
