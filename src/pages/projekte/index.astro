@@ -3,6 +3,7 @@ import Layout from '../../components/Layout/index.astro'
 import ApfloraCarousel from '../../components/Carousel/Apflora.astro'
 import AeCarousel from '../../components/Carousel/Ae.astro'
 import VermehrungCarousel from '../../components/Carousel/Vermehrung.astro'
+import KaplaCarousel from '../../components/Carousel/Kapla.astro'
 import Scrollspy from './_Scrollspy.astro'
 ---
 
@@ -124,8 +125,8 @@ import Scrollspy from './_Scrollspy.astro'
             <li>beinahe null Unterhalt</li>
           </ul>
         </div>
-        <div class="carousel-container carousel-container-apflora">
-          <ApfloraCarousel />
+        <div class="carousel-container carousel-container-kapla">
+          <KaplaCarousel />
         </div>
         <p>Im produktiven Einsatz seit 2016.</p>
         <p>
@@ -352,5 +353,8 @@ import Scrollspy from './_Scrollspy.astro'
   }
   .carousel-container-vermehrung {
     aspect-ratio: 1.14666 / 1;
+  }
+  .carousel-container-kapla {
+    aspect-ratio: 1.7174 / 1;
   }
 </style>

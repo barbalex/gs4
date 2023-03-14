@@ -1,8 +1,8 @@
-import gsListeImg from '/gs_liste.png'
-import gsFilternImg from '/gs_filtern.png'
-import gsBearbImg from '/gs_bearb.png'
-import gsBerichteImg from '/gs_berichte.png'
-import gsExportImg from '/gs_export.png'
+import gsListeImg from '/kapla_liste.png'
+import gsFilternImg from '/kapla_filtern.png'
+import gsBearbImg from '/kapla_bearb.png'
+import gsBerichteImg from '/kapla_berichte.png'
+import gsExportImg from '/kapla_export.png'
 
 export default [
   {

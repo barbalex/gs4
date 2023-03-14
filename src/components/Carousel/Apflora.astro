@@ -104,7 +104,8 @@ import './styles.css'
     >
       <div class="snapper"></div>
       <a href="#apflora-slide8" class="carousel__prev move-apflora">voriges</a>
-      <a href="#apflora-slide10" class="carousel__next move-apflora">nächstes</a>
+      <a href="#apflora-slide10" class="carousel__next move-apflora">nächstes</a
+      >
       <div class="carousel-title">räumlich filtern</div>
     </li>
     <li
@@ -115,7 +116,8 @@ import './styles.css'
     >
       <div class="snapper"></div>
       <a href="#apflora-slide9" class="carousel__prev move-apflora">voriges</a>
-      <a href="#apflora-slide11" class="carousel__next move-apflora">nächstes</a>
+      <a href="#apflora-slide11" class="carousel__next move-apflora">nächstes</a
+      >
       <div class="carousel-title">exportieren</div>
     </li>
     <li
@@ -126,7 +128,8 @@ import './styles.css'
     >
       <div class="snapper"></div>
       <a href="#apflora-slide10" class="carousel__prev move-apflora">voriges</a>
-      <a href="#apflora-slide12" class="carousel__next move-apflora">nächstes</a>
+      <a href="#apflora-slide12" class="carousel__next move-apflora">nächstes</a
+      >
       <div class="carousel-title">...und mehr</div>
     </li>
     <li
@@ -137,7 +140,8 @@ import './styles.css'
     >
       <div class="snapper"></div>
       <a href="#apflora-slide11" class="carousel__prev move-apflora">voriges</a>
-      <a href="#apflora-slide13" class="carousel__next move-apflora">nächstes</a>
+      <a href="#apflora-slide13" class="carousel__next move-apflora">nächstes</a
+      >
       <div class="carousel-title">
         neue Features in der Projekt-Dokumentation lernen
       </div>
@@ -157,64 +161,96 @@ import './styles.css'
   <aside class="navigation">
     <ol class="navigation-list">
       <li class="navigation-item">
-        <a href="#apflora-slide1" class="navigation-button move-apflora">Zu Bild 1</a>
+        <a href="#apflora-slide1" class="navigation-button move-apflora"
+          >Zu Bild 1</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide2" class="navigation-button move-apflora">Zu Bild 2</a>
+        <a href="#apflora-slide2" class="navigation-button move-apflora"
+          >Zu Bild 2</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide3" class="navigation-button move-apflora">Zu Bild 3</a>
+        <a href="#apflora-slide3" class="navigation-button move-apflora"
+          >Zu Bild 3</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide4" class="navigation-button move-apflora">Zu Bild 4</a>
+        <a href="#apflora-slide4" class="navigation-button move-apflora"
+          >Zu Bild 4</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide5" class="navigation-button move-apflora">Zu Bild 5</a>
+        <a href="#apflora-slide5" class="navigation-button move-apflora"
+          >Zu Bild 5</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide6" class="navigation-button move-apflora">Zu Bild 6</a>
+        <a href="#apflora-slide6" class="navigation-button move-apflora"
+          >Zu Bild 6</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide7" class="navigation-button move-apflora">Zu Bild 7</a>
+        <a href="#apflora-slide7" class="navigation-button move-apflora"
+          >Zu Bild 7</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide8" class="navigation-button move-apflora">Zu Bild 8</a>
+        <a href="#apflora-slide8" class="navigation-button move-apflora"
+          >Zu Bild 8</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide9" class="navigation-button move-apflora">Zu Bild 9</a>
+        <a href="#apflora-slide9" class="navigation-button move-apflora"
+          >Zu Bild 9</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide10" class="navigation-button move-apflora">Zu Bild 10</a>
+        <a href="#apflora-slide10" class="navigation-button move-apflora"
+          >Zu Bild 10</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide11" class="navigation-button move-apflora">Zu Bild 11</a>
+        <a href="#apflora-slide11" class="navigation-button move-apflora"
+          >Zu Bild 11</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide12" class="navigation-button move-apflora">Zu Bild 12</a>
+        <a href="#apflora-slide12" class="navigation-button move-apflora"
+          >Zu Bild 12</a
+        >
       </li>
       <li class="navigation-item">
-        <a href="#apflora-slide13" class="navigation-button move-apflora">Zu Bild 13</a>
+        <a href="#apflora-slide13" class="navigation-button move-apflora"
+          >Zu Bild 13</a
+        >
       </li>
     </ol>
   </aside>
 </section>
 
 <script>
+  const onClick = (event) => {
+    const $slide = document.querySelector(event.target?.getAttribute('href'))
+    if (!$slide) return
+
+    if ($slide.scrollIntoViewIfNeeded) {
+      event.preventDefault()
+      $slide.scrollIntoViewIfNeeded()
+    } else if ($slide.scrollIntoView) {
+      event.preventDefault()
+      $slide.scrollIntoView()
+    }
+  }
   // prevent the carousel from jumping to the top on click
   // https://markus.oberlehner.net/blog/super-simple-progressively-enhanced-carousel-with-css-scroll-snap/
   const els = document.querySelectorAll('.move-apflora')
   els.forEach((el) => {
-    el.addEventListener('click', (event) => {
-      const $slide = document.querySelector(event.target?.getAttribute('href'))
-      if (!$slide) return
-
-      if ($slide.scrollIntoViewIfNeeded) {
-        event.preventDefault()
-        $slide.scrollIntoViewIfNeeded()
-      } else if ($slide.scrollIntoView) {
-        event.preventDefault()
-        $slide.scrollIntoView()
-      }
+    el.addEventListener('click', onClick)
+  })
+  addEventListener('beforeunload', () => {
+    els.forEach((el) => {
+      el.removeEventListener('click', onClick)
     })
   })
 </script>
