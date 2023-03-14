@@ -99,15 +99,15 @@ li {
   background-repeat: no-repeat;
 }
 
-.slide:before {
-  /* content: counter(item); */
+/* .slide:before {
+  content: counter(item);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -40%, 70px);
   color: #fff;
   font-size: 2em;
-}
+} */
 
 .snapper {
   position: absolute;
