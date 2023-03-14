@@ -73,14 +73,6 @@ li {
   padding: 0;
 }
 
-.carousel {
-  position: relative;
-  padding-top: 75%;
-  filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
-  max-height: var(--full-height);
-}
-
 .carousel__viewport {
   position: absolute;
   top: 0;
