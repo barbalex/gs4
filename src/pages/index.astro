@@ -72,6 +72,7 @@ import { Icon } from 'astro-icon'
         </ul>
       </section>
     </div>
+    <div class="spacer"></div>
   </div>
 </Layout>
 
@@ -91,14 +92,14 @@ import { Icon } from 'astro-icon'
   .content {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px 0;
+    gap: 20px 10px;
   }
   section {
-    flex-basis: 220px;
+    flex-basis: 215px;
     flex-grow: 1;
   }
   .section-mobile {
-    flex-basis: 189px;
+    flex-basis: 160px;
   }
   .section-all {
     flex-basis: 283px;
@@ -111,7 +112,8 @@ import { Icon } from 'astro-icon'
     margin-bottom: 0.5rem;
   }
   h2 {
-    margin-bottom: 8px !important;
+    margin-bottom: -5px;
+    margin-top: -5px;
     font-weight: bold;
     font-size: 24px;
   }
@@ -119,6 +121,7 @@ import { Icon } from 'astro-icon'
     font-size: 24px;
     font-weight: 700;
     padding-bottom: 4px;
+    color: #145f00;
   }
   .section-title {
     line-height: 1;
@@ -131,28 +134,27 @@ import { Icon } from 'astro-icon'
   }
   .cloud-icon {
     font-size: 90px;
-    min-height: 83px;
-    max-height: 83px;
+    min-height: 89px;
+    max-height: 89px;
     margin-bottom: -5px;
     margin-left: -5px;
   }
   .desktop-icon {
-    min-height: 78px;
-    max-height: 78px;
+    min-height: 84px;
+    max-height: 84px;
   }
   .mobile-icon {
-    min-height: 78px;
-    max-height: 78px;
+    min-height: 71px;
+    max-height: 71px;
     margin-left: -12px;
     padding-top: 7px;
     padding-bottom: 6px;
   }
   .all-cloud-icon {
     padding-top: 5px;
-    min-height: 78px;
-    max-height: 78px;
+    min-height: 84px;
+    max-height: 84px;
     margin-bottom: -5px;
-    margin-left: -8px;
   }
   .all-desktop-icon {
     min-height: 78px;
@@ -162,17 +164,20 @@ import { Icon } from 'astro-icon'
     padding-bottom: 1px;
   }
   .all-mobile-icon {
-    min-height: 78px;
-    max-height: 78px;
+    min-height: 67px;
+    max-height: 67px;
     margin-bottom: 0;
     margin-left: -12px;
     padding-bottom: 7px;
     padding-top: 10px;
   }
   .done-icon {
-    min-height: 85px;
-    max-height: 85px;
+    min-height: 91px;
+    max-height: 91px;
     margin-left: -5px;
     margin-bottom: -7px;
+  }
+  .spacer {
+    height: 60px;
   }
 </style>
