@@ -7,18 +7,6 @@ import ai06 from '/ai_06_administration.png'
 
 export default [
   {
-    src: ai01,
-    altText: 'Hauptmenü',
-    caption: '',
-    header: 'Hauptmenü',
-  },
-  {
-    src: ai02,
-    altText: 'Indikatoren erfassen',
-    caption: '',
-    header: 'Indikatoren erfassen',
-  },
-  {
     src: ai03,
     altText: 'Aufgaben erfassen',
     caption: '',
