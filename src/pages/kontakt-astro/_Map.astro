@@ -1,14 +1,50 @@
 ---
-import leaflet from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 ---
 
-<div id="map">map</div>
+<div id="map"></div>
+<div>
+  <small>
+    <a
+      href="https://www.google.ch/maps/place/47.289563,8.56644"
+      style={{
+        color: '#145f00',
+        textAlign: 'left',
+      }}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      in Google Maps öffnen
+    </a>
+  </small>
+</div>
+
+<script>
+  import Leaflet from 'leaflet'
+  const map = Leaflet.map('map').setView([47.289563, 8.56644], 10)
+  const tiles = Leaflet.tileLayer(
+    '//wmts20.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg',
+    {
+      maxZoom: 19,
+      attribution: '&copy; <a href="//swisstopo.ch">Swisstopo</a>',
+    },
+  ).addTo(map)
+
+  const icon = new Leaflet.Icon({
+    iconUrl: '/map_icon.svg',
+    iconRetinaUrl: '/map_icon.svg',
+    iconAnchor: [10, 10],
+    iconSize: [100, 100],
+  })
+  map.setView([47.289563, 8.56644], 10)
+  Leaflet.marker([47.289563, 8.56644], { icon }).addTo(map)
+</script>
 
 <style>
   #map {
     width: 100cqw;
     height: 100cqh;
-    background-color: burlywood;
+    min-width: 255px;
+    min-height: 300px;
   }
 </style>
