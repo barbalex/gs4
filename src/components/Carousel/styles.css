@@ -85,7 +85,7 @@ li {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scroll-snap-type: y none;
-  max-height: var(--full-height);
+  max-height: 100cqh;
 }
 
 .slide {
@@ -94,7 +94,7 @@ li {
   width: 100%;
   background-color: white;
   counter-increment: item;
-  max-height: var(--full-height);
+  max-height: 100cqh;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -137,6 +137,14 @@ li {
   }
 }
 
+.carousel {
+  position: relative;
+  padding-top: 75%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+  height: 100cqh;
+}
+
 .carousel:hover .snapper,
 .carousel:focus-within .snapper {
   animation-name: none;
@@ -157,7 +165,8 @@ li {
 
 .navigation {
   position: absolute;
-  top: 512px;
+  /* adopt to the height of the image */
+  top: calc(100cqh - 55px);
   right: 0;
   left: 0;
   text-align: center;
@@ -186,7 +195,7 @@ li {
 .carousel__next {
   position: absolute;
   top: 0;
-  margin-top: var(--half-height);
+  margin-top: 50cqh;
   width: 3rem;
   height: 3rem;
   transform: translateY(-50%);

@@ -2,277 +2,299 @@
 import './styles.css'
 ---
 
-<ol class="carousel__viewport">
-  <li
-    id="ae-slide1"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/01_strbaum.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide4" class="carousel__prev move">Go to last slide</a>
-    <a href="#ae-slide2" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">
-      Strukturbaum erschliesst alle Datenstrukturen
-    </div>
-  </li>
-  <li
-    id="ae-slide2"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/02_strbaum_angemeldet.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide1" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide3" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">
-      angemeldete Benutzer mit entsprechenden Rechten sehen mehr
-    </div>
-  </li>
-  <li
-    id="ae-slide3"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/03_suchen.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide2" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide4" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">
-      Art, Lebensraum oder Eigenschaften-Sammlung suchen
-    </div>
-  </li>
-  <li
-    id="ae-slide4"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/04_strbaum.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide3" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide5" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">
-      Der Strukturbaum baut die Taxonomien dynamisch aus den Daten auf
-    </div>
-  </li>
-  <li
-    id="ae-slide5"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/05_taxonomie.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide4" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide6" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Taxonomie anzeigen...</div>
-  </li>
-  <li
-    id="ae-slide6"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/06_synonyme.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide5" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide7" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">
-      ...inklusive Synonymen und ihren Eigenschaften
-    </div>
-  </li>
-  <li
-    id="ae-slide7"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/07_tax_bearbeiten.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide6" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide8" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Taxonomie bearbeiten</div>
-  </li>
-  <li
-    id="ae-slide8"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/08_tax_links.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide7" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide9" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Links zu externen Informationen</div>
-  </li>
-  <li
-    id="ae-slide9"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/09_es_zeigen.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide8" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide10" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Eigenschaften-Sammlung zeigen...</div>
-  </li>
-  <li
-    id="ae-slide10"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/10_es_zeigen.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide9" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide11" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">...inklusive ihren Eigenschaften</div>
-  </li>
-  <li
-    id="ae-slide11"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/11_export.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide10" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide12" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Export: Taxonomie(n) wählen</div>
-  </li>
-  <li
-    id="ae-slide12"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/12_export_filter.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide11" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide13" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Export: Daten filtern</div>
-  </li>
-  <li
-    id="ae-slide13"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/13_export_felder.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide12" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide1" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Export: Felder wählen</div>
-  </li>
-  <li
-    id="ae-slide14"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/14_export.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide13" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide15" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Export: Datei speichern</div>
-  </li>
-  <li
-    id="ae-slide15"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/15_import.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide14" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide16" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Eigenschaften importieren</div>
-  </li>
-  <li
-    id="ae-slide16"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/16_organisationen.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide15" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide17" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">Organisationen geben Benutzern Rollen...</div>
-  </li>
-  <li
-    id="ae-slide17"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/17_organisationen.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide16" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide18" class="carousel__next move">nächstes</a>
-    <div class="carousel-title">
-      ...und sehen, für welche Taxonomien und Eigenschaften-Sammlungen sie
-      zuständig sind
-    </div>
-  </li>
-  <li
-    id="ae-slide18"
-    tabindex="0"
-    class="slide"
-    style="background-image: url('/18_benutzer.png')"
-  >
-    <div class="snapper"></div>
-    <a href="#ae-slide17" class="carousel__prev move">voriges</a>
-    <a href="#ae-slide1" class="carousel__next move">erstes</a>
-    <div class="carousel-title">
-      Benutzer mit Konto sehen, welche Eigenschaften-Sammlungen und Taxonomien
-      sie importiert haben
-    </div>
-  </li>
-</ol>
-<aside class="navigation">
-  <ol class="navigation-list">
-    <li class="navigation-item">
-      <a href="#ae-slide1" class="navigation-button move">Zu Bild 1</a>
+<section class="carousel" aria-label="Gallerie">
+  <ol class="carousel__viewport">
+    <li
+      id="ae-slide1"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/01_strbaum.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide4" class="carousel__prev move-ae">Go to last slide</a>
+      <a href="#ae-slide2" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">
+        Strukturbaum erschliesst alle Datenstrukturen
+      </div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide2" class="navigation-button move">Zu Bild 2</a>
+    <li
+      id="ae-slide2"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/02_strbaum_angemeldet.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide1" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide3" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">
+        angemeldete Benutzer mit entsprechenden Rechten sehen mehr
+      </div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide3" class="navigation-button move">Zu Bild 3</a>
+    <li
+      id="ae-slide3"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/03_suchen.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide2" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide4" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">
+        Art, Lebensraum oder Eigenschaften-Sammlung suchen
+      </div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide4" class="navigation-button move">Zu Bild 4</a>
+    <li
+      id="ae-slide4"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/04_strbaum.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide3" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide5" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">
+        Der Strukturbaum baut die Taxonomien dynamisch aus den Daten auf
+      </div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide5" class="navigation-button move">Zu Bild 5</a>
+    <li
+      id="ae-slide5"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/05_taxonomie.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide4" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide6" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Taxonomie anzeigen...</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide6" class="navigation-button move">Zu Bild 6</a>
+    <li
+      id="ae-slide6"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/06_synonyme.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide5" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide7" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">
+        ...inklusive Synonymen und ihren Eigenschaften
+      </div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide7" class="navigation-button move">Zu Bild 7</a>
+    <li
+      id="ae-slide7"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/07_tax_bearbeiten.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide6" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide8" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Taxonomie bearbeiten</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide8" class="navigation-button move">Zu Bild 8</a>
+    <li
+      id="ae-slide8"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/08_tax_links.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide7" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide9" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Links zu externen Informationen</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide9" class="navigation-button move">Zu Bild 9</a>
+    <li
+      id="ae-slide9"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/09_es_zeigen.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide8" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide10" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Eigenschaften-Sammlung zeigen...</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide10" class="navigation-button move">Zu Bild 10</a>
+    <li
+      id="ae-slide10"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/10_es_zeigen.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide9" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide11" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">...inklusive ihren Eigenschaften</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide11" class="navigation-button move">Zu Bild 11</a>
+    <li
+      id="ae-slide11"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/11_export.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide10" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide12" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Export: Taxonomie(n) wählen</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide12" class="navigation-button move">Zu Bild 12</a>
+    <li
+      id="ae-slide12"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/12_export_filter.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide11" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide13" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Export: Daten filtern</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide13" class="navigation-button move">Zu Bild 13</a>
+    <li
+      id="ae-slide13"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/13_export_felder.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide12" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide1" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Export: Felder wählen</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide14" class="navigation-button move">Zu Bild 14</a>
+    <li
+      id="ae-slide14"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/14_export.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide13" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide15" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Export: Datei speichern</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide15" class="navigation-button move">Zu Bild 15</a>
+    <li
+      id="ae-slide15"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/15_import.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide14" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide16" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Eigenschaften importieren</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide16" class="navigation-button move">Zu Bild 16</a>
+    <li
+      id="ae-slide16"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/16_organisationen.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide15" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide17" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">Organisationen geben Benutzern Rollen...</div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide17" class="navigation-button move">Zu Bild 17</a>
+    <li
+      id="ae-slide17"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/17_organisationen.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide16" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide18" class="carousel__next move-ae">nächstes</a>
+      <div class="carousel-title">
+        ...und sehen, für welche Taxonomien und Eigenschaften-Sammlungen sie
+        zuständig sind
+      </div>
     </li>
-    <li class="navigation-item">
-      <a href="#ae-slide18" class="navigation-button move">Zu Bild 18</a>
+    <li
+      id="ae-slide18"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/18_benutzer.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#ae-slide17" class="carousel__prev move-ae">voriges</a>
+      <a href="#ae-slide1" class="carousel__next move-ae">erstes</a>
+      <div class="carousel-title">
+        Benutzer mit Konto sehen, welche Eigenschaften-Sammlungen und Taxonomien
+        sie importiert haben
+      </div>
     </li>
   </ol>
-</aside>
+  <aside class="navigation">
+    <ol class="navigation-list">
+      <li class="navigation-item">
+        <a href="#ae-slide1" class="navigation-button move-ae">Zu Bild 1</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide2" class="navigation-button move-ae">Zu Bild 2</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide3" class="navigation-button move-ae">Zu Bild 3</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide4" class="navigation-button move-ae">Zu Bild 4</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide5" class="navigation-button move-ae">Zu Bild 5</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide6" class="navigation-button move-ae">Zu Bild 6</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide7" class="navigation-button move-ae">Zu Bild 7</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide8" class="navigation-button move-ae">Zu Bild 8</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide9" class="navigation-button move-ae">Zu Bild 9</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide10" class="navigation-button move-ae">Zu Bild 10</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide11" class="navigation-button move-ae">Zu Bild 11</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide12" class="navigation-button move-ae">Zu Bild 12</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide13" class="navigation-button move-ae">Zu Bild 13</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide14" class="navigation-button move-ae">Zu Bild 14</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide15" class="navigation-button move-ae">Zu Bild 15</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide16" class="navigation-button move-ae">Zu Bild 16</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide17" class="navigation-button move-ae">Zu Bild 17</a>
+      </li>
+      <li class="navigation-item">
+        <a href="#ae-slide18" class="navigation-button move-ae">Zu Bild 18</a>
+      </li>
+    </ol>
+  </aside>
+</section>
+
+<script>
+  // prevent the carousel from jumping to the top on click
+  // https://markus.oberlehner.net/blog/super-simple-progressively-enhanced-carousel-with-css-scroll-snap/
+  const els = document.querySelectorAll('.move-ae')
+  els.forEach((el) => {
+    el.addEventListener('click', (event) => {
+      const $slide = document.querySelector(event.target?.getAttribute('href'))
+      if (!$slide) return
+
+      if ($slide.scrollIntoViewIfNeeded) {
+        event.preventDefault()
+        $slide.scrollIntoViewIfNeeded()
+      } else if ($slide.scrollIntoView) {
+        event.preventDefault()
+        $slide.scrollIntoView()
+      }
+    })
+  })
+</script>
