@@ -36,6 +36,13 @@ const pathname = Astro.url.pathname
           >Kontakt</a
         >
       </div>
+      <div class="nav">
+        <a
+          href="/kontakt-astro/"
+          class:list={['nav-link', { active: pathname === '/kontakt-astro/' }]}
+          >Kontakt-astro</a
+        >
+      </div>
     </div>
   </nav>
   <div class="scroll-container">
