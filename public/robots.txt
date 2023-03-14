@@ -1,0 +1,2 @@
+User-agent: * Disallow: 
+Sitemap: https://www.gabriel-software.ch/sitemap-index.xml
