@@ -5,6 +5,7 @@ import AeCarousel from '../../components/Carousel/Ae.astro'
 import VermehrungCarousel from '../../components/Carousel/Vermehrung.astro'
 import KaplaCarousel from '../../components/Carousel/Kapla.astro'
 import IndikatorenCarousel from '../../components/Carousel/Indikatoren.astro'
+import MmCarousel from '../../components/Carousel/Mm.astro'
 import Scrollspy from './_Scrollspy.astro'
 ---
 
@@ -206,8 +207,8 @@ import Scrollspy from './_Scrollspy.astro'
             </li>
           </ul>
         </div>
-        <div class="carousel-container carousel-container-apflora">
-          <ApfloraCarousel />
+        <div class="carousel-container carousel-container-mm">
+          <MmCarousel />
         </div>
         <p>Im produktiven Einsatz seit 2015.</p>
         <p>
@@ -360,5 +361,8 @@ import Scrollspy from './_Scrollspy.astro'
   }
   .carousel-container-indikatoren {
     aspect-ratio: 1.7174 / 1;
+  }
+  .carousel-container-mm {
+    aspect-ratio: 2.051 / 1;
   }
 </style>

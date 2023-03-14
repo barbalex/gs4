@@ -110,7 +110,8 @@ import './styles.css'
   els.forEach((el) => {
     el.addEventListener('click', onClick)
   })
-  addEventListener('beforeunload', () => {
+  addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') return
     els.forEach((el) => {
       el.removeEventListener('click', onClick)
     })
