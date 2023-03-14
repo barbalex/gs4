@@ -25,18 +25,6 @@
 
 <style>
   .scrollspy {
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-  @media (min-width: 800px) {
-    .scrollspy {
-      position: sticky;
-      top: 15px;
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-  .scrollspy {
     background-color: transparent;
     border: 1px solid #d8d8d8;
     margin-bottom: 15px !important;
@@ -45,6 +33,12 @@
     border-radius: 5px;
     list-style: none;
     height: fit-content;
+  }
+  @media (min-width: 800px) {
+    .scrollspy {
+      position: sticky;
+      top: 15px;
+    }
   }
 
   .scrollspy-item {
