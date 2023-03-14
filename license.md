@@ -1,4 +1,4 @@
-Copyright (c) 2012, Alexander Gabriel
+Copyright (c) 2023, Alexander Gabriel
 
 Alle Rechte vorbehalten.
 
