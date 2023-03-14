@@ -152,13 +152,13 @@ li {
 
 .carousel-title {
   position: absolute;
-  top: 470px;
+  top: calc(100cqh - 110px);
   right: 0;
   left: 0;
   text-align: center;
   text-shadow: black 0 0 0.6rem, black 0 0 0.2rem;
   color: #fff;
-  font-size: 1.6em;
+  font-size: 1.4em;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -179,8 +179,8 @@ li {
 
 .navigation-button {
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   background-color: #145f00;
   background-clip: content-box;
   border: 0.2rem solid white;

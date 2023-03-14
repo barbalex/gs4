@@ -1,0 +1,152 @@
+---
+import './styles.css'
+---
+
+<section class="carousel" aria-label="Gallerie">
+  <ol class="carousel__viewport">
+    <li
+      id="vermehrung-slide1"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/vm_01.jpg')"
+    >
+      <div class="snapper"></div>
+      <a href="#vermehrung-slide4" class="carousel__prev move-vermehrung"
+        >letztes</a
+      >
+      <a href="#vermehrung-slide2" class="carousel__next move-vermehrung"
+        >nächstes</a
+      >
+      <div class="carousel-title">Home</div>
+    </li>
+    <li
+      id="vermehrung-slide2"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/vm_02.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#vermehrung-slide1" class="carousel__prev move-vermehrung"
+        >voriges</a
+      >
+      <a href="#vermehrung-slide3" class="carousel__next move-vermehrung"
+        >nächstes</a
+      >
+      <div class="carousel-title">Alle Objekte - Desktop</div>
+    </li>
+    <li
+      id="vermehrung-slide3"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/vm_03.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#vermehrung-slide2" class="carousel__prev move-vermehrung"
+        >voriges</a
+      >
+      <a href="#vermehrung-slide4" class="carousel__next move-vermehrung"
+        >nächstes</a
+      >
+      <div class="carousel-title">Alle Objekte - mobile</div>
+    </li>
+    <li
+      id="vermehrung-slide4"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/vm_04.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#vermehrung-slide3" class="carousel__prev move-vermehrung"
+        >voriges</a
+      >
+      <a href="#vermehrung-slide5" class="carousel__next move-vermehrung"
+        >nächstes</a
+      >
+      <div class="carousel-title">Art - Desktop</div>
+    </li>
+    <li
+      id="vermehrung-slide5"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/vm_05.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#vermehrung-slide4" class="carousel__prev move-vermehrung"
+        >voriges</a
+      >
+      <a href="#vermehrung-slide6" class="carousel__next move-vermehrung"
+        >nächstes</a
+      >
+      <div class="carousel-title">Art - mobile</div>
+    </li>
+    <li
+      id="vermehrung-slide6"
+      tabindex="0"
+      class="slide"
+      style="background-image: url('/vm_06.png')"
+    >
+      <div class="snapper"></div>
+      <a href="#vermehrung-slide5" class="carousel__prev move-vermehrung"
+        >voriges</a
+      >
+      <a href="#vermehrung-slide1" class="carousel__next move-vermehrung"
+        >erstes</a
+      >
+      <div class="carousel-title">Garten - Felder wählen</div>
+    </li>
+  </ol>
+  <aside class="navigation">
+    <ol class="navigation-list">
+      <li class="navigation-item">
+        <a href="#vermehrung-slide1" class="navigation-button move-vermehrung"
+          >Zu Bild 1</a
+        >
+      </li>
+      <li class="navigation-item">
+        <a href="#vermehrung-slide2" class="navigation-button move-vermehrung"
+          >Zu Bild 2</a
+        >
+      </li>
+      <li class="navigation-item">
+        <a href="#vermehrung-slide3" class="navigation-button move-vermehrung"
+          >Zu Bild 3</a
+        >
+      </li>
+      <li class="navigation-item">
+        <a href="#vermehrung-slide4" class="navigation-button move-vermehrung"
+          >Zu Bild 4</a
+        >
+      </li>
+      <li class="navigation-item">
+        <a href="#vermehrung-slide5" class="navigation-button move-vermehrung"
+          >Zu Bild 5</a
+        >
+      </li>
+      <li class="navigation-item">
+        <a href="#vermehrung-slide6" class="navigation-button move-vermehrung"
+          >Zu Bild 6</a
+        >
+      </li>
+    </ol>
+  </aside>
+</section>
+
+<script>
+  // prevent the carousel from jumping to the top on click
+  // https://markus.oberlehner.net/blog/super-simple-progressively-enhanced-carousel-with-css-scroll-snap/
+  const els = document.querySelectorAll('.move-vermehrung')
+  els.forEach((el) => {
+    el.addEventListener('click', (event) => {
+      const $slide = document.querySelector(event.target?.getAttribute('href'))
+      if (!$slide) return
+
+      if ($slide.scrollIntoViewIfNeeded) {
+        event.preventDefault()
+        $slide.scrollIntoViewIfNeeded()
+      } else if ($slide.scrollIntoView) {
+        event.preventDefault()
+        $slide.scrollIntoView()
+      }
+    })
+  })
+</script>

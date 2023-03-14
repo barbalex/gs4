@@ -2,6 +2,7 @@
 import Layout from '../../components/Layout/index.astro'
 import ApfloraCarousel from '../../components/Carousel/Apflora.astro'
 import AeCarousel from '../../components/Carousel/Ae.astro'
+import VermehrungCarousel from '../../components/Carousel/Vermehrung.astro'
 import Scrollspy from './_Scrollspy.astro'
 ---
 
@@ -28,7 +29,7 @@ import Scrollspy from './_Scrollspy.astro'
             massgeschneiderten Zugängen
           </li>
         </ul>
-        <div class="carousel-container-apflora">
+        <div class="carousel-container carousel-container-apflora">
           <ApfloraCarousel />
         </div>
         <p>Im produktiven Einsatz seit 2013.</p>
@@ -65,7 +66,7 @@ import Scrollspy from './_Scrollspy.astro'
           Absicht dahinter: Alle benötigten Daten können, sofern nicht schon
           enthalten, rasch ergänzt und für Auswertungen kombiniert werden.
         </p>
-        <div class="carousel-container-apflora">
+        <div class="carousel-container carousel-container-apflora">
           <AeCarousel />
         </div>
         <p>Im produktiven Einsatz seit 2013.</p>
@@ -92,8 +93,8 @@ import Scrollspy from './_Scrollspy.astro'
           jedem beliebigen Gerät arbeiten zu können.
         </p>
 
-        <div class="carousel-container-apflora">
-          <ApfloraCarousel />
+        <div class="carousel-container carousel-container-vermehrung">
+          <VermehrungCarousel />
         </div>
         <p>Im produktiven Einsatz seit 2020.</p>
         <p>
@@ -123,7 +124,7 @@ import Scrollspy from './_Scrollspy.astro'
             <li>beinahe null Unterhalt</li>
           </ul>
         </div>
-        <div class="carousel-container-apflora">
+        <div class="carousel-container carousel-container-apflora">
           <ApfloraCarousel />
         </div>
         <p>Im produktiven Einsatz seit 2016.</p>
@@ -174,7 +175,7 @@ import Scrollspy from './_Scrollspy.astro'
             <li>bisher null Unterhaltsbedarf</li>
           </ul>
         </div>
-        <div class="carousel-container-apflora">
+        <div class="carousel-container carousel-container-apflora">
           <ApfloraCarousel />
         </div>
         <p>Im produktiven Einsatz seit 2014.</p>
@@ -203,7 +204,7 @@ import Scrollspy from './_Scrollspy.astro'
             </li>
           </ul>
         </div>
-        <div class="carousel-container-apflora">
+        <div class="carousel-container carousel-container-apflora">
           <ApfloraCarousel />
         </div>
         <p>Im produktiven Einsatz seit 2015.</p>
@@ -341,9 +342,15 @@ import Scrollspy from './_Scrollspy.astro'
   .spacer {
     height: 60px;
   }
-  .carousel-container-apflora {
+  .carousel-container {
+    margin-top: 12px;
     width: 100cqw;
-    aspect-ratio: 1.6538 / 1;
     container-type: size;
+  }
+  .carousel-container-apflora {
+    aspect-ratio: 1.6538 / 1;
+  }
+  .carousel-container-vermehrung {
+    aspect-ratio: 1.14666 / 1;
   }
 </style>
