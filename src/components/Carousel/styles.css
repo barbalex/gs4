@@ -43,26 +43,26 @@
   }
 }
 
-* {
+.carousel-container * {
   box-sizing: border-box;
   scrollbar-color: transparent transparent; /* thumb and track color */
   scrollbar-width: 0px;
 }
 
-*::-webkit-scrollbar {
+.carousel-container *::-webkit-scrollbar {
   width: 0;
 }
 
-*::-webkit-scrollbar-track {
+.carousel-container *::-webkit-scrollbar-track {
   background: transparent;
 }
 
-*::-webkit-scrollbar-thumb {
+.carousel-container *::-webkit-scrollbar-thumb {
   background: transparent;
   border: none;
 }
 
-* {
+.carousel-container * {
   -ms-overflow-style: none;
 }
 
