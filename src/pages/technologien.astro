@@ -102,15 +102,7 @@ import Layout from '../components/Layout/index.astro'
         </ul>
       </section>
       <section>
-        <div
-          style={{
-            fontStyle: 'oblique',
-            fontSize: 16,
-            fontWeight: 600,
-            marginTop: 9,
-            color: 'grey',
-          }}
-        >
+        <div class="sprachen-lead">
           {'if ( ... ) then \u007B ... \u007D'}
         </div>
         <h1 style={{ marginTop: 3 }}>Programmiersprachen</h1>
@@ -400,5 +392,12 @@ import Layout from '../components/Layout/index.astro'
   }
   .icon {
     height: 30px;
+  }
+  .sprachen-lead {
+    font-style: oblique;
+    font-size: 16;
+    font-weight: 600;
+    margin-top: 9;
+    color: #145f00;
   }
 </style>

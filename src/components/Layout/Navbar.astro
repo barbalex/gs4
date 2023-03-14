@@ -36,13 +36,6 @@ const pathname = Astro.url.pathname
           >Kontakt</a
         >
       </div>
-      <div class="nav">
-        <a
-          href="/kontakt-astro/"
-          class:list={['nav-link', { active: pathname === '/kontakt-astro/' }]}
-          >Kontakt-astro</a
-        >
-      </div>
     </div>
   </nav>
   <div class="scroll-container">
@@ -107,5 +100,11 @@ const pathname = Astro.url.pathname
   .container {
     margin: 0 auto;
     max-width: 1170px;
+  }
+  a {
+    border-bottom: none !important;
+  }
+  a:hover {
+    border-bottom: none !important;
   }
 </style>
