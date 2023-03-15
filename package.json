@@ -25,7 +25,8 @@
     "astro-icon": "0.8.0",
     "astrojs-service-worker": "0.0.9",
     "leaflet": "1.9.3",
-    "vercel": "28.16.15"
+    "vercel": "28.16.15",
+    "vite-plugin-pwa": "0.14.4"
   },
   "devDependencies": {
     "copyfiles": "2.4.1",

@@ -22,7 +22,7 @@ export default defineConfig({
       //   globPatterns: [
       //     '**/*.{js,jsx,ts,tsx,css,html,ico,png,jpg,svg,webp,json,woff2,woff}',
       //   ],
-      //   maximumFileSizeToCacheInBytes: 1000000000,
+      //   navigateFallback: '/404',
       // },
       // registerType: 'autoUpdate',
       manifest: {
@@ -46,14 +46,19 @@ export default defineConfig({
             purpose: 'maskable any',
           },
           {
-            src: '/favicon_192.png',
+            src: '/favicon_192.webp',
             sizes: '192x192',
+            type: 'image/webp',
+          },
+          {
+            src: '/favicon_512.webp',
+            sizes: '512x512',
             type: 'image/webp',
           },
           {
             src: '/favicon_512.png',
             sizes: '512x512',
-            type: 'image/webp',
+            type: 'image/png',
           },
         ],
         orientation: 'portrait',

@@ -1,4 +1,5 @@
 ---
+import { pwaInfo } from 'virtual:pwa-info'
 import Navbar from './Navbar.astro'
 ---
 
@@ -17,8 +18,9 @@ import Navbar from './Navbar.astro'
     <link rel="apple-touch-icon" href="/favicon_192.webp" sizes="192x192" />
     <link rel="mask-icon" href="/favicon.svg" color="#145f00" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="manifest" href="manifest.webmanifest" />
+    <!-- <link rel="manifest" href="manifest.webmanifest" /> -->
     <title>Gabriel Software</title>
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body>
     <Navbar>
