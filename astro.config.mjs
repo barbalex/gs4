@@ -1,10 +1,11 @@
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from 'astro/config'
+import sitemap from '@astrojs/sitemap'
+import serviceWorker from 'astrojs-service-worker'
 
-import prefetch from "@astrojs/prefetch";
+import prefetch from '@astrojs/prefetch'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gabriel-software.ch',
-  integrations: [sitemap(), prefetch()]
-});
+  integrations: [serviceWorker(), sitemap(), prefetch()],
+})
