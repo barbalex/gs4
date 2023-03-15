@@ -40,9 +40,10 @@ export default defineConfig({
         display: 'minimal-ui',
         icons: [
           {
-            src: '/favicon.webp',
-            sizes: '48x48',
-            type: 'image/webp',
+            src: '/favicon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'maskable any',
           },
           // {
           //   src: '/maskable_icon_x512.png',
