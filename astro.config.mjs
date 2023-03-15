@@ -29,11 +29,6 @@ export default defineConfig({
         scope: '.',
         name: 'gabriel-software.ch',
         short_name: 'gabriel-software',
-        // https://web.dev/add-manifest/:
-        // Your start_url should direct the user straight into your app,
-        // rather than a product landing page.
-        // Think about what the user will want to do once they open your app,
-        // and place them there
         start_url: '/',
         background_color: '#145f00',
         theme_color: '#145f00',
@@ -61,6 +56,7 @@ export default defineConfig({
             type: 'image/png',
           },
         ],
+        categories: ['software', 'development', 'nature'],
         orientation: 'portrait',
         description: 'Apps für den Naturschutz',
       },
