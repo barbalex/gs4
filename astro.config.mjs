@@ -7,5 +7,13 @@ import prefetch from '@astrojs/prefetch'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gabriel-software.ch',
-  integrations: [serviceWorker(), sitemap(), prefetch()],
+  integrations: [
+    serviceWorker({
+      workbox: {
+        include: ['public/**/*.{js,css,html,ico,png,jpg,svg,webp}'],
+      },
+    }),
+    sitemap(),
+    prefetch(),
+  ],
 })
