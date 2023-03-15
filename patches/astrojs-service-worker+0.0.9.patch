@@ -1,0 +1,16 @@
+diff --git a/node_modules/astrojs-service-worker/service-worker.js.js b/node_modules/astrojs-service-worker/service-worker.js.js
+index 09c9876..96112d4 100644
+--- a/node_modules/astrojs-service-worker/service-worker.js.js
++++ b/node_modules/astrojs-service-worker/service-worker.js.js
+@@ -1,8 +1,10 @@
+ import { readFile } from "node:fs/promises";
++import * as url from 'url';
++
+ export async function get() {
+     const sw = await readFile(
+     // eslint-disable-next-line no-undef
+-    new URL("./noop-service-worker.js", import.meta.url).pathname, { encoding: "utf8" });
++    url.fileURLToPath(import.meta.url), { encoding: "utf8" });
+     return {
+         body: sw,
+     };
