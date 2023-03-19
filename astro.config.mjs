@@ -30,8 +30,8 @@ export default defineConfig({
         name: 'gabriel-software.ch',
         short_name: 'gabriel-software',
         start_url: '/',
-        background_color: '#145f00',
-        theme_color: '#145f00',
+        background_color: 'white',
+        theme_color: '#114f01',
         display: 'minimal-ui',
         icons: [
           {
