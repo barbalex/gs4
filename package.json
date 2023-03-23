@@ -11,7 +11,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "vercel build && vercel deploy --prebuilt",
-    "deploy_productive": "vercel build --prod && vercel deploy --prebuilt --prod"
+    "deploy_productive": "vercel build --prod && vercel deploy --prebuilt --prod",
+    "test": "playwright test",
+    "test-report": "playwright show-report"
   },
   "dependencies": {
     "astro": "2.1.4",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@astrojs/prefetch": "0.2.1",
     "@astrojs/sitemap": "1.2.1",
+    "@playwright/test": "^1.32.0",
     "@types/leaflet": "1.9.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
