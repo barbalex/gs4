@@ -7,6 +7,12 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Gabriel Software/)
 })
 
+test('Home link', async ({ page }) => {
+  await page.goto(`/leitbild`)
+  await page.getByRole('link', { name: 'Gabriel Software' }).click()
+  await expect(page).toHaveURL('/')
+})
+
 test('Leitbild link', async ({ page }) => {
   await page.goto(`/`)
   await page.getByRole('link', { name: 'Leitbild' }).click()
@@ -35,8 +41,8 @@ test('Projekte sidenav mediterranean-migration', async ({ page }) => {
   await page.goto(`/projekte`)
   await page.getByRole('link', { name: 'mediterranean- migration.com' }).click()
   await expect(
-    page.getByRole('link', { name: 'mediterranean-migration.com' }),
-  ).toBeVisible()
+    page.getByRole('heading', { name: 'mediterranean-migration.com' }),
+  ).toBeInViewport()
 })
 
 test('Projekte sidenav arteigenschaften', async ({ page }) => {
@@ -44,13 +50,15 @@ test('Projekte sidenav arteigenschaften', async ({ page }) => {
   await page.getByRole('link', { name: 'arteigenschaften.ch' }).click()
   await expect(
     page.getByRole('heading', { name: 'arteigenschaften.ch' }),
-  ).toBeVisible()
+  ).toBeInViewport()
 })
 
 test('Projekte sidenav apflora', async ({ page }) => {
   await page.goto(`/projekte`)
   await page.getByRole('link', { name: 'apflora.ch' }).click()
-  await expect(page.getByRole('heading', { name: 'apflora.ch' })).toBeVisible()
+  await expect(
+    page.getByRole('heading', { name: 'apflora.ch' }),
+  ).toBeInViewport()
 })
 
 test('Projekte sidenav AWEL-Indikatoren', async ({ page }) => {
@@ -58,7 +66,7 @@ test('Projekte sidenav AWEL-Indikatoren', async ({ page }) => {
   await page.getByRole('link', { name: 'AWEL-Indikatoren' }).click()
   await expect(
     page.getByRole('heading', { name: 'AWEL-Indikatoren' }),
-  ).toBeVisible()
+  ).toBeInViewport()
 })
 
 test('Projekte sidenav vermehrung', async ({ page }) => {
@@ -66,7 +74,7 @@ test('Projekte sidenav vermehrung', async ({ page }) => {
   await page.getByRole('link', { name: 'vermehrung.ch' }).click()
   await expect(
     page.getByRole('heading', { name: 'vermehrung.ch' }),
-  ).toBeVisible()
+  ).toBeInViewport()
 })
 
 test('Projekte sidenav AWEL-Personal', async ({ page }) => {
@@ -74,11 +82,11 @@ test('Projekte sidenav AWEL-Personal', async ({ page }) => {
   await page.getByRole('link', { name: 'AWEL-Personal' }).click()
   await expect(
     page.getByRole('heading', { name: 'AWEL-Personal' }),
-  ).toBeVisible()
+  ).toBeInViewport()
 })
 
 test('Projekte sidenav Kapla', async ({ page }) => {
   await page.goto(`/projekte`)
   await page.getByRole('link', { name: 'Kapla' }).click()
-  await expect(page.getByRole('heading', { name: 'Kapla' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Kapla' })).toBeInViewport()
 })
