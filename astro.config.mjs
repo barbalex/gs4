@@ -11,7 +11,9 @@ export default defineConfig({
   integrations: [
     serviceWorker({
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,jpg,svg,webp}'],
+        globPatterns: [
+          '**/*.{js,css,html,ico,png,jpg,svg,webp,svg,json,woff2,woff}',
+        ],
       },
     }),
     sitemap(),
