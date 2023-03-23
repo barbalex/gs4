@@ -12,7 +12,7 @@
     "astro": "astro",
     "deploy": "vercel build && vercel deploy --prebuilt",
     "deploy_productive": "vercel build --prod && vercel deploy --prebuilt --prod",
-    "test": "playwright test",
+    "test": "cross-env NODE_ENV=test playwright test",
     "test-report": "playwright show-report"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "@vite-pwa/astro": "0.0.5",
     "astrojs-service-worker": "1.0.0",
     "copyfiles": "2.4.1",
+    "cross-env": "^7.0.3",
     "prettier": "2.8.6",
     "vercel": "28.17.0",
     "vite-plugin-pwa": "0.14.4"
