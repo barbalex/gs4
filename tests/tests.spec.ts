@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test'
 
-const baseUrl = '/' // one of: 'http://localhost:3000', 'https://gabriel-software.ch'
-
 test('has title', async ({ page }) => {
   await page.goto(`/`)
 
