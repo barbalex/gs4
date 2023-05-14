@@ -1,183 +1,60 @@
 ---
+import 'swiper/css'
+import 'swiper/css/navigation'
 import './styles.css'
 ---
 
-<section class="carousel" aria-label="Gallerie">
-  <ol class="carousel__viewport">
-    <li
-      id="vermehrung-slide1"
-      tabindex="0"
-      class="slide"
-      style="background-image: url('/vm_01.webp')"
-    >
-      <div class="snapper"></div>
-      <a
-        href="#vermehrung-slide4"
-        class="carousel__prev move-vermehrung"
-        title="letztes">letztes</a
-      >
-      <a
-        href="#vermehrung-slide2"
-        class="carousel__next move-vermehrung"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Home</div>
-    </li>
-    <li
-      id="vermehrung-slide2"
-      tabindex="0"
-      class="slide"
-      style="background-image: url('/vm_02.webp')"
-    >
-      <div class="snapper"></div>
-      <a
-        href="#vermehrung-slide1"
-        class="carousel__prev move-vermehrung"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#vermehrung-slide3"
-        class="carousel__next move-vermehrung"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Alle Objekte - Desktop</div>
-    </li>
-    <li
-      id="vermehrung-slide3"
-      tabindex="0"
-      class="slide"
-      style="background-image: url('/vm_03.webp')"
-    >
-      <div class="snapper"></div>
-      <a
-        href="#vermehrung-slide2"
-        class="carousel__prev move-vermehrung"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#vermehrung-slide4"
-        class="carousel__next move-vermehrung"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Alle Objekte - mobile</div>
-    </li>
-    <li
-      id="vermehrung-slide4"
-      tabindex="0"
-      class="slide"
-      style="background-image: url('/vm_04.webp')"
-    >
-      <div class="snapper"></div>
-      <a
-        href="#vermehrung-slide3"
-        class="carousel__prev move-vermehrung"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#vermehrung-slide5"
-        class="carousel__next move-vermehrung"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Art - Desktop</div>
-    </li>
-    <li
-      id="vermehrung-slide5"
-      tabindex="0"
-      class="slide"
-      style="background-image: url('/vm_05.webp')"
-    >
-      <div class="snapper"></div>
-      <a
-        href="#vermehrung-slide4"
-        class="carousel__prev move-vermehrung"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#vermehrung-slide6"
-        class="carousel__next move-vermehrung"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Art - mobile</div>
-    </li>
-    <li
-      id="vermehrung-slide6"
-      tabindex="0"
-      class="slide"
-      style="background-image: url('/vm_06.webp')"
-    >
-      <div class="snapper"></div>
-      <a
-        href="#vermehrung-slide5"
-        class="carousel__prev move-vermehrung"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#vermehrung-slide1"
-        class="carousel__next move-vermehrung"
-        title="erstes">erstes</a
-      >
-      <div class="carousel-title">Garten - Felder wählen</div>
-    </li>
-  </ol>
-  <aside class="navigation">
-    <ol class="navigation-list">
-      <li class="navigation-item" title="Zu Bild 1">
-        <a href="#vermehrung-slide1" class="navigation-button move-vermehrung"
-          >Zu Bild 1</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 2">
-        <a href="#vermehrung-slide2" class="navigation-button move-vermehrung"
-          >Zu Bild 2</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 3">
-        <a href="#vermehrung-slide3" class="navigation-button move-vermehrung"
-          >Zu Bild 3</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 4">
-        <a href="#vermehrung-slide4" class="navigation-button move-vermehrung"
-          >Zu Bild 4</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 5">
-        <a href="#vermehrung-slide5" class="navigation-button move-vermehrung"
-          >Zu Bild 5</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 6">
-        <a href="#vermehrung-slide6" class="navigation-button move-vermehrung"
-          >Zu Bild 6</a
-        >
-      </li>
-    </ol>
-  </aside>
-</section>
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" style="background-image: url('/vm_01.webp')">
+      Home
+    </div>
+    <div class="swiper-slide" style="background-image: url('/vm_02.webp')">
+      Alle Objekte - Desktop
+    </div>
+    <div class="swiper-slide" style="background-image: url('/vm_03.webp')">
+      Alle Objekte - mobile
+    </div>
+    <div class="swiper-slide" style="background-image: url('/vm_04.webp')">
+      Art - Desktop
+    </div>
+    <div class="swiper-slide" style="background-image: url('/vm_05.webp')">
+      Art - mobile
+    </div>
+    <div class="swiper-slide" style="background-image: url('/vm_06.webp')">
+      Garten - Felder wählen
+    </div>
+  </div>
+  <div class="swiper-button swiper-button-next"></div>
+  <div class="swiper-button swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
 
 <script>
-  const onClick = (event) => {
-    const $slide = document.querySelector(event.target?.getAttribute('href'))
-    if (!$slide) return
-
-    if ($slide.scrollIntoViewIfNeeded) {
-      event.preventDefault()
-      $slide.scrollIntoViewIfNeeded()
-    } else if ($slide.scrollIntoView) {
-      event.preventDefault()
-      $slide.scrollIntoView()
-    }
-  }
-  // prevent the carousel from jumping to the top on click
-  // https://markus.oberlehner.net/blog/super-simple-progressively-enhanced-carousel-with-css-scroll-snap/
-  const els = document.querySelectorAll('.move-vermehrung')
-  els.forEach((el) => {
-    el.addEventListener('click', onClick)
-  })
-  addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') return
-    els.forEach((el) => {
-      el.removeEventListener('click', onClick)
-    })
+  import Swiper from 'swiper/bundle'
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: true,
+    },
   })
 </script>
+
+<style>
+  .swiper {
+    width: 930px;
+    height: 801px;
+  }
+  .swiper-slide {
+    line-height: 1543px;
+  }
+</style>
