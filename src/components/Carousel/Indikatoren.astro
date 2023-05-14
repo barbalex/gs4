@@ -1,185 +1,77 @@
 ---
-import './styles.css'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import './stylesSwiper.css'
 ---
 
-<section class="carousel" aria-label="Gallerie">
-  <ol class="carousel__viewport">
-    <li
-      id="indikatoren-slide1"
-      tabindex="0"
-      class="slide"
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div
+      class="swiper-slide"
       style="background-image: url('/ai_01_hauptmenu.webp')"
     >
-      <div class="snapper"></div>
-      <a
-        href="#indikatoren-slide4"
-        class="carousel__prev move-indikatoren"
-        title="letztes">letztes</a
-      >
-      <a
-        href="#indikatoren-slide2"
-        class="carousel__next move-indikatoren"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Hauptmenü</div>
-    </li>
-    <li
-      id="indikatoren-slide2"
-      tabindex="0"
-      class="slide"
+      Hauptmenü
+    </div>
+    <div
+      class="swiper-slide"
       style="background-image: url('/ai_02_indikatoren.webp')"
     >
-      <div class="snapper"></div>
-      <a
-        href="#indikatoren-slide1"
-        class="carousel__prev move-indikatoren"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#indikatoren-slide3"
-        class="carousel__next move-indikatoren"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Indikatoren erfassen</div>
-    </li>
-    <li
-      id="indikatoren-slide3"
-      tabindex="0"
-      class="slide"
+      Indikatoren erfassen
+    </div>
+    <div
+      class="swiper-slide"
       style="background-image: url('/ai_03_aufgaben.webp')"
     >
-      <div class="snapper"></div>
-      <a
-        href="#indikatoren-slide2"
-        class="carousel__prev move-indikatoren"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#indikatoren-slide4"
-        class="carousel__next move-indikatoren"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Aufgaben erfassen</div>
-    </li>
-    <li
-      id="indikatoren-slide4"
-      tabindex="0"
-      class="slide"
+      Aufgaben erfassen
+    </div>
+    <div
+      class="swiper-slide"
       style="background-image: url('/ai_04_projekte.webp')"
     >
-      <div class="snapper"></div>
-      <a
-        href="#indikatoren-slide3"
-        class="carousel__prev move-indikatoren"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#indikatoren-slide5"
-        class="carousel__next move-indikatoren"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">Projekte erfassen</div>
-    </li>
-    <li
-      id="indikatoren-slide5"
-      tabindex="0"
-      class="slide"
+      Projekte erfassen
+    </div>
+    <div
+      class="swiper-slide"
       style="background-image: url('/ai_05_drucken.webp')"
     >
-      <div class="snapper"></div>
-      <a
-        href="#indikatoren-slide4"
-        class="carousel__prev move-indikatoren"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#indikatoren-slide6"
-        class="carousel__next move-indikatoren"
-        title="nächstes">nächstes</a
-      >
-      <div class="carousel-title">
-        Indikatoren nach Organisationseinheit auflisten
-      </div>
-    </li>
-    <li
-      id="indikatoren-slide6"
-      tabindex="0"
-      class="slide"
+      Indikatoren nach Organisationseinheit auflisten
+    </div>
+    <div
+      class="swiper-slide"
       style="background-image: url('/ai_06_administration.webp')"
     >
-      <div class="snapper"></div>
-      <a
-        href="#indikatoren-slide5"
-        class="carousel__prev move-indikatoren"
-        title="voriges">voriges</a
-      >
-      <a
-        href="#indikatoren-slide1"
-        class="carousel__next move-indikatoren"
-        title="erstes">erstes</a
-      >
-      <div class="carousel-title">...und mehr</div>
-    </li>
-  </ol>
-  <aside class="navigation">
-    <ol class="navigation-list">
-      <li class="navigation-item" title="Zu Bild 1">
-        <a href="#indikatoren-slide1" class="navigation-button move-indikatoren"
-          >Zu Bild 1</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 2">
-        <a href="#indikatoren-slide2" class="navigation-button move-indikatoren"
-          >Zu Bild 2</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 3">
-        <a href="#indikatoren-slide3" class="navigation-button move-indikatoren"
-          >Zu Bild 3</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 4">
-        <a href="#indikatoren-slide4" class="navigation-button move-indikatoren"
-          >Zu Bild 4</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 5">
-        <a href="#indikatoren-slide5" class="navigation-button move-indikatoren"
-          >Zu Bild 5</a
-        >
-      </li>
-      <li class="navigation-item" title="Zu Bild 6">
-        <a href="#indikatoren-slide6" class="navigation-button move-indikatoren"
-          >Zu Bild 6</a
-        >
-      </li>
-    </ol>
-  </aside>
-</section>
+      ...und mehr
+    </div>
+  </div>
+  <div class="swiper-button swiper-button-next"></div>
+  <div class="swiper-button swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
 
 <script>
-  const onClick = (event) => {
-    const $slide = document.querySelector(event.target?.getAttribute('href'))
-    if (!$slide) return
-
-    if ($slide.scrollIntoViewIfNeeded) {
-      event.preventDefault()
-      $slide.scrollIntoViewIfNeeded()
-    } else if ($slide.scrollIntoView) {
-      event.preventDefault()
-      $slide.scrollIntoView()
-    }
-  }
-  // prevent the carousel from jumping to the top on click
-  // https://markus.oberlehner.net/blog/super-simple-progressively-enhanced-carousel-with-css-scroll-snap/
-  const els = document.querySelectorAll('.move-indikatoren')
-  els.forEach((el) => {
-    el.addEventListener('click', onClick)
-  })
-  addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') return
-    els.forEach((el) => {
-      el.removeEventListener('click', onClick)
-    })
+  import Swiper from 'swiper/bundle'
+  const swiper = new Swiper('.swiper', {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: true,
+    },
   })
 </script>
+
+<style>
+  .swiper {
+    width: 930px;
+    height: 552px;
+  }
+  .swiper-slide {
+    line-height: 1040px;
+  }
+</style>
