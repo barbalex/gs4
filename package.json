@@ -18,7 +18,8 @@
   "dependencies": {
     "astro": "2.4.5",
     "astro-icon": "0.8.0",
-    "leaflet": "1.9.3"
+    "leaflet": "1.9.3",
+    "swiper": "^9.3.1"
   },
   "devDependencies": {
     "@astrojs/prefetch": "0.2.1",
