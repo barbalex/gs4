@@ -12,6 +12,7 @@
     "astro": "astro",
     "deploy": "vercel build && vercel deploy --prebuilt",
     "deploy_productive": "vercel build --prod && vercel deploy --prebuilt --prod",
+    "deploy_only": "vercel deploy --prebuilt --prod",
     "test": "cross-env NODE_ENV=dev playwright test",
     "test-report": "playwright show-report"
   },
