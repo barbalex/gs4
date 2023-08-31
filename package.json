@@ -17,24 +17,24 @@
     "test-report": "playwright show-report"
   },
   "dependencies": {
-    "astro": "2.10.9",
+    "astro": "3.0.4",
     "astro-icon": "0.8.1",
     "leaflet": "1.9.4",
     "swiper": "10.2.0"
   },
   "devDependencies": {
-    "@astrojs/prefetch": "0.3.0",
-    "@astrojs/sitemap": "2.0.2",
-    "@playwright/test": "1.37.0",
-    "@types/leaflet": "1.9.3",
-    "@types/react": "18.2.20",
+    "@astrojs/prefetch": "0.4.0",
+    "@astrojs/sitemap": "3.0.0",
+    "@playwright/test": "1.37.1",
+    "@types/leaflet": "1.9.4",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "@vite-pwa/astro": "0.1.1",
-    "astrojs-service-worker": "1.0.0",
+    "astrojs-service-worker": "1.1.0",
     "copyfiles": "2.4.1",
     "cross-env": "7.0.3",
-    "prettier": "3.0.2",
-    "vercel": "31.4.0",
+    "prettier": "3.0.3",
+    "vercel": "32.1.0",
     "vite-plugin-pwa": "0.16.4"
   },
   "license": "MIT",
