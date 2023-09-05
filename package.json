@@ -17,7 +17,7 @@
     "test-report": "playwright show-report"
   },
   "dependencies": {
-    "astro": "3.0.4",
+    "astro": "3.0.8",
     "astro-icon": "0.8.1",
     "leaflet": "1.9.4",
     "swiper": "10.2.0"
@@ -29,7 +29,7 @@
     "@types/leaflet": "1.9.4",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "@vite-pwa/astro": "0.1.1",
+    "@vite-pwa/astro": "0.1.2",
     "astrojs-service-worker": "1.1.0",
     "copyfiles": "2.4.1",
     "cross-env": "7.0.3",
