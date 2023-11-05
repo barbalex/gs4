@@ -17,14 +17,14 @@
     "test-report": "playwright show-report"
   },
   "dependencies": {
-    "astro": "3.4.0",
+    "astro": "3.4.3",
     "astro-icon": "0.8.1",
     "leaflet": "1.9.4",
     "swiper": "11.0.3"
   },
   "devDependencies": {
     "@astrojs/prefetch": "0.4.1",
-    "@astrojs/sitemap": "3.0.2",
+    "@astrojs/sitemap": "3.0.3",
     "@playwright/test": "1.39.0",
     "@types/leaflet": "1.9.7",
     "@vite-pwa/astro": "0.1.4",
@@ -33,7 +33,7 @@
     "cross-env": "7.0.3",
     "prettier": "3.0.3",
     "vercel": "32.5.0",
-    "vite-plugin-pwa": "0.16.6"
+    "vite-plugin-pwa": "0.16.7"
   },
   "license": "MIT",
   "repository": {
