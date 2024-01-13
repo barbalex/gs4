@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import serviceWorker from 'astrojs-service-worker'
 import AstroPWA from '@vite-pwa/astro'
+import icon from 'astro-icon'
 
 import prefetch from '@astrojs/prefetch'
 
@@ -9,6 +10,7 @@ import prefetch from '@astrojs/prefetch'
 export default defineConfig({
   site: 'https://gabriel-software.ch',
   integrations: [
+    icon(),
     serviceWorker({
       workbox: {
         globPatterns: [

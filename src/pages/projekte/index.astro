@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 
 import Layout from '../../components/Layout/index.astro'
 import ApfloraCarousel from '../../components/Carousel/Apflora.astro'
@@ -84,7 +84,7 @@ import Scrollspy from './_Scrollspy.astro'
         </p>
       </section>
       <section id="vermehrung">
-        <Icon pack="fa-solid" name="seedling" class="icon" />
+        <Icon name="fa-solid:seedling" class="icon" />
         <h2>vermehrung.ch</h2>
         <h3>Bedrohte Pflanzen vermehren</h3>
         <ul>
@@ -345,8 +345,9 @@ import Scrollspy from './_Scrollspy.astro'
   .carousel-container-mm {
     aspect-ratio: 2.051 / 1;
   }
-  [astro-icon] {
+  [data-icon] {
     color: #006f00;
     height: 51px;
+    width: 51px;
   }
 </style>

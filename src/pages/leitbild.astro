@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 import Layout from '../components/Layout/index.astro'
 ---
 
@@ -8,7 +8,7 @@ import Layout from '../components/Layout/index.astro'
     <p class="lead">Ich richte mich nach diesen Leitlinien:</p>
     <div class="content">
       <section>
-        <Icon pack="fa-regular" name="question-circle" class="icon" />
+        <Icon name="fa-regular:question-circle" class="icon" />
         <h1>Verstehen, wie Sie arbeiten</h1>
         <p>
           Je mehr ich Ihre Arbeit verstehe,
@@ -24,7 +24,7 @@ import Layout from '../components/Layout/index.astro'
         </p>
       </section>
       <section>
-        <Icon pack="ic" name="baseline-gps-fixed" class="icon" />
+        <Icon name="ic:baseline-gps-fixed" class="icon" />
         <h1>Sinn suchen</h1>
         <p>
           Menschen gewöhnen sich erstaunlich gut an Inkonsistenzen. Oft leidet
@@ -33,7 +33,7 @@ import Layout from '../components/Layout/index.astro'
         <p>Software versteht nur Logik.</p>
       </section>
       <section>
-        <Icon pack="fa-regular" name="check-circle" class="icon" />
+        <Icon name="fa-regular:check-circle" class="icon" />
         <h1>
           So einfach wie möglich,
           <br />
@@ -47,7 +47,7 @@ import Layout from '../components/Layout/index.astro'
         </p>
       </section>
       <section>
-        <Icon pack="fa" name="wrench" class="icon" />
+        <Icon name="fa:wrench" class="icon" />
         <h1>Geeignete Technologie wählen</h1>
         <p>
           Wer einen Hammer hat, ist verleitet, in allem einen Nagel zu sehen.
@@ -60,7 +60,7 @@ import Layout from '../components/Layout/index.astro'
         </p>
       </section>
       <section>
-        <Icon pack="fa-solid" name="crown" class="icon" />
+        <Icon name="fa-solid:crown" class="icon" />
         <h1>Der Kunde ist König</h1>
         <p>
           Damit Sie zufrieden sind, braucht es mehr als eine gute Anwendung. Ich
@@ -75,7 +75,7 @@ import Layout from '../components/Layout/index.astro'
         </ul>
       </section>
       <section>
-        <Icon pack="fa-solid" name="retweet" class="icon" />
+        <Icon name="fa-solid:retweet" class="icon" />
         <h1>Ich bin austauschbar</h1>
         <p>
           {`Ich arbeite 100% `}
@@ -176,6 +176,7 @@ import Layout from '../components/Layout/index.astro'
   }
   .icon {
     height: 40px;
+    width: 40px;
   }
   .spacer {
     height: 40px;

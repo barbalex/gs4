@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 import Layout from '../components/Layout/index.astro'
 ---
 
@@ -8,7 +8,7 @@ import Layout from '../components/Layout/index.astro'
     <p class="lead">Mit diesen Technologien kenne ich mich aus:</p>
     <div class="content">
       <section>
-        <Icon pack="ic" name="baseline-architecture" class="icon" />
+        <Icon name="ic:baseline-architecture" class="app-icon" />
         <h1>App-Architekturen</h1>
         <ul>
           <li>
@@ -56,7 +56,7 @@ import Layout from '../components/Layout/index.astro'
             <p>Apps für mobile und desktop mit nativer Leistung</p>
           </li>
         </ul>
-        <Icon pack="fa-solid" name="database" class="icon" />
+        <Icon name="fa-solid:database" />
         <h1 style={{ marginTop: 5 }}>Datenbanken</h1>
         <ul>
           <li>
@@ -120,7 +120,7 @@ import Layout from '../components/Layout/index.astro'
         </ul>
       </section>
       <section>
-        <Icon pack="fa-solid" name="code" class="icon code-icon" />
+        <Icon name="fa-solid:code" class="code-icon" />
         <h1 style={{ marginTop: 3 }}>Programmiersprachen</h1>
         <ul>
           <li>
@@ -202,7 +202,7 @@ import Layout from '../components/Layout/index.astro'
         </ul>
       </section>
       <section>
-        <Icon pack="fa" name="wrench" class="icon" />
+        <Icon name="fa:wrench" />
         <h1 style={{ marginTop: 0 }}>
           Werkzeuge <small>(Auswahl)</small>
         </h1>
@@ -351,9 +351,9 @@ import Layout from '../components/Layout/index.astro'
             <p>Vertrauen ist gut, testen ist besser</p>
           </li>
         </ul>
-        <Icon pack="fa-brands" name="windows" class="icon" alt="Windows" />
-        <Icon pack="fa-brands" name="linux" class="icon" alt="Linux" />
-        <Icon pack="fa-brands" name="apple" class="icon" alt="MaxOs" />
+        <Icon name="fa-brands:windows" alt="Windows" />
+        <Icon name="fa-brands:linux" alt="Linux" />
+        <Icon name="fa-brands:apple" alt="MaxOs" />
         <h1>Betriebssysteme</h1>
         <ul>
           <li>
@@ -440,14 +440,23 @@ import Layout from '../components/Layout/index.astro'
     margin-top: 0;
     margin-bottom: -2px;
   }
-  .icon {
-    height: 30px;
-  }
   .spacer {
     height: 40px;
+  }
+  [data-icon] {
+    height: 30px;
+    width: 30px;
   }
   .code-icon {
     height: 27px;
     margin-top: 3px;
+  }
+
+  .app-icon {
+    height: 45px;
+    width: 45px;
+    margin-top: -15px;
+    position: relative;
+    top: 7px;
   }
 </style>

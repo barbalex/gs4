@@ -1,6 +1,6 @@
 ---
 import Layout from '../components/Layout/index.astro'
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 ---
 
 <Layout>
@@ -19,7 +19,7 @@ import { Icon } from 'astro-icon'
 
     <div class="content">
       <section class="section-web">
-        <Icon pack="bi" name="cloud" class="cloud-icon" />
+        <Icon name="bi:cloud" class="cloud-icon" />
         <h2>Web</h2>
         <ul>
           <li>{`Im Browser / als Progressive Web App`}</li>
@@ -28,7 +28,7 @@ import { Icon } from 'astro-icon'
         </ul>
       </section>
       <section class="section-desktop">
-        <Icon pack="ant-design" name="desktop-outlined" class="desktop-icon" />
+        <Icon name="ant-design:desktop-outlined" class="desktop-icon" />
         <h2>Desktop</h2>
         <ul>
           <li>Lokal installiert</li>
@@ -37,7 +37,7 @@ import { Icon } from 'astro-icon'
         </ul>
       </section>
       <section class="section-mobile">
-        <Icon pack="ant-design" name="mobile-outlined" class="mobile-icon" />
+        <Icon name="ant-design:mobile-outlined" class="mobile-icon" />
         <h2>Mobile</h2>
         <ul>
           <li>Im App-Store</li>
@@ -45,17 +45,9 @@ import { Icon } from 'astro-icon'
         </ul>
       </section>
       <section class="section-all">
-        <Icon pack="bi" name="cloud" class="all-cloud-icon" />
-        <Icon
-          pack="ant-design"
-          name="desktop-outlined"
-          class="all-desktop-icon"
-        />
-        <Icon
-          pack="ant-design"
-          name="mobile-outlined"
-          class="all-mobile-icon"
-        />
+        <Icon name="bi:cloud" class="all-cloud-icon" />
+        <Icon name="ant-design:desktop-outlined" class="all-desktop-icon" />
+        <Icon name="ant-design:mobile-outlined" class="all-mobile-icon" />
         <h2>Alle Geräte-Klassen</h2>
         <ul>
           <li>Basierend auf einer einzigen Code-Basis</li>
@@ -63,7 +55,7 @@ import { Icon } from 'astro-icon'
         </ul>
       </section>
       <section class="section-done">
-        <Icon pack="ic" name="round-done" class="done-icon" />
+        <Icon name="ic:round-done" class="done-icon" />
         <h2>Hohe Ansprüche</h2>
         <ul>
           <li>Live synchronisiert</li>
@@ -145,10 +137,12 @@ import { Icon } from 'astro-icon'
   .desktop-icon {
     min-height: 84px;
     max-height: 84px;
+    width: 84px;
   }
   .mobile-icon {
     min-height: 71px;
     max-height: 71px;
+    width: 71px;
     margin-left: -12px;
     padding-top: 7px;
     padding-bottom: 6px;
@@ -157,11 +151,13 @@ import { Icon } from 'astro-icon'
     padding-top: 5px;
     min-height: 84px;
     max-height: 84px;
+    width: 84px;
     margin-bottom: -5px;
   }
   .all-desktop-icon {
     min-height: 78px;
     max-height: 78px;
+    width: 78px;
     margin-left: -3px;
     padding-top: 5px;
     padding-bottom: 1px;
@@ -169,6 +165,7 @@ import { Icon } from 'astro-icon'
   .all-mobile-icon {
     min-height: 67px;
     max-height: 67px;
+    width: 67px;
     margin-bottom: 0;
     margin-left: -12px;
     padding-bottom: 7px;
@@ -177,6 +174,7 @@ import { Icon } from 'astro-icon'
   .done-icon {
     min-height: 91px;
     max-height: 91px;
+    width: 91px;
     margin-left: -5px;
     margin-bottom: -7px;
   }
