@@ -8,48 +8,6 @@ import Layout from '../components/Layout/index.astro'
     <p class="lead">Mit diesen Technologien kenne ich mich aus:</p>
     <div class="content">
       <section>
-        <Icon
-          name="ic:baseline-architecture"
-          class="app-icon"
-          aria-label="architecture"
-        />
-        <h1>App-Architekturen</h1>
-        <ul>
-          <li>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Progressive Web Apps
-            </a>
-            <p>
-              Web-Apps auf Augenhöhe mit nativen Apps, mit allen Vorteilen des
-              Webs
-            </p>
-          </li>
-          <li>
-            <a
-              href="https://www.electronjs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Electron
-            </a>{' '}
-            und{' '}
-            <a
-              href="https://tauri.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Tauri
-            </a>
-            <p>
-              JavaScript-Apps auf PC/Mac/Linux installieren. Mit Tauri bald auch
-              auf Android/iOS
-            </p>
-          </li>
-        </ul>
         <Icon name="fa-solid:database" aria-label="database" />
         <h1 style={{ marginTop: 5 }}>Datenbanken</h1>
         <ul>
@@ -333,6 +291,52 @@ import Layout from '../components/Layout/index.astro'
             <p>Vertrauen ist gut, testen ist besser</p>
           </li>
         </ul>
+      </section>
+        <section>
+          <Icon
+            name="ic:baseline-architecture"
+            class="app-icon"
+            aria-label="architecture"
+          />
+          <h1>App-Architekturen</h1>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Progressive Web Apps
+              </a>
+              <p>
+                Web-Apps auf Augenhöhe mit nativen Apps, mit allen Vorteilen des
+                Webs
+              </p>
+            </li>
+            <li>
+              <a
+                href="https://www.electronjs.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Electron
+              </a>{' '}
+              und{' '}
+              <a
+                href="https://tauri.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Tauri
+              </a>
+              <p>
+                JavaScript-Apps auf PC/Mac/Linux installieren. Mit Tauri bald auch
+                auf Android/iOS
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section>
         <Icon name="fa-brands:windows" title="Windows" aria-label="Windows" />
         <Icon name="fa-brands:linux" title="Linux" aria-label="Linux" />
         <Icon name="fa-brands:apple" title="MaxOs" aria-label="MaxOs" />
@@ -397,11 +401,12 @@ import Layout from '../components/Layout/index.astro'
   .content {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px 20px;
+    gap: 30px 30px;
   }
   section {
     flex-basis: 345px;
-    flex-grow: 1;
+    flex-grow: 0.5;
+    flex-shrink: 0.5;
   }
   h1 {
     margin-top: 5px !important;
