@@ -19,7 +19,7 @@ import { Icon } from 'astro-icon/components'
 
     <div class="content">
       <section class="section-web">
-        <Icon name="bi:cloud" class="cloud-icon" />
+        <Icon name="bi:cloud" class="cloud-icon" aria-label="cloud" />
         <h2>Web</h2>
         <ul>
           <li>{`Im Browser / als Progressive Web App`}</li>
@@ -28,7 +28,11 @@ import { Icon } from 'astro-icon/components'
         </ul>
       </section>
       <section class="section-desktop">
-        <Icon name="ant-design:desktop-outlined" class="desktop-icon" />
+        <Icon
+          name="ant-design:desktop-outlined"
+          class="desktop-icon"
+          aria-label="desktop"
+        />
         <h2>Desktop</h2>
         <ul>
           <li>Lokal installiert</li>
@@ -37,7 +41,11 @@ import { Icon } from 'astro-icon/components'
         </ul>
       </section>
       <section class="section-mobile">
-        <Icon name="ant-design:mobile-outlined" class="mobile-icon" />
+        <Icon
+          name="ant-design:mobile-outlined"
+          class="mobile-icon"
+          aria-label="mobile"
+        />
         <h2>Mobile</h2>
         <ul>
           <li>Im App-Store</li>
@@ -45,9 +53,17 @@ import { Icon } from 'astro-icon/components'
         </ul>
       </section>
       <section class="section-all">
-        <Icon name="bi:cloud" class="all-cloud-icon" />
-        <Icon name="ant-design:desktop-outlined" class="all-desktop-icon" />
-        <Icon name="ant-design:mobile-outlined" class="all-mobile-icon" />
+        <Icon name="bi:cloud" class="all-cloud-icon" aria-label="cloud" />
+        <Icon
+          name="ant-design:desktop-outlined"
+          class="all-desktop-icon"
+          aria-label="desktop"
+        />
+        <Icon
+          name="ant-design:mobile-outlined"
+          class="all-mobile-icon"
+          aria-label="mobile"
+        />
         <h2>Alle Geräte-Klassen</h2>
         <ul>
           <li>Basierend auf einer einzigen Code-Basis</li>
@@ -55,7 +71,7 @@ import { Icon } from 'astro-icon/components'
         </ul>
       </section>
       <section class="section-done">
-        <Icon name="ic:round-done" class="done-icon" />
+        <Icon name="ic:round-done" class="done-icon" aria-label="done" />
         <h2>Hohe Ansprüche</h2>
         <ul>
           <li>Live synchronisiert</li>

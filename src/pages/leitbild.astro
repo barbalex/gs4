@@ -8,7 +8,11 @@ import Layout from '../components/Layout/index.astro'
     <p class="lead">Ich richte mich nach diesen Leitlinien:</p>
     <div class="content">
       <section>
-        <Icon name="fa-regular:question-circle" class="icon" />
+        <Icon
+          name="fa-regular:question-circle"
+          class="icon"
+          aria-label="questionmark"
+        />
         <h1>Verstehen, wie Sie arbeiten</h1>
         <p>
           Je mehr ich Ihre Arbeit verstehe,
@@ -24,7 +28,11 @@ import Layout from '../components/Layout/index.astro'
         </p>
       </section>
       <section>
-        <Icon name="ic:baseline-gps-fixed" class="icon" />
+        <Icon
+          name="ic:baseline-gps-fixed"
+          class="icon"
+          aria-label="gps fixed"
+        />
         <h1>Sinn suchen</h1>
         <p>
           Menschen gewöhnen sich erstaunlich gut an Inkonsistenzen. Oft leidet
@@ -33,7 +41,11 @@ import Layout from '../components/Layout/index.astro'
         <p>Software versteht nur Logik.</p>
       </section>
       <section>
-        <Icon name="fa-regular:check-circle" class="icon" />
+        <Icon
+          name="fa-regular:check-circle"
+          class="icon"
+          aria-label="checkmark"
+        />
         <h1>
           So einfach wie möglich,
           <br />
@@ -47,7 +59,7 @@ import Layout from '../components/Layout/index.astro'
         </p>
       </section>
       <section>
-        <Icon name="fa:wrench" class="icon" />
+        <Icon name="fa:wrench" class="icon" aria-label="wrench" />
         <h1>Geeignete Technologie wählen</h1>
         <p>
           Wer einen Hammer hat, ist verleitet, in allem einen Nagel zu sehen.
@@ -60,7 +72,7 @@ import Layout from '../components/Layout/index.astro'
         </p>
       </section>
       <section>
-        <Icon name="fa-solid:crown" class="icon" />
+        <Icon name="fa-solid:crown" class="icon" aria-label="crown" />
         <h1>Der Kunde ist König</h1>
         <p>
           Damit Sie zufrieden sind, braucht es mehr als eine gute Anwendung. Ich
@@ -75,7 +87,7 @@ import Layout from '../components/Layout/index.astro'
         </ul>
       </section>
       <section>
-        <Icon name="fa-solid:retweet" class="icon" />
+        <Icon name="fa-solid:retweet" class="icon" aria-label="replace" />
         <h1>Ich bin austauschbar</h1>
         <p>
           {`Ich arbeite 100% `}

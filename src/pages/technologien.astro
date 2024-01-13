@@ -8,7 +8,11 @@ import Layout from '../components/Layout/index.astro'
     <p class="lead">Mit diesen Technologien kenne ich mich aus:</p>
     <div class="content">
       <section>
-        <Icon name="ic:baseline-architecture" class="app-icon" />
+        <Icon
+          name="ic:baseline-architecture"
+          class="app-icon"
+          aria-label="architecture"
+        />
         <h1>App-Architekturen</h1>
         <ul>
           <li>
@@ -56,7 +60,7 @@ import Layout from '../components/Layout/index.astro'
             <p>Apps für mobile und desktop mit nativer Leistung</p>
           </li>
         </ul>
-        <Icon name="fa-solid:database" />
+        <Icon name="fa-solid:database" aria-label="database" />
         <h1 style={{ marginTop: 5 }}>Datenbanken</h1>
         <ul>
           <li>
@@ -120,7 +124,7 @@ import Layout from '../components/Layout/index.astro'
         </ul>
       </section>
       <section>
-        <Icon name="fa-solid:code" class="code-icon" />
+        <Icon name="fa-solid:code" class="code-icon" aria-label="code" />
         <h1 style={{ marginTop: 3 }}>Programmiersprachen</h1>
         <ul>
           <li>
@@ -202,7 +206,7 @@ import Layout from '../components/Layout/index.astro'
         </ul>
       </section>
       <section>
-        <Icon name="fa:wrench" />
+        <Icon name="fa:wrench" aria-label="wrench" />
         <h1 style={{ marginTop: 0 }}>
           Werkzeuge <small>(Auswahl)</small>
         </h1>
@@ -351,9 +355,9 @@ import Layout from '../components/Layout/index.astro'
             <p>Vertrauen ist gut, testen ist besser</p>
           </li>
         </ul>
-        <Icon name="fa-brands:windows" alt="Windows" />
-        <Icon name="fa-brands:linux" alt="Linux" />
-        <Icon name="fa-brands:apple" alt="MaxOs" />
+        <Icon name="fa-brands:windows" title="Windows" aria-label="Windows" />
+        <Icon name="fa-brands:linux" title="Linux" aria-label="Linux" />
+        <Icon name="fa-brands:apple" title="MaxOs" aria-label="MaxOs" />
         <h1>Betriebssysteme</h1>
         <ul>
           <li>
