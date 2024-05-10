@@ -29,6 +29,7 @@ export default defineConfig({
       //   navigateFallback: '/404',
       // },
       // registerType: 'autoUpdate',
+      workbox: { navigateFallback: '/404' },
       manifest: {
         scope: '.',
         name: 'gabriel-software.ch',
