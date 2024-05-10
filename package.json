@@ -17,30 +17,30 @@
     "test-report": "playwright show-report"
   },
   "dependencies": {
-    "@iconify-json/ant-design": "1.1.13",
+    "@iconify-json/ant-design": "1.1.16",
     "@iconify-json/bi": "1.1.23",
     "@iconify-json/fa": "1.1.8",
     "@iconify-json/fa-brands": "1.1.8",
     "@iconify-json/fa-regular": "1.1.8",
     "@iconify-json/fa-solid": "1.1.8",
     "@iconify-json/ic": "1.1.17",
-    "astro": "4.1.2",
-    "astro-icon": "1.0.2",
+    "astro": "4.8.2",
+    "astro-icon": "1.1.0",
     "leaflet": "1.9.4",
-    "swiper": "11.0.5"
+    "swiper": "11.1.1"
   },
   "devDependencies": {
     "@astrojs/prefetch": "0.4.1",
-    "@astrojs/sitemap": "3.0.4",
-    "@playwright/test": "1.40.1",
-    "@types/leaflet": "1.9.8",
-    "@vite-pwa/astro": "0.2.0",
+    "@astrojs/sitemap": "3.1.4",
+    "@playwright/test": "1.44.0",
+    "@types/leaflet": "1.9.12",
+    "@vite-pwa/astro": "0.4.0",
     "astrojs-service-worker": "2.0.0",
     "copyfiles": "2.4.1",
     "cross-env": "7.0.3",
-    "prettier": "3.2.1",
-    "vercel": "33.1.0",
-    "vite-plugin-pwa": "0.17.4"
+    "prettier": "3.2.5",
+    "vercel": "34.1.10",
+    "vite-plugin-pwa": "0.20.0"
   },
   "license": "MIT",
   "repository": {
