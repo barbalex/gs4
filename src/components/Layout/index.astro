@@ -1,26 +1,68 @@
 ---
 import { pwaInfo } from 'virtual:pwa-info'
 import Navbar from './Navbar.astro'
+import Analytics from '@vercel/analytics/astro'
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de-CH">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Software entwickeln" />
-    <meta name="keywords" content="Software, Entwicklung, Naturschutz" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#145f00" />
-    <meta name="background-color" content="#145f00" />
-    <meta name="msapplication-TileColor" content="#145f00" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/favicon_192.webp" sizes="192x192" />
-    <link rel="mask-icon" href="/favicon.svg" color="#145f00" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Software entwickeln"
+    />
+    <meta
+      name="keywords"
+      content="Software, Entwicklung, Naturschutz"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <meta
+      name="theme-color"
+      content="#145f00"
+    />
+    <meta
+      name="background-color"
+      content="#145f00"
+    />
+    <meta
+      name="msapplication-TileColor"
+      content="#145f00"
+    />
+    <link
+      rel="icon"
+      href="/favicon.ico"
+      sizes="any"
+    />
+    <link
+      rel="icon"
+      href="/favicon.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/favicon_192.webp"
+      sizes="192x192"
+    />
+    <link
+      rel="mask-icon"
+      href="/favicon.svg"
+      color="#145f00"
+    />
+    <link
+      rel="sitemap"
+      href="/sitemap-index.xml"
+    />
     <title>Gabriel Software</title>
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+    <Analytics />
   </head>
   <body>
     <Navbar>
@@ -34,8 +76,14 @@ import Navbar from './Navbar.astro'
     overflow: hidden;
     height: 100vh;
     margin: 0;
-    font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica',
-      'Arial', sans-serif;
+    font-family:
+      system-ui,
+      -apple-system,
+      'Segoe UI',
+      'Roboto',
+      'Helvetica',
+      'Arial',
+      sans-serif;
   }
   ::-webkit-scrollbar {
     /* Foreground, Background */
