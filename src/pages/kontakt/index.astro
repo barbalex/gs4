@@ -1,18 +1,14 @@
 ---
 import Layout from '../../components/Layout/index.astro'
 import Map from './_Map.astro'
+import KontaktCarousel from '../../components/Carousel/Kontakt.astro'
 ---
 
 <Layout>
   <div class="page kontakt">
     <div class="row">
       <div class="me">
-        <img
-          alt="Alexander Gabriel"
-          src="/alex.webp"
-          width="300"
-          height="341"
-        />
+        <KontaktCarousel />
         <address class="address">
           <strong>Gabriel Software</strong>
           <br />Alexander Gabriel<br />
@@ -117,9 +113,6 @@ import Map from './_Map.astro'
     .col {
       /* side spacing for mobile first views */
       padding: 10px !important;
-    }
-    img {
-      margin-bottom: 10px;
     }
     h1 {
       font-size: 1.5em;

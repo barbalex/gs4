@@ -1,0 +1,55 @@
+---
+import 'swiper/css'
+import 'swiper/css/navigation'
+import './styles.css'
+---
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" style="background-image: url('/kontakt10.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt11.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt12.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt13.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt14.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt15.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt16.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt17.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt18.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt19.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt20.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt21.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt22.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt23.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt24.webp')"></div>
+    <div class="swiper-slide" style="background-image: url('/kontakt25.webp')"></div>
+  </div>
+  <div class="swiper-button swiper-button-next"></div>
+  <div class="swiper-button swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script>
+  import Swiper from 'swiper/bundle'
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: true,
+    },
+  })
+</script>
+
+<style>
+  .swiper {
+    width: 300px;
+    height: 341px;
+  }
+</style>
