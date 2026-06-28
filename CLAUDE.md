@@ -45,6 +45,6 @@ Marketing/portfolio website for **Gabriel Software** (gabriel-software.ch), a on
 
 ## Conventions
 - Dependencies are pinned to exact versions (`save-exact=true` in [.npmrc](.npmrc)) and `allow-git=none`. To upgrade, use `npm run ncu using cooldown` (`ncu -c 5 -i`) — the 5-day cooldown is a deliberate supply-chain-attack mitigation used in place of npm's `min-release-age`.
-- Tests live in [tests/](tests/); the Playwright `testDir` is `./tests`. [e2e/](e2e/) is leftover scaffolding and is **not** executed.
+- Tests live in [tests/](tests/); the Playwright `testDir` is `./tests`.
 - Strict TypeScript ([tsconfig.json](tsconfig.json), extends `astro/tsconfigs/strict`); JSX is configured for React (`jsxImportSource: react`) for Astro integration compatibility.
 - `public/` holds all static assets (`.webp` screenshots/favicons, `robots.txt`); carousel slides and `<img>` tags reference them by absolute path (e.g. `/apflora.webp`).
