@@ -1,10 +1,6 @@
-lets add light/dark mode as done in apf2. default is system settings
-
 ---
 
 ---
-
-getting: '[barbalex/gs4] Run failed: Playwright Tests - master' from notifications@github.com. What is this and do I need it?
 
 ---
 
