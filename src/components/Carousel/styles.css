@@ -17,7 +17,7 @@
   font-weight: bold;
 }
 .swiper-button {
-  color: #145f00 !important;
+  color: var(--carousel-arrow) !important;
   z-index: 10;
 }
 .swiper-pagination {

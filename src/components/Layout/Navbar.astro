@@ -32,6 +32,16 @@ const navLinks = [
     </div>
     <button
       type="button"
+      class="theme-toggle"
+      title="Darstellung: wie System"
+      aria-label="Darstellung: wie System"
+    >
+      <Icon name="fa-solid:adjust" class="icon-system" />
+      <Icon name="fa-solid:sun" class="icon-light" />
+      <Icon name="fa-solid:moon" class="icon-dark" />
+    </button>
+    <button
+      type="button"
       class="nav-toggle"
       aria-label="Menü öffnen"
       aria-haspopup="true"
@@ -50,6 +60,57 @@ const navLinks = [
   </div>
 </>
 <script>
+  // theme toggle, ported from ps: cycles system > light > dark,
+  // persists in localStorage and follows the OS preference in system mode
+  const themeToggle = document.querySelector<HTMLButtonElement>('.theme-toggle')
+  if (themeToggle) {
+    const html = document.documentElement
+    const media = window.matchMedia('(prefers-color-scheme: dark)')
+    const modeLabels = {
+      system: 'Darstellung: wie System',
+      light: 'Darstellung: hell',
+      dark: 'Darstellung: dunkel',
+    } as const
+    const nextMode = {
+      system: 'light',
+      light: 'dark',
+      dark: 'system',
+    } as const
+
+    const getMode = () => {
+      let mode: string | null = null
+      try {
+        mode = localStorage.getItem('themeMode')
+      } catch {
+        mode = null
+      }
+      return mode === 'light' || mode === 'dark' ? mode : 'system'
+    }
+
+    const applyTheme = () => {
+      const mode = getMode()
+      const isDark = mode === 'dark' || (mode === 'system' && media.matches)
+      html.dataset.theme = isDark ? 'dark' : 'light'
+      html.dataset.themeMode = mode
+      html.style.colorScheme = isDark ? 'dark' : 'light'
+      themeToggle.title = modeLabels[mode]
+      themeToggle.setAttribute('aria-label', modeLabels[mode])
+    }
+
+    themeToggle.addEventListener('click', () => {
+      try {
+        localStorage.setItem('themeMode', nextMode[getMode()])
+      } catch {
+        // private mode: theme still applies for this page view
+      }
+      applyTheme()
+    })
+    // in system mode, follow the OS preference live
+    media.addEventListener('change', applyTheme)
+    // sync the button label with a possibly stored mode
+    applyTheme()
+  }
+
   // Port of the MenuBar overflow pattern used in apf2/ps:
   // as the viewport narrows, nav links that no longer fit
   // are moved into the hamburger menu one by one
@@ -150,6 +211,9 @@ const navLinks = [
         ;(index < count ? menus : dropdown).appendChild(item)
       })
       toggle.hidden = count === items.length
+      // with no link left inline, the brand has no baseline partner
+      // and is vertically centered instead
+      navbar.classList.toggle('collapsed', count === 0)
       if (toggle.hidden) closeMenu()
     }
 
@@ -190,12 +254,15 @@ const navLinks = [
     min-height: 56px;
     position: sticky;
     z-index: 10;
+    /* its own group in cross-document view transitions:
+     * the identical navbar appears static while the page content fades */
+    view-transition-name: main-navbar;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     flex-wrap: wrap;
     padding: 0 6px 0 0;
-    background-color: #145f00 !important;
+    background-color: var(--navbar-bg) !important;
   }
   .navbar-brand {
     font-size: 1.5rem;
@@ -211,6 +278,11 @@ const navLinks = [
   }
   .navbar-brand:hover {
     color: white;
+  }
+  .navbar.collapsed .navbar-brand {
+    align-self: center;
+    padding-top: 0;
+    margin-top: 0;
   }
   .nav-menus {
     display: flex;
@@ -269,6 +341,27 @@ const navLinks = [
     width: 1.3rem;
     height: 1.3rem;
   }
+  .theme-toggle {
+    align-self: center;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 56px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
+  .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .theme-toggle svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -276,7 +369,7 @@ const navLinks = [
     display: flex;
     flex-direction: column;
     min-width: 180px;
-    background-color: #145f00;
+    background-color: var(--navbar-bg);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
   }
   /* author styles would otherwise override the hidden attribute */

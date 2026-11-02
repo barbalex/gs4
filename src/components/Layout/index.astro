@@ -61,6 +61,27 @@ import Analytics from '@vercel/analytics/astro'
       href="/sitemap-index.xml"
     />
     <title>Gabriel Software</title>
+    <script is:inline>
+      // resolve the stored theme mode before first paint to avoid a flash
+      // of the wrong theme (same pattern as ps)
+      ;(() => {
+        let mode = null
+        try {
+          mode = localStorage.getItem('themeMode')
+        } catch {
+          mode = null
+        }
+        if (mode !== 'light' && mode !== 'dark') mode = 'system'
+        const isDark =
+          mode === 'dark' ||
+          (mode === 'system' &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        const html = document.documentElement
+        html.dataset.theme = isDark ? 'dark' : 'light'
+        html.dataset.themeMode = mode
+        html.style.colorScheme = isDark ? 'dark' : 'light'
+      })()
+    </script>
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <Analytics />
   </head>
@@ -72,22 +93,60 @@ import Analytics from '@vercel/analytics/astro'
 </html>
 
 <style is:global>
+  /* theme tokens: light values here, dark variants below.
+     html[data-theme] is set before first paint by the head script */
+  html {
+    --bg: #fff;
+    --text: #000;
+    --brand: #145f00;
+    --brand-muted: #155f00c7;
+    --navbar-bg: #145f00;
+    --link-underline: #333;
+    --jumbotron-bg: #e0f6da;
+    --scrollbar-thumb: #155f0057;
+    --scrollbar-track: #155f000f;
+    --sidenav-border: #d8d8d8;
+    --sidenav-text: #716b7a;
+    --sidenav-hover-bg: #155f0026;
+    --sidenav-active-bg: #155f0011;
+    --icon-green: #006f00;
+    --carousel-arrow: #145f00;
+  }
+  html[data-theme='dark'] {
+    --bg: #121810;
+    --text: #d9e5d4;
+    --brand: #739e5e;
+    --brand-muted: #9ab889;
+    --navbar-bg: #0c3a00;
+    --link-underline: #8aa483;
+    --jumbotron-bg: #1a2418;
+    --scrollbar-thumb: #d4e1cc38;
+    --scrollbar-track: #d4e1cc0f;
+    --sidenav-border: #465546;
+    --sidenav-text: #b8cbb0;
+    --sidenav-hover-bg: #ffffff12;
+    --sidenav-active-bg: #86ab7326;
+    --icon-green: #86ab73;
+    --carousel-arrow: #86ab73;
+  }
   body {
     overflow: hidden;
     height: 100vh;
     margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
     font-family:
       system-ui,
       -apple-system,
       'Segoe UI',
       'Roboto',
-      'Helvetica',
+      'Helvetica Neue',
       'Arial',
       sans-serif;
   }
   ::-webkit-scrollbar {
     /* Foreground, Background */
-    scrollbar-color: #155f0057 #155f000f;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   }
   ::-webkit-scrollbar {
     width: 10px; /* Mostly for vertical scrollbars */
@@ -95,19 +154,38 @@ import Analytics from '@vercel/analytics/astro'
   }
   ::-webkit-scrollbar-thumb {
     /* Foreground */
-    background: #155f0057;
+    background: var(--scrollbar-thumb);
   }
   ::-webkit-scrollbar-track {
     /* Background */
-    background: #155f000f;
+    background: var(--scrollbar-track);
   }
   a {
-    color: #145f00;
-    border-bottom: 1px dashed #333;
+    color: var(--brand);
+    border-bottom: 1px dashed var(--link-underline);
     text-decoration: none;
   }
   a:hover {
-    border-bottom: 1px solid #145f00;
+    border-bottom: 1px solid var(--brand);
     text-decoration: none;
+  }
+  /* cross-document view transitions: the standard way to animate
+     between full page loads. Same-origin only; browsers without support
+     (Firefox: behind a flag) navigate without animation */
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+      navigation: auto;
+    }
+  }
+  /* theme toggle: show the icon matching the current mode */
+  .theme-toggle .icon-system,
+  .theme-toggle .icon-light,
+  .theme-toggle .icon-dark {
+    display: none;
+  }
+  html[data-theme-mode='system'] .theme-toggle .icon-system,
+  html[data-theme-mode='light'] .theme-toggle .icon-light,
+  html[data-theme-mode='dark'] .theme-toggle .icon-dark {
+    display: inline-block;
   }
 </style>

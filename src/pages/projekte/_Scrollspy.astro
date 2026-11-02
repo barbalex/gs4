@@ -53,7 +53,7 @@
 <style>
   .scrollspy {
     background-color: transparent;
-    border: 1px solid #d8d8d8;
+    border: 1px solid var(--sidenav-border);
     margin-bottom: 15px !important;
     padding-left: 0;
     padding-right: 0;
@@ -71,26 +71,26 @@
 
   .scrollspy-item {
     display: block;
-    color: #716b7a;
+    color: var(--sidenav-text);
     font-weight: bold;
     padding: 10px 15px;
     text-decoration: none;
     /* border: 0.3px solid rgba(0, 0, 0, 0.125); */
     &:target-current {
-      background-color: #155f0011;
-      color: black;
+      background-color: var(--sidenav-active-bg);
+      color: var(--text);
     }
   }
 
   .scrollspy-item:hover {
-    background-color: #155f0026;
+    background-color: var(--sidenav-hover-bg);
   }
 
   /* once scroll-target-group is supported, this can be removed */
   /* https://caniuse.com/?search=scroll-target-group */
   .scrollspy-item.active {
-    background-color: #155f0011;
-    color: black;
+    background-color: var(--sidenav-active-bg);
+    color: var(--text);
   }
   a {
     border-bottom: none;

@@ -94,9 +94,21 @@ import { Icon } from 'astro-icon/components'
     margin-bottom: 32px;
     padding: 60px;
     border-radius: 5px;
-    background-color: #e0f6da;
+    background-color: var(--jumbotron-bg);
     font-size: 21px;
     font-weight: 500;
+  }
+  @media (max-width: 576px) {
+    .jumbotron {
+      padding: 15px;
+      font-size: 16px;
+    }
+    .jumbotron ul {
+      padding-left: 25px;
+    }
+    .jumbotron h1 {
+      font-size: 28px;
+    }
   }
   .content {
     display: flex;
@@ -132,7 +144,7 @@ import { Icon } from 'astro-icon/components'
     font-size: 24px;
     font-weight: 700;
     padding-bottom: 4px;
-    color: #145f00;
+    color: var(--brand);
   }
   .section-title {
     line-height: 1;
