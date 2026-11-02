@@ -2,7 +2,7 @@
   "name": "gs4",
   "description": "Gabriel Software's website",
   "type": "module",
-  "version": "2.0.17",
+  "version": "2.0.19",
   "author": "Alexander Gabriel",
   "scripts": {
     "dev": "astro dev",
@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "vercel build && vercel deploy --prebuilt",
+    "deploy": "node scripts/deploy.mjs",
+    "deploy_preview": "vercel build && vercel deploy --prebuilt",
     "deploy_productive": "vercel build --prod && vercel deploy --prebuilt --prod",
     "deploy_only": "vercel deploy --prebuilt --prod",
     "test": "NODE_ENV=dev playwright test",

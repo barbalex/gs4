@@ -15,7 +15,8 @@ Marketing/portfolio website for **Gabriel Software** (gabriel-software.ch), a on
   - Single file / single test: `npx playwright test tests/tests.spec.ts` / `npx playwright test -g "has title"`
   - `NODE_ENV=dev` must be set when running locally, otherwise the base URL resolves to the live production site.
 - `npm run test-report` — open the HTML Playwright report
-- `npm run deploy` — `vercel build && vercel deploy --prebuilt` (preview environment)
+- `npm run deploy [patch|minor|major]` — bumps the version in package.json (default: patch), then builds and deploys to **production**; see [scripts/deploy.mjs](scripts/deploy.mjs)
+- `npm run deploy_preview` — build + deploy to the preview environment (no version bump)
 - `npm run deploy_productive` — build + deploy to production
 - `npm run deploy_only` — deploy an already-built `dist/` artifact to production
 
