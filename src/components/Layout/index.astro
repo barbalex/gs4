@@ -82,6 +82,22 @@ import Analytics from '@vercel/analytics/astro'
         html.style.colorScheme = isDark ? 'dark' : 'light'
       })()
     </script>
+    <style is:inline>
+      /* cross-document view transitions. Kept inline in the document:
+       * if the opt-in only lives in the bundled stylesheet, chrome can
+       * evaluate it too late and abort navigations with
+       * "ViewTransition opt-in disabled" */
+      @media (prefers-reduced-motion: no-preference) {
+        @view-transition {
+          navigation: auto;
+        }
+        /* the identical navbar is its own transition group, so it appears
+         * static while the page content fades */
+        .navbar {
+          view-transition-name: main-navbar;
+        }
+      }
+    </style>
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <Analytics />
   </head>
@@ -168,14 +184,6 @@ import Analytics from '@vercel/analytics/astro'
   a:hover {
     border-bottom: 1px solid var(--brand);
     text-decoration: none;
-  }
-  /* cross-document view transitions: the standard way to animate
-     between full page loads. Same-origin only; browsers without support
-     (Firefox: behind a flag) navigate without animation */
-  @media (prefers-reduced-motion: no-preference) {
-    @view-transition {
-      navigation: auto;
-    }
   }
   /* theme toggle: show the icon matching the current mode */
   .theme-toggle .icon-system,

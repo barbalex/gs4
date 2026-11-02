@@ -53,210 +53,215 @@ const navLinks = [
     </button>
     <div class="nav-menu" id="nav-menu" hidden></div>
   </nav>
+  <!-- is:inline and placed right after the navbar: the script runs during
+       parsing, before first paint. This way cross-document view transitions
+       snapshot the final navbar state instead of the server-rendered one,
+       which would flash (links jumping) when the deferred script ran -->
+  <script is:inline>
+    ;(() => {
+      // theme toggle, ported from ps: cycles system > light > dark,
+      // persists in localStorage and follows the OS preference in system mode
+      const themeToggle = document.querySelector('.theme-toggle')
+      if (themeToggle) {
+        const html = document.documentElement
+        const media = window.matchMedia('(prefers-color-scheme: dark)')
+        const modeLabels = {
+          system: 'Darstellung: wie System',
+          light: 'Darstellung: hell',
+          dark: 'Darstellung: dunkel',
+        }
+        const nextMode = { system: 'light', light: 'dark', dark: 'system' }
+
+        const getMode = () => {
+          let mode = null
+          try {
+            mode = localStorage.getItem('themeMode')
+          } catch {
+            mode = null
+          }
+          return mode === 'light' || mode === 'dark' ? mode : 'system'
+        }
+
+        const applyTheme = () => {
+          const mode = getMode()
+          const isDark =
+            mode === 'dark' || (mode === 'system' && media.matches)
+          html.dataset.theme = isDark ? 'dark' : 'light'
+          html.dataset.themeMode = mode
+          html.style.colorScheme = isDark ? 'dark' : 'light'
+          themeToggle.title = modeLabels[mode]
+          themeToggle.setAttribute('aria-label', modeLabels[mode])
+        }
+
+        themeToggle.addEventListener('click', () => {
+          try {
+            localStorage.setItem('themeMode', nextMode[getMode()])
+          } catch {
+            // private mode: theme still applies for this page view
+          }
+          applyTheme()
+        })
+        // in system mode, follow the OS preference live
+        media.addEventListener('change', applyTheme)
+        // sync the button label with a possibly stored mode
+        applyTheme()
+      }
+
+      // Port of the MenuBar overflow pattern used in apf2/ps:
+      // as the viewport narrows, nav links that no longer fit
+      // are moved into the hamburger menu one by one
+      const navbar = document.querySelector('.navbar')
+      const menus = document.querySelector('.nav-menus')
+      const toggle = document.querySelector('.nav-toggle')
+      const dropdown = document.querySelector('.nav-menu')
+      if (navbar && menus && toggle && dropdown) {
+        // width of .nav-toggle incl. border, from the css below
+        const toggleWidth = 48
+        // trailing debounce like use-debounce in apf2/ps:
+        // wait 300 ms after the last resize event, 500 ms at the latest
+        const debounce = (fn, wait, maxWait) => {
+          let timer
+          let maxTimer
+          return () => {
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+              clearTimeout(maxTimer)
+              fn()
+            }, wait)
+            if (!maxTimer) {
+              maxTimer = setTimeout(() => {
+                clearTimeout(timer)
+                fn()
+              }, maxWait)
+            }
+          }
+        }
+
+        navbar.classList.add('js')
+
+        const items = Array.from(menus.querySelectorAll(':scope > .nav'))
+        const widths = items.map(() => 0)
+        // server renders all links inline
+        let inlineCount = items.length
+        let menuOpen = false
+
+        // widths of links currently in the row can be measured in place;
+        // widths of links sitting in the hamburger menu are cached
+        const measureInlineWidths = () => {
+          items.forEach((item, index) => {
+            if (item.parentElement === menus) widths[index] = item.offsetWidth
+          })
+        }
+
+        // to re-measure moved links, put all of them back into the row first
+        const measureAllWidths = () => {
+          items.forEach((item) => menus.appendChild(item))
+          items.forEach((item, index) => {
+            widths[index] = item.offsetWidth
+          })
+        }
+
+        const closeMenu = () => {
+          dropdown.hidden = true
+          menuOpen = false
+          toggle.setAttribute('aria-expanded', 'false')
+          toggle.setAttribute('aria-label', 'Menü öffnen')
+        }
+
+        const openMenu = () => {
+          dropdown.hidden = false
+          menuOpen = true
+          toggle.setAttribute('aria-expanded', 'true')
+          toggle.setAttribute('aria-label', 'Menü schliessen')
+        }
+
+        const layout = () => {
+          measureInlineWidths()
+
+          // .nav-menus grows to fill the space left by brand and toggle,
+          // so its width plus a possibly visible toggle is the available space
+          const available =
+            menus.clientWidth + (toggle.hidden ? 0 : toggleWidth)
+          const totalWidth = widths.reduce((acc, width) => acc + width, 0)
+          const needMenu = totalWidth > available
+          const spaceForItems = needMenu
+            ? available - toggleWidth
+            : available
+
+          let count = 0
+          let widthSum = 0
+          for (const width of widths) {
+            if (widthSum + width > spaceForItems) break
+            widthSum += width
+            count++
+          }
+          // a hamburger containing a single link is worse ux
+          // than the link itself: move one more link into it (as in ps)
+          if (needMenu && count === items.length - 1 && count > 0) {
+            count = items.length - 2
+          }
+
+          if (count === inlineCount) return
+          inlineCount = count
+          items.forEach((item, index) => {
+            ;(index < count ? menus : dropdown).appendChild(item)
+          })
+          toggle.hidden = count === items.length
+          // with no link left inline, the brand has no baseline partner
+          // and is vertically centered instead
+          navbar.classList.toggle('collapsed', count === 0)
+          if (toggle.hidden) closeMenu()
+        }
+
+        const checkOverflowDebounced = debounce(layout, 300, 500)
+
+        new ResizeObserver(() => checkOverflowDebounced()).observe(menus)
+
+        // web fonts can change link widths after the first layout
+        if (document.fonts) {
+          document.fonts.ready.then(() => {
+            // measureAllWidths puts all links back into the row,
+            // so the layout state has to be reset to match
+            inlineCount = items.length
+            measureAllWidths()
+            layout()
+          })
+        }
+
+        toggle.addEventListener('click', () => {
+          menuOpen ? closeMenu() : openMenu()
+        })
+        dropdown.addEventListener('click', (event) => {
+          if (event.target.closest('a')) closeMenu()
+        })
+        document.addEventListener('click', (event) => {
+          if (menuOpen && !navbar.contains(event.target)) closeMenu()
+        })
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && menuOpen) {
+            closeMenu()
+            toggle.focus()
+          }
+        })
+
+        layout()
+      }
+    })()
+  </script>
   <div class="scroll-container">
     <div class="container">
       <slot />
     </div>
   </div>
 </>
-<script>
-  // theme toggle, ported from ps: cycles system > light > dark,
-  // persists in localStorage and follows the OS preference in system mode
-  const themeToggle = document.querySelector<HTMLButtonElement>('.theme-toggle')
-  if (themeToggle) {
-    const html = document.documentElement
-    const media = window.matchMedia('(prefers-color-scheme: dark)')
-    const modeLabels = {
-      system: 'Darstellung: wie System',
-      light: 'Darstellung: hell',
-      dark: 'Darstellung: dunkel',
-    } as const
-    const nextMode = {
-      system: 'light',
-      light: 'dark',
-      dark: 'system',
-    } as const
 
-    const getMode = () => {
-      let mode: string | null = null
-      try {
-        mode = localStorage.getItem('themeMode')
-      } catch {
-        mode = null
-      }
-      return mode === 'light' || mode === 'dark' ? mode : 'system'
-    }
-
-    const applyTheme = () => {
-      const mode = getMode()
-      const isDark = mode === 'dark' || (mode === 'system' && media.matches)
-      html.dataset.theme = isDark ? 'dark' : 'light'
-      html.dataset.themeMode = mode
-      html.style.colorScheme = isDark ? 'dark' : 'light'
-      themeToggle.title = modeLabels[mode]
-      themeToggle.setAttribute('aria-label', modeLabels[mode])
-    }
-
-    themeToggle.addEventListener('click', () => {
-      try {
-        localStorage.setItem('themeMode', nextMode[getMode()])
-      } catch {
-        // private mode: theme still applies for this page view
-      }
-      applyTheme()
-    })
-    // in system mode, follow the OS preference live
-    media.addEventListener('change', applyTheme)
-    // sync the button label with a possibly stored mode
-    applyTheme()
-  }
-
-  // Port of the MenuBar overflow pattern used in apf2/ps:
-  // as the viewport narrows, nav links that no longer fit
-  // are moved into the hamburger menu one by one
-  const navbar = document.querySelector<HTMLElement>('.navbar')
-  const menus = document.querySelector<HTMLElement>('.nav-menus')
-  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle')
-  const dropdown = document.querySelector<HTMLElement>('.nav-menu')
-  if (navbar && menus && toggle && dropdown) {
-    // width of .nav-toggle incl. border, from the css below
-    const toggleWidth = 48
-    // trailing debounce like use-debounce in apf2/ps:
-    // wait 300 ms after the last resize event, 500 ms at the latest
-    const debounce = (fn: () => void, wait: number, maxWait: number) => {
-      let timer: ReturnType<typeof setTimeout> | undefined
-      let maxTimer: ReturnType<typeof setTimeout> | undefined
-      return () => {
-        clearTimeout(timer)
-        timer = setTimeout(() => {
-          clearTimeout(maxTimer)
-          fn()
-        }, wait)
-        if (!maxTimer) {
-          maxTimer = setTimeout(() => {
-            clearTimeout(timer)
-            fn()
-          }, maxWait)
-        }
-      }
-    }
-
-    navbar.classList.add('js')
-
-    const items = Array.from(
-      menus.querySelectorAll<HTMLElement>(':scope > .nav'),
-    )
-    const widths = items.map(() => 0)
-    // server renders all links inline
-    let inlineCount = items.length
-    let menuOpen = false
-
-    // widths of links currently in the row can be measured in place;
-    // widths of links sitting in the hamburger menu are cached
-    const measureInlineWidths = () => {
-      items.forEach((item, index) => {
-        if (item.parentElement === menus) widths[index] = item.offsetWidth
-      })
-    }
-
-    // to re-measure moved links, put all of them back into the row first
-    const measureAllWidths = () => {
-      items.forEach((item) => menus.appendChild(item))
-      items.forEach((item, index) => {
-        widths[index] = item.offsetWidth
-      })
-    }
-
-    const closeMenu = () => {
-      dropdown.hidden = true
-      menuOpen = false
-      toggle.setAttribute('aria-expanded', 'false')
-      toggle.setAttribute('aria-label', 'Menü öffnen')
-    }
-
-    const openMenu = () => {
-      dropdown.hidden = false
-      menuOpen = true
-      toggle.setAttribute('aria-expanded', 'true')
-      toggle.setAttribute('aria-label', 'Menü schliessen')
-    }
-
-    const layout = () => {
-      measureInlineWidths()
-
-      // .nav-menus grows to fill the space left by brand and toggle,
-      // so its width plus a possibly visible toggle is the available space
-      const available =
-        menus.clientWidth + (toggle.hidden ? 0 : toggleWidth)
-      const totalWidth = widths.reduce((acc, width) => acc + width, 0)
-      const needMenu = totalWidth > available
-      const spaceForItems = needMenu ? available - toggleWidth : available
-
-      let count = 0
-      let widthSum = 0
-      for (const width of widths) {
-        if (widthSum + width > spaceForItems) break
-        widthSum += width
-        count++
-      }
-      // a hamburger containing a single link is worse ux
-      // than the link itself: move one more link into it (as in ps)
-      if (needMenu && count === items.length - 1 && count > 0) {
-        count = items.length - 2
-      }
-
-      if (count === inlineCount) return
-      inlineCount = count
-      items.forEach((item, index) => {
-        ;(index < count ? menus : dropdown).appendChild(item)
-      })
-      toggle.hidden = count === items.length
-      // with no link left inline, the brand has no baseline partner
-      // and is vertically centered instead
-      navbar.classList.toggle('collapsed', count === 0)
-      if (toggle.hidden) closeMenu()
-    }
-
-    const checkOverflowDebounced = debounce(layout, 300, 500)
-
-    new ResizeObserver(() => checkOverflowDebounced()).observe(menus)
-
-    // web fonts can change link widths after the first layout
-    document.fonts?.ready.then(() => {
-      // measureAllWidths puts all links back into the row,
-      // so the layout state has to be reset to match
-      inlineCount = items.length
-      measureAllWidths()
-      layout()
-    })
-
-    toggle.addEventListener('click', () => {
-      menuOpen ? closeMenu() : openMenu()
-    })
-    dropdown.addEventListener('click', (event) => {
-      if ((event.target as HTMLElement).closest('a')) closeMenu()
-    })
-    document.addEventListener('click', (event) => {
-      if (menuOpen && !navbar.contains(event.target as Node)) closeMenu()
-    })
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && menuOpen) {
-        closeMenu()
-        toggle.focus()
-      }
-    })
-
-    layout()
-  }
-</script>
 <style>
   .navbar {
     min-height: 56px;
     position: sticky;
     z-index: 10;
-    /* its own group in cross-document view transitions:
-     * the identical navbar appears static while the page content fades */
-    view-transition-name: main-navbar;
+    /* view-transition-name lives in the inline head style in Layout,
+     * so it is available to the browser without waiting for this css */
     display: flex;
     justify-content: space-between;
     align-items: baseline;
