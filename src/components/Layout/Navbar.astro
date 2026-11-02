@@ -1,5 +1,14 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 const pathname = Astro.url.pathname
+
+const navLinks = [
+  { href: '/leitbild/', label: 'Leitbild' },
+  { href: '/projekte/', label: 'Projekte' },
+  { href: '/technologien/', label: 'Technologien' },
+  { href: '/kontakt/', label: 'Kontakt' },
+]
 ---
 
 <>
@@ -8,35 +17,31 @@ const pathname = Astro.url.pathname
       >Gabriel Software</a
     >
     <div class="nav-menus">
-      <div class="nav">
-        <a
-          href="/leitbild/"
-          class:list={['nav-link', { active: pathname === '/leitbild/' }]}
-          >Leitbild</a
-        >
-      </div>
-      <div class="nav">
-        <a
-          href="/projekte/"
-          class:list={['nav-link', { active: pathname === '/projekte/' }]}
-          >Projekte</a
-        >
-      </div>
-      <div class="nav">
-        <a
-          href="/technologien/"
-          class:list={['nav-link', { active: pathname === '/technologien/' }]}
-          >Technologien</a
-        >
-      </div>
-      <div class="nav">
-        <a
-          href="/kontakt/"
-          class:list={['nav-link', { active: pathname === '/kontakt/' }]}
-          >Kontakt</a
-        >
-      </div>
+      {
+        navLinks.map(({ href, label }) => (
+          <div class="nav">
+            <a
+              href={href}
+              class:list={['nav-link', { active: pathname === href }]}
+            >
+              {label}
+            </a>
+          </div>
+        ))
+      }
     </div>
+    <button
+      type="button"
+      class="nav-toggle"
+      aria-label="Menü öffnen"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      hidden
+    >
+      <Icon name="fa-solid:bars" />
+    </button>
+    <div class="nav-menu" id="nav-menu" hidden></div>
   </nav>
   <div class="scroll-container">
     <div class="container">
@@ -44,10 +49,147 @@ const pathname = Astro.url.pathname
     </div>
   </div>
 </>
+<script>
+  // Port of the MenuBar overflow pattern used in apf2/ps:
+  // as the viewport narrows, nav links that no longer fit
+  // are moved into the hamburger menu one by one
+  const navbar = document.querySelector<HTMLElement>('.navbar')
+  const menus = document.querySelector<HTMLElement>('.nav-menus')
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle')
+  const dropdown = document.querySelector<HTMLElement>('.nav-menu')
+  if (navbar && menus && toggle && dropdown) {
+    // width of .nav-toggle incl. border, from the css below
+    const toggleWidth = 48
+    // trailing debounce like use-debounce in apf2/ps:
+    // wait 300 ms after the last resize event, 500 ms at the latest
+    const debounce = (fn: () => void, wait: number, maxWait: number) => {
+      let timer: ReturnType<typeof setTimeout> | undefined
+      let maxTimer: ReturnType<typeof setTimeout> | undefined
+      return () => {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          clearTimeout(maxTimer)
+          fn()
+        }, wait)
+        if (!maxTimer) {
+          maxTimer = setTimeout(() => {
+            clearTimeout(timer)
+            fn()
+          }, maxWait)
+        }
+      }
+    }
+
+    navbar.classList.add('js')
+
+    const items = Array.from(
+      menus.querySelectorAll<HTMLElement>(':scope > .nav'),
+    )
+    const widths = items.map(() => 0)
+    // server renders all links inline
+    let inlineCount = items.length
+    let menuOpen = false
+
+    // widths of links currently in the row can be measured in place;
+    // widths of links sitting in the hamburger menu are cached
+    const measureInlineWidths = () => {
+      items.forEach((item, index) => {
+        if (item.parentElement === menus) widths[index] = item.offsetWidth
+      })
+    }
+
+    // to re-measure moved links, put all of them back into the row first
+    const measureAllWidths = () => {
+      items.forEach((item) => menus.appendChild(item))
+      items.forEach((item, index) => {
+        widths[index] = item.offsetWidth
+      })
+    }
+
+    const closeMenu = () => {
+      dropdown.hidden = true
+      menuOpen = false
+      toggle.setAttribute('aria-expanded', 'false')
+      toggle.setAttribute('aria-label', 'Menü öffnen')
+    }
+
+    const openMenu = () => {
+      dropdown.hidden = false
+      menuOpen = true
+      toggle.setAttribute('aria-expanded', 'true')
+      toggle.setAttribute('aria-label', 'Menü schliessen')
+    }
+
+    const layout = () => {
+      measureInlineWidths()
+
+      // .nav-menus grows to fill the space left by brand and toggle,
+      // so its width plus a possibly visible toggle is the available space
+      const available =
+        menus.clientWidth + (toggle.hidden ? 0 : toggleWidth)
+      const totalWidth = widths.reduce((acc, width) => acc + width, 0)
+      const needMenu = totalWidth > available
+      const spaceForItems = needMenu ? available - toggleWidth : available
+
+      let count = 0
+      let widthSum = 0
+      for (const width of widths) {
+        if (widthSum + width > spaceForItems) break
+        widthSum += width
+        count++
+      }
+      // a hamburger containing a single link is worse ux
+      // than the link itself: move one more link into it (as in ps)
+      if (needMenu && count === items.length - 1 && count > 0) {
+        count = items.length - 2
+      }
+
+      if (count === inlineCount) return
+      inlineCount = count
+      items.forEach((item, index) => {
+        ;(index < count ? menus : dropdown).appendChild(item)
+      })
+      toggle.hidden = count === items.length
+      if (toggle.hidden) closeMenu()
+    }
+
+    const checkOverflowDebounced = debounce(layout, 300, 500)
+
+    new ResizeObserver(() => checkOverflowDebounced()).observe(menus)
+
+    // web fonts can change link widths after the first layout
+    document.fonts?.ready.then(() => {
+      // measureAllWidths puts all links back into the row,
+      // so the layout state has to be reset to match
+      inlineCount = items.length
+      measureAllWidths()
+      layout()
+    })
+
+    toggle.addEventListener('click', () => {
+      menuOpen ? closeMenu() : openMenu()
+    })
+    dropdown.addEventListener('click', (event) => {
+      if ((event.target as HTMLElement).closest('a')) closeMenu()
+    })
+    document.addEventListener('click', (event) => {
+      if (menuOpen && !navbar.contains(event.target as Node)) closeMenu()
+    })
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuOpen) {
+        closeMenu()
+        toggle.focus()
+      }
+    })
+
+    layout()
+  }
+</script>
 <style>
   .navbar {
     min-height: 56px;
     position: sticky;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -74,19 +216,82 @@ const pathname = Astro.url.pathname
     display: flex;
     flex-wrap: wrap;
   }
+  /* with js, links never wrap; overflowing ones move into the hamburger menu */
+  .navbar.js {
+    flex-wrap: nowrap;
+  }
+  .navbar.js .navbar-brand {
+    flex-shrink: 0;
+  }
+  .navbar.js .nav-menus {
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
   .nav {
     padding: 6px 12px 12px 12px;
   }
   .nav-link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
+    color: white;
   }
   .nav-link.active {
     font-weight: 700;
-    color: white;
   }
   .nav-link:hover {
     color: white;
+    font-weight: 700;
+  }
+  .nav-toggle {
+    align-self: center;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 56px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  .nav-toggle[hidden] {
+    display: none;
+  }
+  .nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .nav-toggle svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    background-color: #145f00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  }
+  /* author styles would otherwise override the hidden attribute */
+  .nav-menu[hidden] {
+    display: none;
+  }
+  .nav-menu .nav {
+    padding: 0;
+  }
+  .nav-menu .nav-link {
+    display: block;
+    padding: 12px 20px;
+  }
+  .nav-menu .nav-link:hover {
+    background: rgba(255, 255, 255, 0.15);
   }
   .scroll-container {
     overflow-y: auto;
