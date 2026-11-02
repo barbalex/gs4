@@ -11,7 +11,8 @@ import { defineConfig, devices } from '@playwright/test'
  */
 export default defineConfig({
   webServer: {
-    command: 'npm run dev',
+    // astro dev defaults to port 4321; this config expects 3000
+    command: 'npm run dev -- --port 3000',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
   },
