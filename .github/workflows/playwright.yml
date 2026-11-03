@@ -18,7 +18,7 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      # npm test sets NODE_ENV=dev, which points the tests at localhost:3000
+      # npm test sets NODE_ENV=dev, which points the tests at localhost:7432
       # instead of the production site
       - name: Run Playwright tests
         run: npm test

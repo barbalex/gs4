@@ -8,10 +8,10 @@ Marketing/portfolio website for **Gabriel Software** (gabriel-software.ch), a on
 
 ## Commands
 
-- `npm run dev` (alias `npm start`) — Astro dev server. The Playwright config expects it on http://localhost:3000.
+- `npm run dev` (alias `npm start`) — Astro dev server. The Playwright config expects it on http://localhost:7432.
 - `npm run build` — production build to `dist/`
 - `npm run preview` — preview the production build locally
-- `npm test` — Playwright e2e tests. Runs with `NODE_ENV=dev`, which sets the test base URL to localhost:3000 and auto-starts the dev server (see `webServer` in [playwright.config.ts](playwright.config.ts)).
+- `npm test` — Playwright e2e tests. Runs with `NODE_ENV=dev`, which sets the test base URL to localhost:7432 and auto-starts the dev server (see `webServer` in [playwright.config.ts](playwright.config.ts)).
   - Single file / single test: `npx playwright test tests/tests.spec.ts` / `npx playwright test -g "has title"`
   - `NODE_ENV=dev` must be set when running locally, otherwise the base URL resolves to the live production site.
 - `npm run test-report` — open the HTML Playwright report
@@ -47,7 +47,7 @@ Marketing/portfolio website for **Gabriel Software** (gabriel-software.ch), a on
 
 ### PWA
 
-- **Two** service-worker/PWA integrations are both wired in [astro.config.mjs](astro.config.mjs): `astrojs-service-worker` (workbox precaching) and `@vite-pwa/astro` (manifest + `navigateFallback: '/404'`). The SW is registered client-side in [src/pwa.ts](src/pwa.ts) via `virtual:pwa-register`. When adding a new precacheable asset type, update the `globPatterns` array in `astro.config.mjs`.
+- PWA via `@vite-pwa/astro` in [astro.config.mjs](astro.config.mjs): workbox `generateSW` precaching (manifest, `navigateFallback: '/404'`) plus the web app manifest. The service worker is registered by a minimal inline `navigator.serviceWorker.register('/sw.js')` script at the end of `<body>` in the Layout; `injectRegister: null` keeps vite-pwa from injecting its own registration script. All page CSS is inlined into the HTML (`build.inlineStylesheets: 'always'`). When adding a new precacheable asset type, update the `globPatterns` array in `astro.config.mjs`.
 
 ### Styling
 

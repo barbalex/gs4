@@ -11,9 +11,11 @@ import { defineConfig, devices } from '@playwright/test'
  */
 export default defineConfig({
   webServer: {
-    // astro dev defaults to port 4321; this config expects 3000
-    command: 'npm run dev -- --port 3000',
-    url: 'http://localhost:3000',
+    // distinctive port: common defaults like 3000 get squatted by other
+    // local services, and reuseExistingServer would then silently point
+    // the tests at the wrong app
+    command: 'npm run dev -- --port 7432',
+    url: 'http://localhost:7432',
     reuseExistingServer: !process.env.CI,
   },
   testDir: './tests',
@@ -43,7 +45,7 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL:
       process.env.NODE_ENV === 'dev'
-        ? 'http://localhost:3000'
+        ? 'http://localhost:7432'
         : 'https://gabriel-software.ch',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
