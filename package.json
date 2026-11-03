@@ -2,7 +2,7 @@
   "name": "gs4",
   "description": "Gabriel Software's website",
   "type": "module",
-  "version": "2.0.26",
+  "version": "2.0.27",
   "author": "Alexander Gabriel",
   "engines": {
     "node": ">=22.12.0"
