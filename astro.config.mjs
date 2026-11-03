@@ -1,12 +1,15 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
-import AstroPWA from '@vite-pwa/astro'
+import { AstroPWAIntegration as AstroPWA } from '@vite-pwa/astro'
 import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gabriel-software.ch',
   prefetch: true,
+  // keep the pre-v7 whitespace handling ('jsx' strips spaces between
+  // inline elements across lines; revisit when templates are audited)
+  compressHTML: true,
   integrations: [
     icon(),
     sitemap(),
