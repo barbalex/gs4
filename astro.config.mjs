@@ -27,6 +27,11 @@ export default defineConfig({
   // keep the pre-v7 whitespace handling ('jsx' strips spaces between
   // inline elements across lines; revisit when templates are audited)
   compressHTML: true,
+  // the default 'auto' only inlines stylesheets below vite's 4 KiB
+  // assetsInlineLimit; Layout.css (4.8 KiB) stayed a separate
+  // render-blocking request. 'always' keeps page CSS out of the
+  // critical request chain.
+  build: { inlineStylesheets: 'always' },
   integrations: [
     icon(),
     sitemap(),
@@ -34,6 +39,10 @@ export default defineConfig({
     // service worker's precache manifest is globbed from dist/
     copy404ToRoute(),
     AstroPWA({
+      // the sw is registered by a one-line inline script in the Layout;
+      // without this, removing the virtual:pwa-register import makes
+      // 'auto' fall back to injecting its own registerSW.js script
+      injectRegister: null,
       workbox: {
         globPatterns: [
           '**/*.{js,css,html,ico,png,jpg,svg,webp,json,woff2,woff}',
