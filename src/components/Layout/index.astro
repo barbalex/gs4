@@ -8,58 +8,18 @@ import Analytics from '@vercel/analytics/astro'
 <html lang="de-CH">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <meta
-      name="description"
-      content="Software entwickeln"
-    />
-    <meta
-      name="keywords"
-      content="Software, Entwicklung, Naturschutz"
-    />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
-    <meta
-      name="theme-color"
-      content="#145f00"
-    />
-    <meta
-      name="background-color"
-      content="#145f00"
-    />
-    <meta
-      name="msapplication-TileColor"
-      content="#145f00"
-    />
-    <link
-      rel="icon"
-      href="/favicon.ico"
-      sizes="any"
-    />
-    <link
-      rel="icon"
-      href="/favicon.svg"
-      type="image/svg+xml"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/favicon_192.webp"
-      sizes="192x192"
-    />
-    <link
-      rel="mask-icon"
-      href="/favicon.svg"
-      color="#145f00"
-    />
-    <link
-      rel="sitemap"
-      href="/sitemap-index.xml"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Software entwickeln" />
+    <meta name="keywords" content="Software, Entwicklung, Naturschutz" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#145f00" />
+    <meta name="background-color" content="#145f00" />
+    <meta name="msapplication-TileColor" content="#145f00" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon_192.webp" sizes="192x192" />
+    <link rel="mask-icon" href="/favicon.svg" color="#145f00" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Gabriel Software</title>
     <script is:inline>
       // resolve the stored theme mode before first paint to avoid a flash
@@ -105,6 +65,7 @@ import Analytics from '@vercel/analytics/astro'
     <Navbar>
       <slot />
     </Navbar>
+    <script src="../../pwa.ts"></script>
   </body>
 </html>
 

@@ -84,8 +84,7 @@ const navLinks = [
 
         const applyTheme = () => {
           const mode = getMode()
-          const isDark =
-            mode === 'dark' || (mode === 'system' && media.matches)
+          const isDark = mode === 'dark' || (mode === 'system' && media.matches)
           html.dataset.theme = isDark ? 'dark' : 'light'
           html.dataset.themeMode = mode
           html.style.colorScheme = isDark ? 'dark' : 'light'
@@ -184,9 +183,7 @@ const navLinks = [
             menus.clientWidth + (toggle.hidden ? 0 : toggleWidth)
           const totalWidth = widths.reduce((acc, width) => acc + width, 0)
           const needMenu = totalWidth > available
-          const spaceForItems = needMenu
-            ? available - toggleWidth
-            : available
+          const spaceForItems = needMenu ? available - toggleWidth : available
 
           let count = 0
           let widthSum = 0

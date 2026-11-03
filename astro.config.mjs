@@ -1,35 +1,22 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
-import serviceWorker from 'astrojs-service-worker'
 import AstroPWA from '@vite-pwa/astro'
 import icon from 'astro-icon'
-
-import prefetch from '@astrojs/prefetch'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gabriel-software.ch',
+  prefetch: true,
   integrations: [
     icon(),
-    serviceWorker({
+    sitemap(),
+    AstroPWA({
       workbox: {
         globPatterns: [
-          '**/*.{js,css,html,ico,png,jpg,svg,webp,svg,json,woff2,woff}',
+          '**/*.{js,css,html,ico,png,jpg,svg,webp,json,woff2,woff}',
         ],
+        navigateFallback: '/404',
       },
-    }),
-    sitemap(),
-    prefetch(),
-    AstroPWA({
-      // workbox: {
-      //   sourcemap: true,
-      //   globPatterns: [
-      //     '**/*.{js,jsx,ts,tsx,css,html,ico,png,jpg,svg,webp,json,woff2,woff}',
-      //   ],
-      //   navigateFallback: '/404',
-      // },
-      // registerType: 'autoUpdate',
-      workbox: { navigateFallback: '/404' },
       manifest: {
         scope: '.',
         name: 'gabriel-software.ch',
