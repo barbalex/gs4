@@ -38,7 +38,7 @@ Marketing/portfolio website for **Gabriel Software** (gabriel-software.ch), a on
 
 ### Interactive bits
 
-- Navbar overflow menu: [Navbar.astro](src/components/Layout/Navbar.astro)'s client script measures available width (port of the MenuBar pattern from apf2/ps) and moves nav links that no longer fit into a hamburger dropdown.
+- Navbar overflow menu: [Navbar.astro](src/components/Layout/Navbar.astro)'s client script measures available width (port of the MenuBar pattern from apf2/ps) and moves nav links that no longer fit into a hamburger dropdown; the light/dark toggle moves in with them as soon as the hamburger appears (with a text label) and returns to the navbar when everything fits.
 - Light/dark mode: same pattern as ps — a pre-paint inline script in [Layout/index.astro](src/components/Layout/index.astro) resolves the stored `themeMode` (`system`/`light`/`dark`, default `system`) against the OS preference and sets `html[data-theme]`; the navbar button cycles modes. Colors come from tokens (`--bg`, `--brand`, …) defined in Layout's global styles with `html[data-theme='dark']` overrides.
 - Page transitions: cross-document View Transitions via `@view-transition { navigation: auto }` in Layout's global styles (progressive enhancement; navbar has `view-transition-name: main-navbar`). The site stays a plain MPA — no Astro `<ClientRouter />`.
 - Projekte scrollspy: [projekte/_Scrollspy.astro](src/pages/projekte/_Scrollspy.astro) highlights the current section with the experimental CSS `:target-current` / `scroll-target-group`. An `IntersectionObserver` fallback lives in [projekte/index.astro](src/pages/projekte/index.astro)'s `<script>` until browser support for `scroll-target-group` lands.

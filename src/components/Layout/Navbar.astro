@@ -39,6 +39,7 @@ const navLinks = [
       <Icon name="fa-solid:adjust" class="icon-system" />
       <Icon name="fa-solid:sun" class="icon-light" />
       <Icon name="fa-solid:moon" class="icon-dark" />
+      <span class="theme-label">Darstellung: wie System</span>
     </button>
     <button
       type="button"
@@ -90,6 +91,9 @@ const navLinks = [
           html.style.colorScheme = isDark ? 'dark' : 'light'
           themeToggle.title = modeLabels[mode]
           themeToggle.setAttribute('aria-label', modeLabels[mode])
+          // the label is only displayed in the hamburger menu
+          themeToggle.querySelector('.theme-label').textContent =
+            modeLabels[mode]
         }
 
         themeToggle.addEventListener('click', () => {
@@ -108,14 +112,16 @@ const navLinks = [
 
       // Port of the MenuBar overflow pattern used in apf2/ps:
       // as the viewport narrows, nav links that no longer fit
-      // are moved into the hamburger menu one by one
+      // are moved into the hamburger menu one by one.
+      // The theme toggle joins them as soon as the hamburger appears
       const navbar = document.querySelector('.navbar')
       const menus = document.querySelector('.nav-menus')
       const toggle = document.querySelector('.nav-toggle')
       const dropdown = document.querySelector('.nav-menu')
-      if (navbar && menus && toggle && dropdown) {
-        // width of .nav-toggle incl. border, from the css below
+      if (navbar && menus && toggle && dropdown && themeToggle) {
+        // widths of .nav-toggle and .theme-toggle incl. border, from the css below
         const toggleWidth = 48
+        const themeWidth = 44
         // trailing debounce like use-debounce in apf2/ps:
         // wait 300 ms after the last resize event, 500 ms at the latest
         const debounce = (fn, wait, maxWait) => {
@@ -177,10 +183,18 @@ const navLinks = [
         const layout = () => {
           measureInlineWidths()
 
-          // .nav-menus grows to fill the space left by brand and toggle,
-          // so its width plus a possibly visible toggle is the available space
+          // available space = what the links would have in a fully
+          // unfolded navbar: viewport minus brand minus theme toggle.
+          // .nav-menus fills exactly that space when nothing is folded,
+          // so its width plus the widths of the buttons currently
+          // occupying its space (hamburger) minus the space folding has
+          // freed up (theme toggle in the menu) is that measure.
+          // Normalizing this way keeps the fold decision independent of
+          // the current state, so it cannot oscillate at a fixed width
           const available =
-            menus.clientWidth + (toggle.hidden ? 0 : toggleWidth)
+            menus.clientWidth +
+            (toggle.hidden ? 0 : toggleWidth) -
+            (themeToggle.parentElement === navbar ? 0 : themeWidth)
           const totalWidth = widths.reduce((acc, width) => acc + width, 0)
           const needMenu = totalWidth > available
           const spaceForItems = needMenu ? available - toggleWidth : available
@@ -198,12 +212,22 @@ const navLinks = [
             count = items.length - 2
           }
 
-          if (count === inlineCount) return
-          inlineCount = count
-          items.forEach((item, index) => {
-            ;(index < count ? menus : dropdown).appendChild(item)
-          })
+          if (count !== inlineCount) {
+            inlineCount = count
+            items.forEach((item, index) => {
+              ;(index < count ? menus : dropdown).appendChild(item)
+            })
+          }
           toggle.hidden = count === items.length
+          // the theme toggle joins the links in the hamburger menu and
+          // returns to its place in front of the hamburger. Re-appending
+          // on every layout keeps it the last entry even when links
+          // keep folding in after it
+          if (toggle.hidden) {
+            if (themeToggle.parentElement !== navbar) toggle.before(themeToggle)
+          } else {
+            dropdown.appendChild(themeToggle)
+          }
           // with no link left inline, the brand has no baseline partner
           // and is vertically centered instead
           navbar.classList.toggle('collapsed', count === 0)
@@ -229,6 +253,8 @@ const navLinks = [
           menuOpen ? closeMenu() : openMenu()
         })
         dropdown.addEventListener('click', (event) => {
+          // only links close the menu: the theme toggle stays open
+          // so its modes can be cycled and watched live
           if (event.target.closest('a')) closeMenu()
         })
         document.addEventListener('click', (event) => {
@@ -364,6 +390,10 @@ const navLinks = [
     width: 1.2rem;
     height: 1.2rem;
   }
+  /* the label is only displayed in the hamburger menu, not in the navbar */
+  .theme-toggle .theme-label {
+    display: none;
+  }
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -387,6 +417,18 @@ const navLinks = [
   }
   .nav-menu .nav-link:hover {
     background: rgba(255, 255, 255, 0.15);
+  }
+  /* in the hamburger menu the theme toggle is a row like the links,
+   * showing its icon and the current mode */
+  .nav-menu .theme-toggle {
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 20px;
+  }
+  .nav-menu .theme-toggle .theme-label {
+    display: inline;
   }
   .scroll-container {
     overflow-y: auto;

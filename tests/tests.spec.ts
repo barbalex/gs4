@@ -35,6 +35,39 @@ test('Kontakt link', async ({ page }) => {
   await expect(page).toHaveURL(/.*kontakt/)
 })
 
+test('theme toggle cycles modes in the navbar', async ({ page }) => {
+  await page.goto(`/`)
+  const themeToggle = page.locator('.navbar > .theme-toggle')
+  await expect(themeToggle).toBeVisible()
+  await expect(themeToggle).toHaveAccessibleName('Darstellung: wie System')
+  await themeToggle.click()
+  await expect(page.locator('html')).toHaveAttribute('data-theme-mode', 'light')
+  await expect(themeToggle).toHaveAccessibleName('Darstellung: hell')
+  await themeToggle.click()
+  await expect(page.locator('html')).toHaveAttribute('data-theme-mode', 'dark')
+  await expect(themeToggle).toHaveAccessibleName('Darstellung: dunkel')
+})
+
+test('theme toggle folds into the hamburger menu on narrow viewports', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 360, height: 800 })
+  await page.goto(`/`)
+  await expect(page.locator('.nav-menu .theme-toggle')).toBeAttached()
+  await page.getByRole('button', { name: 'Menü öffnen' }).click()
+  const themeToggle = page.locator('.nav-menu .theme-toggle')
+  await expect(themeToggle).toBeVisible()
+  // clicking cycles the mode without closing the menu
+  await themeToggle.click()
+  await expect(page.locator('html')).toHaveAttribute('data-theme-mode', 'light')
+  await expect(themeToggle).toHaveAccessibleName('Darstellung: hell')
+  await expect(page.locator('.nav-menu')).toBeVisible()
+  // widening the viewport moves the theme toggle back into the navbar
+  await page.setViewportSize({ width: 1280, height: 800 })
+  await expect(page.locator('.navbar > .theme-toggle')).toBeVisible()
+  await expect(page.locator('.nav-menu .theme-toggle')).toHaveCount(0)
+})
+
 test('Projekte sidenav mediterranean-migration', async ({ page }) => {
   await page.goto(`/projekte`)
   await page.getByRole('link', { name: 'mediterranean- migration.com' }).click()
