@@ -43,7 +43,7 @@ export default defineConfig({
       // without this, removing the virtual:pwa-register import makes
       // 'auto' fall back to injecting its own registerSW.js script
       injectRegister: null,
-      workbox: {
+      generateSW: {
         globPatterns: [
           '**/*.{js,css,html,ico,png,jpg,svg,webp,json,woff2,woff}',
         ],
