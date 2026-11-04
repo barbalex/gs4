@@ -1,0 +1,21 @@
+version: 2
+updates:
+  # grouped minor/patch PRs keep the tree fresh without pr spam;
+  # majors get individual PRs because of the exact-pin style here
+  # (package.json pins exact versions — every bump is a review)
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday

@@ -46,7 +46,7 @@
     "pngjs": "7.0.0",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.2",
-    "vercel": "65.10.0"
+    "vercel": "65.11.0"
   },
   "license": "MIT",
   "repository": {
