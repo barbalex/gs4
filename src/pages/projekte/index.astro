@@ -261,6 +261,18 @@ import Scrollspy from './_Scrollspy.astro'
 </Layout>
 
 <script>
+  // chrome skips its scroll-to-fragment when the document is served
+  // by the service worker (pwa reload on a phone stays at the top).
+  // If the browser did not scroll, do it manually; scrollIntoView
+  // honours the scroller's smooth scroll-behavior
+  if (location.hash) {
+    const target = document.querySelector(location.hash)
+    // 200px: well below the navbar, tolerant of slight layout shifts
+    if (target && target.getBoundingClientRect().top > 200) {
+      target.scrollIntoView()
+    }
+  }
+
   // once scroll-target-group is supported, this can be removed
   // https://caniuse.com/?search=scroll-target-group
   const options = { threshold: 0.5 }
