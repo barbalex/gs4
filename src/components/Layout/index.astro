@@ -70,13 +70,11 @@ import Analytics from '@vercel/analytics/astro'
         Replaces the 8 KiB workbox-window chunk that chained off
         every page's html. Prod-only: vite-plugin-pwa serves no sw
         in dev, registering there just logs a 404. */}
-    {import.meta.env.PROD && (
-      <script is:inline>
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw.js')
-        }
-      </script>
-    )}
+    {import.meta.env.PROD && <script is:inline>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+      }
+    </script>}
   </body>
 </html>
 
@@ -119,7 +117,13 @@ import Analytics from '@vercel/analytics/astro'
   }
   body {
     overflow: hidden;
+    /* 100vh on phones is the url-bar-hidden height, making the page
+     * taller than the visible area. That gave the root scroller range
+     * behind the url bar, and anchor jumps (programmatically
+     * scrollable despite overflow hidden) scrolled the navbar away.
+     * dvh always matches the visible area — no root scroll range */
     height: 100vh;
+    height: 100dvh;
     margin: 0;
     background-color: var(--bg);
     color: var(--text);
