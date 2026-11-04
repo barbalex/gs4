@@ -35,7 +35,7 @@
     "@vercel/analytics": "2.0.1",
     "astro-icon": "1.2.0",
     "leaflet": "1.9.4",
-    "swiper": "12.2.0"
+    "swiper": "14.4.0"
   },
   "devDependencies": {
     "@astrojs/sitemap": "3.7.4",
