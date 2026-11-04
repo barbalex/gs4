@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { PNG } from 'pngjs'
 
 test('has title', async ({ page }) => {
   await page.goto(`/`)
@@ -68,6 +69,31 @@ test('theme toggle folds into the hamburger menu on narrow viewports', async ({
   await page.setViewportSize({ width: 1280, height: 800 })
   await expect(page.locator('.navbar > .theme-toggle')).toBeVisible()
   await expect(page.locator('.nav-menu .theme-toggle')).toHaveCount(0)
+})
+
+test('appbar stays painted after a sidenav jump', async ({ page }) => {
+  // the navbar used to lose its paint when .scroll-container
+  // smooth-scrolled to an anchor (chromium dropped the sticky
+  // navbar's layer; the bar reappeared on the next scroll).
+  // Guard the pixels, not the dom: layout stayed healthy throughout
+  await page.setViewportSize({ width: 360, height: 800 })
+  await page.goto(`/projekte`)
+  await page.getByRole('link', { name: 'AWEL-Personal', exact: true }).click()
+  // let the smooth scroll settle before sampling
+  await page.waitForTimeout(1500)
+  const png = PNG.sync.read(
+    await page.screenshot({
+      clip: { x: 0, y: 0, width: 360, height: 56 },
+    }),
+  )
+  let green = 0
+  for (let i = 0; i < png.data.length; i += 4) {
+    const [r, g, b] = [png.data[i], png.data[i + 1], png.data[i + 2]]
+    if (g > r && g > b && r < 80) green++
+  }
+  // the navbar is solid brand green in both themes; the brand text
+  // and hamburger icon only cover a fraction of the strip
+  expect(green / (png.width * png.height)).toBeGreaterThan(0.5)
 })
 
 test('Projekte sidenav mediterranean-migration', async ({ page }) => {
