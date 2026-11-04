@@ -61,6 +61,13 @@ export default defineConfig({
           '404.html',
         ],
         navigateFallback: '/404',
+        // trailing-slash urls aren't precached (the manifest holds the
+        // slash-less forms); the fallback above would answer them with
+        // the 404 page — even online. Let them through so the server
+        // can redirect to the clean url. '/' also matches this regex
+        // but is served by its precache entry before the fallback
+        // route is consulted.
+        navigateFallbackDenylist: [/\/$/],
       },
       manifest: {
         scope: '.',
