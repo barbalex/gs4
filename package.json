@@ -2,7 +2,7 @@
   "name": "gs4",
   "description": "Gabriel Software's website",
   "type": "module",
-  "version": "2.0.27",
+  "version": "2.0.28",
   "author": "Alexander Gabriel",
   "engines": {
     "node": ">=22.12.0"
@@ -17,7 +17,8 @@
     "deploy_preview": "vercel build && vercel deploy --prebuilt",
     "deploy_productive": "vercel build --prod && vercel deploy --prebuilt --prod",
     "deploy_only": "vercel deploy --prebuilt --prod",
-    "test": "NODE_ENV=dev playwright test",
+    "test": "npm run test:precache && NODE_ENV=dev playwright test",
+    "test:precache": "astro build && node --test tests/sw-precache.test.mjs",
     "test-report": "playwright show-report",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

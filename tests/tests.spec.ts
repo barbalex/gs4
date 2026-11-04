@@ -14,25 +14,27 @@ test('Home link', async ({ page }) => {
 test('Leitbild link', async ({ page }) => {
   await page.goto(`/`)
   await page.getByRole('link', { name: 'Leitbild' }).click()
-  await expect(page).toHaveURL(/.*leitbild/)
+  // exact match, no trailing slash: the sw precache manifest lists
+  // pages slash-less and serves its 404 fallback otherwise
+  await expect(page).toHaveURL(/\/leitbild$/)
 })
 
 test('Projekte link', async ({ page }) => {
   await page.goto(`/`)
   await page.getByRole('link', { name: 'Projekte' }).click()
-  await expect(page).toHaveURL(/.*projekte/)
+  await expect(page).toHaveURL(/\/projekte$/)
 })
 
 test('Technologien link', async ({ page }) => {
   await page.goto(`/`)
   await page.getByRole('link', { name: 'Technologien' }).click()
-  await expect(page).toHaveURL(/.*technologien/)
+  await expect(page).toHaveURL(/\/technologien$/)
 })
 
 test('Kontakt link', async ({ page }) => {
   await page.goto(`/`)
   await page.getByRole('link', { name: 'Kontakt' }).click()
-  await expect(page).toHaveURL(/.*kontakt/)
+  await expect(page).toHaveURL(/\/kontakt$/)
 })
 
 test('theme toggle cycles modes in the navbar', async ({ page }) => {
