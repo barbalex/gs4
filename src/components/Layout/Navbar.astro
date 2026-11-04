@@ -279,7 +279,12 @@ const navLinks = [
 <style>
   .navbar {
     min-height: 56px;
-    position: sticky;
+    /* relative, not sticky: the body never scrolls (overflow hidden,
+     * height 100vh), so sticky had no effect — but its compositing
+     * made chromium drop the navbar's paint when the inner
+     * .scroll-container smooth-scrolled to an anchor (appbar
+     * disappeared on mobile until the next scroll) */
+    position: relative;
     z-index: 10;
     /* view-transition-name lives in the inline head style in Layout,
      * so it is available to the browser without waiting for this css */
