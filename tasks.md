@@ -11,8 +11,6 @@ reloading on https://gabriel-software.ch/projekte#awel-personal does not scroll 
 
 ---
 
-service worker error when launching in dev
-
 ---
 
 console extract after running 'npm run deploy':
