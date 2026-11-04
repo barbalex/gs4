@@ -13,22 +13,20 @@ const navLinks = [
 
 <>
   <nav role="navigation" class="navbar">
-    <a href="/" class:list={['navbar-brand', { active: pathname === '/' }]}
-      >Gabriel Software</a
-    >
+    <a href="/" class:list={['navbar-brand', { active: pathname === '/' }]}>
+      Gabriel Software
+    </a>
     <div class="nav-menus">
-      {
-        navLinks.map(({ href, label }) => (
-          <div class="nav">
-            <a
-              href={href}
-              class:list={['nav-link', { active: pathname === href }]}
-            >
-              {label}
-            </a>
-          </div>
-        ))
-      }
+      {navLinks.map(({ href, label }) => (
+        <div class="nav">
+          <a
+            href={href}
+            class:list={['nav-link', { active: pathname === href }]}
+          >
+            {label}
+          </a>
+        </div>
+      ))}
     </div>
     <button
       type="button"

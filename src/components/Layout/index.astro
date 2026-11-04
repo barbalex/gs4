@@ -65,12 +65,10 @@ import Analytics from '@vercel/analytics/astro'
     <Navbar>
       <slot />
     </Navbar>
-    {
-      /* minimal inline registration: scope '/', classic sw and
+    {/* minimal inline registration: scope '/', classic sw and
         updateViaCache 'imports' are navigator.register() defaults.
         Replaces the 8 KiB workbox-window chunk that chained off
-        every page's html. */
-    }
+        every page's html. */}
     <script is:inline>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
